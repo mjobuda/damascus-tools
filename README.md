@@ -25,3 +25,5 @@ FeNanoIDE
 FunctionExporterMacros
 
 FeTizenTV
+
+FeGtags
