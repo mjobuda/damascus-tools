@@ -29,7 +29,7 @@ I have no name yet for this tool(lets call it here fsc).
 The next action will be something like fsc complain "bla bla crashes bla".
 This would send a crash report with the solc and fe versions.
 We need this for creating the compatibility matrix.
-How about ecc? Ethereum compiler collection!!!
+How about ecc? Ethereum compiler collection!!
 
 ### FeTruffle
 
