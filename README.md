@@ -20,6 +20,16 @@ so that as many of the above plugins may be build from the same source.
 
 ### Solc\&Fe bundler(add
 
+Will consist of a bundler which packs a small rust program,
+one version of solc and one version of Fe.
+The executable checks whether the --fe option is present.
+Then it calls the Fe compiler with all the options(without the --fe).
+Otherwise it calls the solc compiler with all options.
+I have no name yet for this tool(lets call it here fsc).
+The next action will be something like fsc complain "bla bla crashes bla".
+This would send a crash report with the solc and fe versions.
+We need this for creating the compatibility matrix.
+
 ### FeTruffle
 
 ### FeHighHat plugin
