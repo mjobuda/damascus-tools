@@ -24,6 +24,8 @@ FeNanoIDE
 
 FunctionExporterMacros
 
-FeTizenTV
+# FeTizenTV
 
-FeGtags
+# FeGtags
+
+# FeCordova
