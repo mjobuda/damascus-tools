@@ -1,0 +1,29 @@
+{
+  "name": "fejs",
+  "collaborators": [
+    "The Fe Developers <snakecharmers@ethereum.org>"
+  ],
+  "description": "An implementation of the Fe smart contract language",
+  "version": "0.6.1-alpha",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ethereum/fe"
+  },
+  "files": [
+    "fejs_bg.wasm",
+    "fejs.js",
+    "fejs.d.ts"
+  ],
+  "module": "fejs.js",
+  "types": "fejs.d.ts",
+  "sideEffects": false,
+  "keywords": [
+    "ethereum",
+    "fe",
+    "yul",
+    "smart",
+    "contract",
+    "compiler"
+  ]
+}
