@@ -1,5 +1,7 @@
 # Damascus tools
 
+" Ethereum must remain a bazaar, and never become a cathedral. "
+
 ## Tools for Fe. Monorepo. Check the philosophy of the project.
 
 ## Feature requests welcome
