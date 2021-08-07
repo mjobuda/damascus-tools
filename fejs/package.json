@@ -1,0 +1,16 @@
+{
+  "name": "fejs",
+  "version": "0.1.0",
+  "description": "JS wrapper around Ethereum/Fe Compiler",
+  "main": "index.node",
+  "scripts": {
+    "build": "cargo-cp-artifact -nc index.node -- cargo build",
+    "install": "npm run build",
+    "test": "cargo test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cargo-cp-artifact": "^0.1"
+  }
+}

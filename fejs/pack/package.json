@@ -1,0 +1,26 @@
+{
+  "name": "@berlinvege/fejs",
+  "version": "1.0.1",
+  "description": "JS wrapper around Ethereum Fe Compiler https://github.com/ethereum/fe",
+  "main": "index.node",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -u qunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjobuda/vscode-fe/tree/tokenprovider/fejs"
+  },
+  "keywords": [
+    "\"ethereum\"",
+    "\"fe\"",
+    "\"yul\"",
+    "\"smart\"",
+    "\"contract\"",
+    "\"compiler\""
+  ],
+  "author": "Marek Owsikowski",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.0.2"
+  }
+}
