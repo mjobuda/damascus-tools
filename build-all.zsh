@@ -1,1 +1,4 @@
-for file in ./*/; echo building $file; zsh $file/build.zsh
+for file in ./*/; do
+  echo building $file
+  zsh $file/build.zsh
+done
