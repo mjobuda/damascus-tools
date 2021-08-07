@@ -1,21 +1,26 @@
 # Damascus tools
 
 ## Tools for Fe. Monorepo. Check the philosophy of the project.
+
 ## Feature requests welcome
 
 ### FeDocker 1
 
 ### FeDockerJs 0
+
 JS wrapper around a shell call calling FeDocker.
 
 ### Fejs 1
+
 A few functions from FE compiled to native as a JS library. Linux in my case. Works not on node 16.
 Takes a string with Fe source code and returns tokens, bytecode, ast's ....
 
 ### Fewasm 1
+
 Fejs compiled for wasm. It can be then used in the webbrowser.
 
 ### FePython 0
+
 Fejs compiled for Python.
 
 ### FunctionExporterMacros 1
@@ -27,9 +32,9 @@ so that as many of the above plugins may be build from the same source.
 ### FeBrownie 0
 
 ### Solc\&Fe bundler 0
-Two tools:
-1)
 
+Two tools:
+1\)
 
 Will consist of a bundler which packs a small rust program,
 one version of solc and one version of Fe.
@@ -43,19 +48,19 @@ We need this for creating the compatibility matrix.
 How about ecc? Ethereum compiler collection!!
 
 commandbundle --fe --FE .fe .Fe .FE --Fe /path/to/fe --cbdefault /path/to/solc
-This command should generate an executable that 
+This command should generate an executable that
 if launched with the --fe, --FE or --Fe parameter,
 or if it is called on a file with the endings .fe, .Fe or .FE,
 then it calls the Fe compiler with all other options from this commandline.
 Otherwise the solc compiler is called.
 The artifact of this tool should be somehow easily installable.
 
+2.
 
-2)
 something similar with json. This should be I think be written in node.
 This will generate a wrapper, so that we can use json for the solc compiler.
 But if somewhere in this json a "Fe" is indicated then the Fe compiler will be executed.
-I'm not sure wether here a general approach makes sense. 
+I'm not sure wether here a general approach makes sense.
 It could be a javascript program that understands the solc json syntax and enhances it a little bit.
 And it can also assemble the json output.
 
@@ -72,7 +77,7 @@ The plugin could use some stupid checks to decide what to use.
 For instance putting all possible ways how to run different versions of different Fe, FeDocker, Fewasm, Fejs, Fe\* compilers.
 Then run each with a -v to see which one won't crash. Or compile some contracts to see which one works best.
 
-### FeAbstract
+### FeAbstract 0
 
 Concept: Common codebase for Fe plugins. Some code in FeHighHat,FeTruffle,FeBrownie,VScode,Remix might be duplicated.
 The common part will be here. The Damascus build system will build all dependent tools from this.
@@ -106,13 +111,8 @@ But I'm still looking for a simple(preferably non microsoft like) way to have ID
 
 Exports FeNanoIDE to Apple targets, Android and with some luck something else
 
-### Damascus build system 0
+### Damascus build system 1
 
-one command should fetch a version of the Fe compiler(sources or binaries or both) and build all tools.
-With one command!!! I think of make.
-No, even better:
-A short rust program compiled with rustc (without cargo)
-Runs in each folder a builder.
-The builder can do what it wants.
-For instance calling another build tool.
-
+One command should fetch a version of the Fe compiler(sources or binaries or both) and build all tools.
+Zsh is used here as the main build system.
+The build-all.zsh script calls in each folder the build.zsh script.
