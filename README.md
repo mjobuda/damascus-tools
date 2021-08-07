@@ -110,3 +110,9 @@ Exports FeNanoIDE to Apple targets, Android and with some luck something else
 
 one command should fetch a version of the Fe compiler(sources or binaries or both) and build all tools.
 With one command!!! I think of make.
+No, even better:
+A short rust program compiled with rustc (without cargo)
+Runs in each folder a builder.
+The builder can do what it wants.
+For instance calling another build tool.
+
