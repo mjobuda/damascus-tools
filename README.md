@@ -1,24 +1,35 @@
 # Damascus tools
 
-## Tools for Fe. Monorepo. Check the philosophy of the project and write some issues/feature requests
+## Tools for Fe. Monorepo. Check the philosophy of the project.
+## Feature requests welcome
 
-### FeDocker
+### FeDocker 1
 
-### Fejs
+### FeDockerJs 0
+JS wrapper around a shell call calling FeDocker.
 
-### Fewasm
+### Fejs 1
+A few functions from FE compiled to native as a JS library. Linux in my case. Works not on node 16.
+Takes a string with Fe source code and returns tokens, bytecode, ast's ....
 
-### FePython
+### Fewasm 1
+Fejs compiled for wasm. It can be then used in the webbrowser.
 
-### FunctionExporterMacros
+### FePython 0
+Fejs compiled for Python.
+
+### FunctionExporterMacros 1
 
 Rust macro lib that helps to build above targets.
 Depending on the target it'll substitute some code
 so that as many of the above plugins may be build from the same source.
 
-### FeBrownie
+### FeBrownie 0
 
-### Solc\&Fe bundler(add
+### Solc\&Fe bundler 0
+Two tools:
+1)
+
 
 Will consist of a bundler which packs a small rust program,
 one version of solc and one version of Fe.
@@ -31,9 +42,26 @@ This would send a crash report with the solc and fe versions.
 We need this for creating the compatibility matrix.
 How about ecc? Ethereum compiler collection!!
 
-### FeTruffle
+commandbundle --fe --FE .fe .Fe .FE --Fe /path/to/fe --cbdefault /path/to/solc
+This command should generate an executable that 
+if launched with the --fe, --FE or --Fe parameter,
+or if it is called on a file with the endings .fe, .Fe or .FE,
+then it calls the Fe compiler with all other options from this commandline.
+Otherwise the solc compiler is called.
+The artifact of this tool should be somehow easily installable.
 
-### FeHighHat plugin
+
+2)
+something similar with json. This should be I think be written in node.
+This will generate a wrapper, so that we can use json for the solc compiler.
+But if somewhere in this json a "Fe" is indicated then the Fe compiler will be executed.
+I'm not sure wether here a general approach makes sense. 
+It could be a javascript program that understands the solc json syntax and enhances it a little bit.
+And it can also assemble the json output.
+
+### FeTruffle 0
+
+### FeHighHat plugin 1
 
 First somehow working release is using Fejs. Fejs is native compiled into node.
 There are a few compatibility matrices for the used tools and libs, thus it does not seem to be a good solution.
@@ -50,33 +78,41 @@ Concept: Common codebase for Fe plugins. Some code in FeHighHat,FeTruffle,FeBrow
 The common part will be here. The Damascus build system will build all dependent tools from this.
 This is another advantage of simplicity.
 
-### VScode plugin
+### VScode plugin 1
 
 This story deserves an own blog entry!!!!
 
-### Remix Plugin
+### Remix Plugin 0
 
 idealy the VScode Plugin will work here without changes. Remix is based on Theia so it should be compatible.
 
-### FeNanoIDE
+### FeNanoIDE 1
 
 A simple Code Editor in vanilla JS and HTML5 with basic IDE features and Fewasm built in.
 The simplicity means that it can be easily exported to other targets that support some kind of WebView.
 The simplicity and choice of Vanilla JS means that changes and exports will be easy and cheap(and hopefully stable\&fast).
 
-### FeTizenTV
+### FeTizenTV 0
 
 Exports FeNanoIDE Tizen TV
 
-### FeGtags
+### FeGtags 0
 
-This seems to be a good candidate for a common part of text editor plugins(or IDE plugins).
+This could to be a good candidate for a common part of text editor plugins(or IDE plugins).
+We can get tokens and AST's from Fe sourcecode. Semantic highliting is delivered by the Fe tokenizer(f.i. in the VScode plugin).
+But I'm still looking for a simple(preferably non microsoft like) way to have IDE functionalities like "go to definition/declaration".
 
-### FeCordova
+### FeCordova 0
 
 Exports FeNanoIDE to Apple targets, Android and with some luck something else
 
-### Damascus build system
+### Damascus build system 0
 
 one command should fetch a version of the Fe compiler(sources or binaries or both) and build all tools.
-With one command!!!
+With one command!!! I think of make.
+No, even better:
+A short rust program compiled with rustc (without cargo)
+Runs in each folder a builder.
+The builder can do what it wants.
+For instance calling another build tool.
+
