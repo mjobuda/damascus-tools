@@ -118,3 +118,13 @@ Exports FeNanoIDE to Apple targets, Android and with some luck something else
 One command should fetch a version of the Fe compiler(sources or binaries or both) and build all tools.
 Zsh is used here as the main build system.
 The build-all.zsh script calls in each folder the build.zsh script.
+
+### GhosthubPublisher
+
+Tool that contains a dockerized Ghost cms coupled with a
+watch script that exports generated static html to your github pages.
+Marketing can be an important aspect even of open source development.
+
+### Bonus Wishlist Extra: Fe Debugger
+
+I haven't estimated the difficulty of this task.
