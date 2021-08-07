@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "damascus-build": "echo hello"
+  }
+}
