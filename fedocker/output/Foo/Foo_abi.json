@@ -1,0 +1,33 @@
+[
+  {
+    "name": "read_bar",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "uint8"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ]
+  },
+  {
+    "name": "write_bar",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "uint8"
+      },
+      {
+        "name": "value",
+        "type": "uint8"
+      }
+    ],
+    "outputs": []
+  }
+]
