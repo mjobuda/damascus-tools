@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>WASM instantiateStreaming() test</title>
+  </head>
+
+  <body>
+
+
+    <script>
+      var importObject = { imports: { imported_func: arg => console.log(arg) } };
+
+      WebAssembly.instantiateStreaming(fetch('fejs.wasm'), importObject)
+      .then(obj => obj.instance.exports.exported_func());
+      console.log('buuu!');
+    </script>
+  </body>
+
+</html>
