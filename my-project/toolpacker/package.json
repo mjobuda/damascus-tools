@@ -1,0 +1,35 @@
+{
+  "name": "toolpacker",
+  "description": "Create an executable which runs different commands depending on commandline options and fileendings",
+  "version": "0.0.0",
+  "author": "Marek Owsikowski @mjobuda",
+  "bin": {
+    "toolpacker": "./bin/run"
+  },
+  "bugs": "https://github.com/mjobuda/toolpacker/issues",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/mjobuda/toolpacker",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "toolpacker"
+  },
+  "repository": "mjobuda/toolpacker",
+  "scripts": {
+    "posttest": "eslint .",
+    "prepack": "oclif-dev readme",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
