@@ -6,3 +6,8 @@
   pom {:project 'my-project
        :version "0.1.0"}
   jar {:manifest {"Foo" "bar"}})
+
+(deftask build
+  "Build my project."
+  []
+  (comp (pom) (jar) (install)))
