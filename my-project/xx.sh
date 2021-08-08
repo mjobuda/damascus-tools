@@ -16,5 +16,6 @@ exec clojure $OPTS -Sdeps "$DEPS" "$0" "$@"
 )
 
 (println "It works!")
+(println "It works!")
 
 
