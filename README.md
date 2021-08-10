@@ -1,6 +1,6 @@
 # Damascus tools
 
-" Ethereum must remain a bazaar, and never become a cathedral. "
+A collection of ancient tools using nanotechnology
 
 ## Tools for Fe. Monorepo. Check the philosophy of the project.
 
@@ -136,3 +136,5 @@ Marketing can be an important aspect even of open source development.
 ### Bonus Wishlist Extra: Fe Debugger
 
 I haven't estimated the difficulty of this task.
+
+" Ethereum must remain a bazaar, and never become a cathedral. "
