@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "berlinvege",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "docker-cli-js": "^2.8.0"
+  }
 }
