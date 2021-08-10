@@ -139,7 +139,7 @@ window.editor = editor;
 editor.setSize(null, 550);
 // var code_mirror = document.querySelector('.CodeMirror');
 //editor.style.fontFamily = "victor-mono, monospace";
-import init, { get_token, compile_to_ast, compile } from "./resources/fejs.js";
+// import init, { get_token, compile_to_ast, compile } from "./resources/fejs.js";
 
 async function run() {
   await init("./resources/fejs_bg.wasm");
