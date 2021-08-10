@@ -113,6 +113,14 @@ But I'm still looking for a simple(preferably non microsoft like) way to have ID
 
 Exports FeNanoIDE to Apple targets, Android and with some luck something else
 
+### FeGhostIDE 0
+
+FeNanoIDE available as a plugin for the ghost CMS.
+
+### FeWPIDE 0
+
+FeNanoIDE available as a plugin for the WordPress CMS.
+
 ### Damascus build system 1
 
 One command should fetch a version of the Fe compiler(sources or binaries or both) and build all tools.
