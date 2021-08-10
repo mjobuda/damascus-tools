@@ -1,6 +1,8 @@
 # Damascus tools
 
-A collection of ancient tools using nanotechnology
+Handcrafted Tools from the orient.
+A fine collection of ancient nanotechnologies.
+Use as you wish and come next week for more!
 
 ## Tools for Fe. Monorepo. Check the philosophy of the project.
 
