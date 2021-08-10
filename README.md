@@ -10,7 +10,7 @@ Use as you wish and come next week for more!!
 
 ### FeDocker 1
 
-### FeDockerJs 0
+### FeDockerJs 1
 
 JS wrapper around a shell call calling FeDocker.
 
