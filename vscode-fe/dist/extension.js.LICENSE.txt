@@ -1,0 +1,27 @@
+/** 
+ * @author github.com/tintinweb
+ * @author Marek Owsikowski adapted for Fe
+ * @license MIT
+ * 
+ * */
+
+/** 
+ * @author github.com/tintinweb
+ * @license MIT
+ * 
+ * 
+ * */
+
+/** 
+ * @author github.com/tintinweb
+ * @license MIT
+ * 
+ * */
+
+/** 
+ * @author github.com/tintinweb
+ * @license MIT
+ * 
+ * language definition based on: https://raw.githubusercontent.com/Microsoft/vscode/master/extensions/python/syntaxes/MagicPython.tmLanguage.json (MIT)
+ * compilation related parts taken from: https://github.com/trufflesuite/truffle/tree/develop/packages/truffle-compile-fe (MIT)
+ * */

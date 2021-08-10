@@ -1,0 +1,13 @@
+[
+  {
+    "name": "bar",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ]
+  }
+]
