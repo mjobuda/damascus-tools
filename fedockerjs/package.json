@@ -1,0 +1,11 @@
+{
+  "name": "fedockerjs",
+  "version": "1.0.0",
+  "description": "Wrapper to call the Ethereum/Fe compiler in it's doeckeriezed form",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "berlinvege",
+  "license": "ISC"
+}
