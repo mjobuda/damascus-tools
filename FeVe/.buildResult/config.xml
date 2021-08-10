@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="qdBbzCwFzO.FeVe" package="qdBbzCwFzO" required_version="2.3"/>
+    <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+    <icon src="icon.png"/>
+    <content src="index.html"/>
+	<tizen:setting background-support="disable" context-menu="enable" encryption="disable" hwkey-event="enable" install-location="auto" screen-orientation="landscape"/>
+    <name>FeVe</name>
+    <tizen:profile name="tv"/>
+</widget>
