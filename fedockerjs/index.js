@@ -1,0 +1,1 @@
+dockerCLI.dockerCommand('run  -v /home/mmm/github/damascus-tools/fedockerjs:/home/mmm/github/damascus-tools/fedockerjs -w /home/mmm/github/damascus-tools/fedockerjs   ekovege/fe if_statement.fe').then(function (data) {console.log('data = ', data); });
