@@ -6,6 +6,8 @@ var options = new DockerOptions();
 
 var docker = new Docker(options);
 
-docker.command("run ekovege/fe if_statement.fe").then(function (data) {
-  console.log("data = ", data);
-});
+docker
+  .command("run  -v `pwd`:`pwd` -w `pwd`   ekovege/fe if_statement.fe")
+  .then(function (data) {
+    console.log("data = ", data);
+  });
