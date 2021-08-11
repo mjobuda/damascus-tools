@@ -8,4 +8,4 @@ const options = {
   echo: true, // echo command output to stdout/stderr
 };
 
-const data = await dockerCommand("run hello-world", options);
+const data = await dockerCommand("build -t nginximg .", options);
