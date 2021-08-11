@@ -10,7 +10,8 @@ function compile(commandLine) {
     .command("run  -v `pwd`:`pwd` -w `pwd`   ekovege/fe " + commandLine)
     .then(function (data) {
       console.log("data = ", data);
-    });
+    })
+    .catch((err) => alert(err));
 }
 
 module.exports = compile;
