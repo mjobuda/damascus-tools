@@ -1,11 +1,15 @@
-// esm
-const { dockerCommand } = require("docker-cli-js");
+var dockerCLI = require("docker-cli-js");
+var DockerOptions = dockerCLI.Options;
+var Docker = dockerCLI.Docker;
 
-// default options
-const options = {
-  machineName: null, // uses local docker
-  currentWorkingDirectory: null, // uses current working directory
-  echo: true, // echo command output to stdout/stderr
-};
+var options = new DockerOptions(
+  /* machinename */ "aws_machine01",
+  /* currentWorkingDirectory */ "nginx",
+  /* echo */ true
+);
 
-const data = await dockerCommand("build -t nginximg .", options);
+var docker = new Docker(options);
+
+docker.command("build -t nginximg .").then(function (data) {
+  console.log("data = ", data);
+});
