@@ -9,3 +9,5 @@ function compile(options) {
       console.log("data = ", data);
     });
 }
+
+module.exports = compile;
