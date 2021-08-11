@@ -6,6 +6,6 @@ var options = new DockerOptions();
 
 var docker = new Docker(options);
 
-docker.command("run ekovege/fe --help").then(function (data) {
+docker.command("run ekovege/fe -V").then(function (data) {
   console.log("data = ", data);
 });
