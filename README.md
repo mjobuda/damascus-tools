@@ -128,6 +128,7 @@ FeNanoIDE available as a plugin for the WordPress CMS.
 One command should fetch a version of the Fe compiler(sources or binaries or both) and build all tools.
 Zsh is used here as the main build system.
 The build-all.zsh script calls in each folder the build.zsh script.
+Or some dialect of clojure in the future.
 
 ### GhosthubPublisher
 
