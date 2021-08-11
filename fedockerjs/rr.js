@@ -1,4 +1,4 @@
-var dockerCLI = require("docker-cli-js");
+ar dockerCLI = require("docker-cli-js");
 var DockerOptions = dockerCLI.Options;
 var Docker = dockerCLI.Docker;
 
