@@ -11,7 +11,7 @@ function compile(commandLine) {
     .then(function (data) {
       console.log("data = ", data);
     })
-    .catch((err) => alert(err));
+    .catch((err) => console.log(err));
 }
 
 module.exports = compile;
