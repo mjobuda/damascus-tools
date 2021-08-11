@@ -6,6 +6,6 @@ var options = new DockerOptions();
 
 var docker = new Docker(options);
 
-docker.command("run berlinvege/fe -v").then(function (data) {
+docker.command("run ekovege/fe -v").then(function (data) {
   console.log("data = ", data);
 });
