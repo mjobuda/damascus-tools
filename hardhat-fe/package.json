@@ -24,8 +24,14 @@
     "build": "tsc --build .",
     "clean": "rimraf dist"
   },
-  "files": ["dist/", "src/", "LICENSE", "README.md"],
+  "files": [
+    "dist/",
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
   "dependencies": {
+    "@berlinvege/fedockerjs": "^1.0.5",
     "@berlinvege/fejs": "^1.0.1",
     "fs-extra": "^7.0.1",
     "glob": "^7.1.3",
