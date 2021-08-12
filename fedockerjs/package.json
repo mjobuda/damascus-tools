@@ -1,7 +1,7 @@
 {
-  "name": "fedockerjs",
+  "name": "@berlinvege/fedockerjs",
   "version": "1.0.2",
-  "description": "Wrapper to call the Ethereum/Fe compiler in it's doeckeriezed form",
+  "description": "Wrapper to call the Ethereum/Fe compiler in it's dockerized form",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
