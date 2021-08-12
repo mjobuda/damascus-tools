@@ -26,7 +26,7 @@ exports.compile = void 0;
 const plugins_1 = require("hardhat/plugins");
 const source_names_1 = require("hardhat/utils/source-names");
 const path_1 = __importDefault(require("path"));
-var fejs = require("@berlinvege/fejs");
+var fejs = require("@berlinvege/fedockeXXrjs");
 const fs = __importStar(require("fs"));
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
 async function compile(feConfig, paths, artifacts) {
@@ -42,9 +42,9 @@ async function compile(feConfig, paths, artifacts) {
         //console.log("Fe moduler object... "+fejs.compile_to_ast);
         const sourceName = await source_names_1.localPathToSourceName(paths.root, file);
         const feSourceCode = fs.readFileSync(file, "utf8");
-        //console.log(feSourceCode);
+        console.log(feSourceCode);
         const compilerResult = fejs.compile(feSourceCode);
-        //console.log("Fe compilerResult object... "+compilerResult.contracts['Foo'].bytecode);
+        console.log("Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode);
         for (const key of Object.keys(compilerResult.contracts)) {
             const artifact = getArtifactFromFeOutput(sourceName, key, compilerResult.contracts[key]);
             await artifacts.saveArtifactAndDebugFile(artifact);
