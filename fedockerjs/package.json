@@ -1,6 +1,6 @@
 {
   "name": "@berlinvege/fedockerjs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Wrapper to call the Ethereum/Fe compiler in it's dockerized form",
   "main": "index.js",
   "scripts": {
