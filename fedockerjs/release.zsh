@@ -1,2 +1,2 @@
 npx standard-version
-npm publish
+npm publish --access public
