@@ -3,7 +3,7 @@ import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import { Artifact, Artifacts, ProjectPathsConfig } from "hardhat/types";
 import { localPathToSourceName } from "hardhat/utils/source-names";
 import path from "path";
-var fejs = require("@berlinvege/fedockerjs");
+var fejs = require("@berlinvege/fedockerjs"); //
 import * as fs from "fs";
 import { FeConfig } from "./types";
 
