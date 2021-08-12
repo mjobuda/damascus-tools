@@ -1,13 +1,17 @@
 var dockerCLI = require("docker-cli-js");
+var DockerOptions = dockerCLI.Options;
+var Docker = dockerCLI.Docker;
 
-function compile(options) {
-  return dockerCLI
-    .dockerCommand(
-      "run  -v /home/mmm/github/damascus-tools/fedockerjs:/home/mmm/github/damascus-tools/fedockerjs -w /home/mmm/github/damascus-tools/fedockerjs   ekovege/fe ${ options }"
-    )
-    .then(function (err, data) {
+var options = new DockerOptions();
+
+var docker = new Docker(options);
+function compile(commandLine) {
+  docker
+    .command("run  -v `pwd`:`pwd` -w `pwd`   ekovege/fe " + commandLine)
+    .then(function (data) {
       console.log("data = ", data);
-    });
+    })
+    .catch((err) => console.log(err));
 }
 
 module.exports = compile;

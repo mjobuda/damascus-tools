@@ -3,8 +3,8 @@ import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import { Artifact, Artifacts, ProjectPathsConfig } from "hardhat/types";
 import { localPathToSourceName } from "hardhat/utils/source-names";
 import path from "path";
-var fejs = require("@berlinvege/fejs");
-import * as fs from 'fs';
+var fejs = require("@berlinvege/fedockeXXrjs");
+import * as fs from "fs";
 import { FeConfig } from "./types";
 
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
@@ -17,8 +17,8 @@ export async function compile(
   const feVersion = feConfig.version;
 
   const files = await getFeSources(paths);
-    //console.log(paths);
-    //console.log(files);
+  //console.log(paths);
+  //console.log(files);
 
   let someContractFailed = false;
 
@@ -33,12 +33,15 @@ export async function compile(
     //console.log(feSourceCode);
     const compilerResult = fejs.compile(feSourceCode);
     //console.log("Fe compilerResult object... "+compilerResult.contracts['Foo'].bytecode);
-  for (const key of Object.keys(compilerResult.contracts)) {
-    const artifact = getArtifactFromFeOutput(sourceName, key, compilerResult.contracts[key]);
-    await artifacts.saveArtifactAndDebugFile(artifact);
+    for (const key of Object.keys(compilerResult.contracts)) {
+      const artifact = getArtifactFromFeOutput(
+        sourceName,
+        key,
+        compilerResult.contracts[key]
+      );
+      await artifacts.saveArtifactAndDebugFile(artifact);
+    }
   }
-
-}
 
   if (someContractFailed) {
     throw new NomicLabsHardhatPluginError(
@@ -62,7 +65,11 @@ function pathToContractName(file: string) {
   return sourceName.substring(0, sourceName.indexOf("."));
 }
 
-function getArtifactFromFeOutput(sourceName: string, contractName: string, output: any): Artifact {
+function getArtifactFromFeOutput(
+  sourceName: string,
+  contractName: string,
+  output: any
+): Artifact {
   //const contractName = pathToContractName(sourceName);
 
   return {
