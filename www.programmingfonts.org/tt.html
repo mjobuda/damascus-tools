@@ -1,7 +1,39 @@
-<script src="fenanoidetag.js"></script>
-<x-foo-with-markup></x-foo-with-markup>
-<script>
-  window.setTimeout(function () {
-    window.location.reload();
-  }, 3000);
-</script>
+<head>
+  <!-- CodeMirror -->
+  <link
+    rel="stylesheet"
+    href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.min.css"
+  />
+  <!-- CodeMirror Themes -->
+  <link
+    rel="stylesheet"
+    href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/theme/the-matrix.css"
+  />
+
+  <!-- CodeMirror JS -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/addon/edit/matchbrackets.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/addon/selection/active-line.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/ruby/ruby.min.js"></script>
+
+  <!-- input mono -->
+  <link
+    href="//cloud.webtype.com/css/7e544c5e-55dc-4b41-a8d3-c13f7e0a13d3.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+
+  <link rel="stylesheet" href="fonts/stylesheets/stylesheet.css" />
+  <!-- Compiled (using less on node) with "lessc fonts.less > stylesheet.css" -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <script src="fenanoidetag.js"></script>
+  <x-foo-with-markup></x-foo-with-markup>
+  <script>
+    window.setTimeout(function () {
+      window.location.reload();
+    }, 3000);
+  </script>
+</body>
