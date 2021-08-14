@@ -74,7 +74,7 @@ function compileEditor() {
 // console.log(cButton);
 // cButton.onclick = compileEditor;
 run();
-window.get_token = get_token;
-window.compile_to_ast = compile_to_ast;
-window.compile = compile;
+// window.get_token = get_token;
+// window.compile_to_ast = compile_to_ast;
+// window.compile = compile;
 // </script>
