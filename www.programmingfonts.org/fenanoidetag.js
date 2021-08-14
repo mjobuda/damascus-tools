@@ -2,9 +2,7 @@ customElements.define(
   "x-foo-with-markup",
   class extends HTMLElement {
     connectedCallback() {
-      this.innerHTML = `
-                <button id="COMPILEBUTTON">COMPILE</button>
-      <form>
+      this.innerHTML = `<form>
       <label for="code" class="screenreader-only">Code area</label>
       <textarea id="code" name="code">
 contract Foo:
@@ -59,7 +57,7 @@ editor.setSize(null, 550);
 // import init, { get_token, compile_to_ast, compile } from "./resources/fejs.js";
 
 async function run() {
-  // await init("./resources/fejs_bg.wasm");
+  await init("./resources/fejs_bg.wasm");
 }
 
 function compileEditor() {
@@ -69,12 +67,12 @@ function compileEditor() {
   console.log(get_token(editor.getValue()));
   console.log(compile_to_ast(editor.getValue()));
 }
-//
-// var cButton = document.getElementById("COMPILEBUTTON");
-// console.log(cButton);
-// cButton.onclick = compileEditor;
+
+var cButton = document.getElementById("COMPILEBUTTON");
+console.log(cButton);
+cButton.onclick = compileEditor;
 run();
-// window.get_token = get_token;
-// window.compile_to_ast = compile_to_ast;
-// window.compile = compile;
+window.get_token = get_token;
+window.compile_to_ast = compile_to_ast;
+window.compile = compile;
 // </script>
