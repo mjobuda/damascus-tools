@@ -23,7 +23,7 @@ var filters = {
   author: "all",
   name: "",
 };
-
+/*
 function selectTheme() {
   // var theme = "monokai";
   var theme = "the-martrix";
@@ -489,4 +489,4 @@ window.addEventListener("DOMContentLoaded", function () {
   // }
   // }
   // });
-});
+}); */
