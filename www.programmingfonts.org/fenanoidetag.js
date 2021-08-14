@@ -69,10 +69,10 @@ function compileEditor() {
   console.log(get_token(editor.getValue()));
   console.log(compile_to_ast(editor.getValue()));
 }
-
-var cButton = document.getElementById("COMPILEBUTTON");
-console.log(cButton);
-cButton.onclick = compileEditor;
+//
+// var cButton = document.getElementById("COMPILEBUTTON");
+// console.log(cButton);
+// cButton.onclick = compileEditor;
 run();
 window.get_token = get_token;
 window.compile_to_ast = compile_to_ast;
