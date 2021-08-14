@@ -27,6 +27,10 @@ Fejs compiled for wasm. It can be then used in the webbrowser.
 
 Fejs compiled for Python.
 
+### FeDockerPy 1
+
+Python wrapper around a shell call calling FeDocker.
+
 ### FunctionExporterMacros 1
 
 Rust macro lib that helps to build above targets.
