@@ -59,7 +59,7 @@ editor.setSize(null, 550);
 // import init, { get_token, compile_to_ast, compile } from "./resources/fejs.js";
 
 async function run() {
-  await init("./resources/fejs_bg.wasm");
+  // await init("./resources/fejs_bg.wasm");
 }
 
 function compileEditor() {
