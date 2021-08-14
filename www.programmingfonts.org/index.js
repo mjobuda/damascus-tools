@@ -2,14 +2,14 @@
 /* eslint-disable no-implicit-globals */
 
 // CodeMirror
-var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-  lineNumbers: true,
-  styleActiveLine: true,
-  matchBrackets: true,
-  // theme: "pastel-on-dark",
-  theme: "the-matrix",
-  lineWrapping: true,
-});
+// var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+// lineNumbers: true,
+// styleActiveLine: true,
+// matchBrackets: true,
+// theme: "pastel-on-dark",
+// theme: "the-matrix",
+// lineWrapping: true,
+// });
 
 // CodeMirror theme selector
 var input = document.getElementById("select-theme");
