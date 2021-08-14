@@ -23,6 +23,14 @@ var filters = {
   author: "all",
   name: "",
 };
+var theme = "the-martrix";
+editor.setOption("theme", theme);
+document.cookie = "theme=" + theme + ";max-age=172800";
+var font = window.location.hash.substring(1);
+var lang = "ruby"; //document.getElementById("select-language").value;
+
+editor.setOption("mode", lang.toLowerCase());
+document.cookie = "language=" + lang + ";max-age=172800";
 /*
 function selectTheme() {
   // var theme = "monokai";
