@@ -449,42 +449,42 @@ window.addEventListener("DOMContentLoaded", function () {
   // };
   // });
 
-  document.getElementById("authors-list").onchange = function (event) {
-    filters.author = event.target.value;
-    applyFilters();
-  };
-
-  document.getElementById("name-search").onkeyup = function (event) {
-    filters.name = event.target.value.toLowerCase();
-    applyFilters();
-  };
-
-  document.querySelector(".select-list").onkeyup = function (event) {
-    if (event.ctrlKey || event.altKey || event.metaKey || event.shiftKey) {
-      return;
-    }
-    if (event.key === "ArrowUp") {
-      event.preventDefault();
-      event.stopPropagation();
-      walk("up");
-    } else if (event.key === "ArrowDown") {
-      event.preventDefault();
-      event.stopPropagation();
-      walk("down");
-    }
-  };
-
-  document.body.addEventListener("keydown", function (event) {
-    if (event.ctrlKey || event.metaKey) {
-      if (event.key === "-") {
-        event.preventDefault();
-        event.stopPropagation();
-        decreaseFontSize();
-      } else if (event.key === "=") {
-        event.preventDefault();
-        event.stopPropagation();
-        increaseFontSize();
-      }
-    }
-  });
-});
+  // document.getElementById("authors-list").onchange = function (event) {
+    // filters.author = event.target.value;
+    // applyFilters();
+  // };
+//
+  // document.getElementById("name-search").onkeyup = function (event) {
+    // filters.name = event.target.value.toLowerCase();
+    // applyFilters();
+  // };
+//
+  // document.querySelector(".select-list").onkeyup = function (event) {
+    // if (event.ctrlKey || event.altKey || event.metaKey || event.shiftKey) {
+      // return;
+    // }
+    // if (event.key === "ArrowUp") {
+      // event.preventDefault();
+      // event.stopPropagation();
+      // walk("up");
+    // } else if (event.key === "ArrowDown") {
+      // event.preventDefault();
+      // event.stopPropagation();
+      // walk("down");
+    // }
+  // };
+//
+  // document.body.addEventListener("keydown", function (event) {
+    // if (event.ctrlKey || event.metaKey) {
+      // if (event.key === "-") {
+        // event.preventDefault();
+        // event.stopPropagation();
+        // decreaseFontSize();
+      // } else if (event.key === "=") {
+        // event.preventDefault();
+        // event.stopPropagation();
+        // increaseFontSize();
+      // }
+    // }
+  // });
+// });
