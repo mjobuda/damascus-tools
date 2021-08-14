@@ -1,0 +1,467 @@
+@font-face {
+    font-family: 'ui-font';
+    font-weight: normal;
+    font-style: normal;
+    src: url('merriweather/MerriweatherSans-Light.ttf');
+}
+@font-face {
+    font-family: 'ui-font';
+    font-weight: bold;
+    font-style: normal;
+    src: url('merriweather/MerriweatherSans-Bold.ttf');
+}
+@font-face {
+    font-family: 'ui-font';
+    font-weight: normal;
+    font-style: italic;
+    src: url('merriweather/MerriweatherSans-Italic.ttf');
+}
+@font-face {
+    font-family: 'ui-font';
+    font-weight: bold;
+    font-style: italic;
+    src: url('merriweather/MerriweatherSans-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'ui-font-serif';
+    font-weight: normal;
+    font-style: normal;
+    src: url('merriweather/Merriweather-Light.ttf');
+}
+@font-face {
+    font-family: 'ui-font-serif';
+    font-weight: bold;
+    font-style: normal;
+    src: url('merriweather/Merriweather-Bold.ttf');
+}
+@font-face {
+    font-family: 'ui-font-serif';
+    font-weight: normal;
+    font-style: italic;
+    src: url('merriweather/Merriweather-Italic.ttf');
+}
+@font-face {
+    font-family: 'ui-font-serif';
+    font-weight: bold;
+    font-style: italic;
+    src: url('merriweather/Merriweather-BoldItalic.ttf');
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    --bright-white: #FFF;
+    --paper-white: #F5F5F5;
+
+    --ink-black: #2A2A2A;
+    --dark-grey: #4A4A4A;
+    --medium-grey: #777;
+    --light-grey: #E0E0E0;
+    --bright-grey: #ECECEC;
+
+    height: 100%;
+    min-height: 100%;
+    font-family: 'ui-font', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    background: var(--paper-white);
+}
+@media (prefers-color-scheme: dark) {
+    html {
+        --bright-white: #111;
+        --paper-white: #1F1F1F;
+
+        --ink-black: #ECECEC;
+        --dark-grey: #E0E0E0;
+        --medium-grey: #808080;
+        --light-grey: #4A4A4A;
+        --bright-grey: #2A2A2A;
+    }
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    background: var(--paper-white);
+    color: var(--ink-black);
+}
+h1 {
+    margin: 0;
+    padding: .25em 0 0 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+p {
+    padding: 0;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+.screenreader-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: -999px;
+    left: -999px;
+    overflow:hidden
+}
+.no-smooth {
+    -webkit-font-smoothing: none;
+}
+.octicon {
+    fill: currentColor;
+}
+.main-wrapper {
+    width: 28em;
+    height: 100%;
+    max-height: 100%;
+    float: left;
+    position: relative;
+    z-index: 2;
+    border-right: 1px solid var(--medium-grey);
+    overflow: hidden;
+}
+@media (prefers-color-scheme: dark) {
+    .main-wrapper {
+        border-right-color: var(--paper-white);
+    }
+}
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+section {
+    flex: 0;
+    flex-shrink: 0;
+}
+section#filters,
+section.config {
+    display: grid;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    grid-row-gap: 4px;
+    grid-template-columns: auto auto auto auto;
+    padding: 8px;
+    font-size: 10px;
+    background: var(--bright-grey);
+}
+
+section#filters {
+    align-items: stretch;
+    grid-template-columns: auto auto auto auto auto;
+    border-bottom: 1px solid var(--light-grey);
+}
+section#filters input,
+section#filters select {
+    width: 100%;
+    margin: 0;
+}
+section#filters > div {
+    display: flex;
+}
+
+section.config {
+    border-top: 1px solid var(--light-grey);
+}
+section.config > * {
+    text-align: center;
+    padding: 0;
+    white-space: nowrap;
+}
+section.select-list {
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+section.select-list:focus {
+    outline: none;
+}
+section.select-list > * {
+    overflow: hidden;
+}
+section.select-list [data-style='serif'] .name {
+    font-family: 'ui-font-serif', serif;
+}
+section.select-list .entry {
+    position: relative;
+    padding: 8px 12px;
+}
+section.select-list .entry:not(:first-child) {
+    border-top: 1px solid var(--light-grey);
+}
+section.select-list .entry:hover {
+    background: var(--bright-white);
+}
+section.select-list .entry.active {
+    background: var(--bright-white);
+}
+section.select-list .entry > a {
+    display: block;
+    flex: 1;
+}
+section.select-list .entry.filtered-out {
+    display: none;
+}
+section.select-list a[data-value] {
+    display: block;
+    width: 66.67%;
+    position: relative;
+    overflow: hidden;
+}
+section.select-list a:hover .name,
+section.select-list a:active .name {
+    text-decoration: underline;
+}
+section.select-list .entry.active .name {
+    font-weight: bold;
+}
+section.select-list a.website {
+    position: absolute;
+    top: 6px;
+    right: 32px;
+    padding: 0 4px;
+    font-size: 10px;
+    color: var(--paper-white);
+    transition: all .2s ease-in-out;
+}
+section.select-list a.website svg {
+    position: relative;
+    top: 2px;
+}
+section.select-list a.website span {
+    display: inline-block;
+    padding-right: 1ex;
+}
+section.select-list a.favoritelink {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: var(--paper-white);
+    cursor: pointer;
+}
+section.select-list .entry:not(.pinned) a.favoritelink svg {
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 1;
+}
+section.select-list .entry:hover a.website,
+section.select-list .entry:hover a.favoritelink {
+    color: var(--bright-grey);
+}
+section.select-list .entry:hover a.favoritelink:hover,
+section.select-list a.favoritelink:hover {
+    color: var(--ink-black);
+}
+section.select-list .entry.active a.website,
+section.select-list .entry.active a.favoritelink {
+    color: var(--dark-grey);
+}
+section.select-list .entry a.website:hover,
+section.select-list .entry.pinned a.favoritelink {
+    color: var(--ink-black);
+}
+section.select-list .pinned {
+    background: var(--paper-white);
+}
+section.select-list .details {
+    display: block;
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--ink-black);
+}
+footer {
+    padding: 0 8px 4px 8px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 20px;
+    background: var(--bright-grey);
+    color: var(--medium-grey);
+}
+footer h1 + p {
+    font-style: italic;
+}
+footer a:hover,
+footer a:active {
+    text-decoration: underline;
+    color: var(--ink-black);
+}
+footer p a,
+footer p a:link,
+footer p a:visited {
+    text-decoration: underline;
+}
+
+label {
+    margin-right: .5ex;
+    color: var(--medium-grey);
+}
+button {
+    all: unset;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 18px;
+    position: relative;
+    margin: 0 .5ex 0 0;
+
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    background: linear-gradient(var(--bright-white), var(--light-grey));
+    color: var(--medium-grey);
+    cursor: pointer;
+}
+@media (prefers-color-scheme: dark) {
+    button {
+        background: linear-gradient(var(--light-grey), var(--bright-white));
+    }
+}
+button:hover {
+    color: var(--ink-black);
+}
+button.selected {
+    background: var(--bright-white);
+    color: var(--ink-black);
+    box-shadow: none;
+}
+button path,
+button rect {
+    fill: currentColor;
+}
+button:not(.selected) > svg:not(:first-child),
+button.selected > svg:not(.selected) {
+    display: none;
+}
+select {
+    all: unset;
+    width: 9em;
+    padding: 0 .5ex;
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    background: var(--paper-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+select option {
+    background: var(--light-white);
+    color: var(--ink-black);
+}
+input[type='text'] {
+    line-height: 12px;
+}
+input[type='text'],
+input[type='number'] {
+    all: unset;
+    width: 4em;
+    margin-left: .5ex;
+    padding: 0 .5ex;
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    background: var(--paper-white);
+    text-align: left;
+    transition: all .2s ease-in-out;
+}
+input[type='text']:hover,
+input[type='text']:focus,
+input[type='number']:hover,
+input[type='number']:focus,
+select:hover,
+select:focus {
+    border-color: var(--medium-grey);
+    background: var(--paper-white);
+}
+pre,
+textarea,
+.CodeMirror {
+    height: auto;
+    font-family: 'Input Mono', monospace;
+}
+form {
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    z-index: 1;
+}
+.nav-button {
+    all: unset;
+    font-family: inherit;
+    cursor: pointer;
+}
+label + .nav-button {
+    margin-left: .5ex;
+}
+.CodeMirror {
+    height: 100%;
+    min-height: 100%;
+    border: none;
+    font-size: 100%;
+    background: transparent;
+    box-shadow: none !important;
+    text-rendering: optimizeLegibility;
+}
+.CodeMirror .cm-atom {
+    font-style: italic;
+}
+.CodeMirror .cm-comment {
+    font-weight: bold;
+}
+.CodeMirror-gutters {
+    background: transparent;
+}
+.CodeMirror-scroll {
+    -webkit-overflow-scrolling: touch;
+}
+
+footer .logo {
+    display: inline-block;
+    position: absolute;
+    bottom: 4px;
+    left: 8px;
+    opacity: .5;
+}
+footer .logo svg path {
+    fill: currentColor;
+}
+footer .logo:last-child {
+    right: 8px;
+    left: auto;
+}
+
+@media screen and (max-width: 56em) {
+    .main-wrapper,
+    form {
+        width: 100%;
+        height: 50vh;
+        min-height: 50vh;
+        float: none;
+    }
+}
+@media screen and (max-width: 56em) and (max-height: 36em) {
+    section.select-list a.website {
+        top: 0;
+    }
+    section.select-list .entry {
+        padding: 0 1em;
+    }
+    footer p:first-of-type,
+    footer p:first-of-type + p {
+        display: none;
+    }
+}
