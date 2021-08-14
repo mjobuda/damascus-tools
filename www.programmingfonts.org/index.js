@@ -23,7 +23,7 @@ var filters = {
   author: "all",
   name: "",
 };
-var theme = "the-martrix";
+var theme = "the-matrix";
 editor.setOption("theme", theme);
 document.cookie = "theme=" + theme + ";max-age=172800";
 var font = window.location.hash.substring(1);
