@@ -6,7 +6,8 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   lineNumbers: true,
   styleActiveLine: true,
   matchBrackets: true,
-  theme: "pastel-on-dark",
+  // theme: "pastel-on-dark",
+  theme: "the-matrix",
   lineWrapping: true,
 });
 
@@ -24,7 +25,8 @@ var filters = {
 };
 
 function selectTheme() {
-  var theme = "monokai";
+  // var theme = "monokai";
+  var theme = "the-martrix";
 
   if (input.selectedIndex > -1) {
     theme = input.options[input.selectedIndex].innerHTML;
