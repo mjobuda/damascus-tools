@@ -2,7 +2,9 @@ customElements.define(
   "x-foo-with-markup",
   class extends HTMLElement {
     connectedCallback() {
-      this.innerHTML = `<form>
+      this.innerHTML = `
+                <button id="COMPILEBUTTON">COMPILE</button>
+      <form>
       <label for="code" class="screenreader-only">Code area</label>
       <textarea id="code" name="code">
 contract Foo:
