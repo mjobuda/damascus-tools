@@ -25,7 +25,6 @@ contract Foo:
     }
   }
 );
-
 window.onload = (event) => {
   CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
