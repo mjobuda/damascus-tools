@@ -6,7 +6,6 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   lineNumbers: true,
   styleActiveLine: true,
   matchBrackets: true,
-  // theme: "pastel-on-dark",
   theme: "the-matrix",
   lineWrapping: true,
 });
