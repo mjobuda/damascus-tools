@@ -23,7 +23,9 @@ contract Foo:
     }
   }
 );
-
+window.onload = (event) => {
+  alert("The page has fully loaded");
+};
 var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   //var editor = CodeMirror(document.getElementById("code"), {
   lineNumbers: true,
