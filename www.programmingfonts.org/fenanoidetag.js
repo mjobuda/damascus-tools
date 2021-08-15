@@ -26,7 +26,7 @@ contract Foo:
 window.onload = (event) => {
   alert("The page has fully loaded");
 };
-var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+/* var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   //var editor = CodeMirror(document.getElementById("code"), {
   lineNumbers: true,
   styleActiveLine: true,
@@ -58,7 +58,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   mode: "ruby",
 });
 window.editor = editor;
-
+*/
 // <script type="module">
 // CodeMirror
 // var editor = CodeMirror(document.getElementById("CODEEDITOR"), {
