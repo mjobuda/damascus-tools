@@ -16,6 +16,7 @@ contract Foo:
 </textarea
       >
     </form>
+    <div id="code-output"></div>
     <script>
 
     </script>
