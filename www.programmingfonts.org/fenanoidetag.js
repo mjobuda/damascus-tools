@@ -3,6 +3,7 @@ customElements.define(
   class extends HTMLElement {
     connectedCallback() {
       this.innerHTML = `
+   <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.min.js"></script>
     <form>
       <label for="code" class="screenreader-only">Code area</label>
       <textarea id="code" name="code">
