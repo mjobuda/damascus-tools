@@ -24,7 +24,13 @@ contract Foo:
   }
 );
 window.onload = (event) => {
-  CodeMirror.fromTextArea(document.getElementById("code"));
+  CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    styleActiveLine: true,
+    matchBrackets: true,
+    theme: "the-matrix",
+    lineWrapping: true,
+  });
   // alert("The page has fully loaded");
 };
 /* var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
