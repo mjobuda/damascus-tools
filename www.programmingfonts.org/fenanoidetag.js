@@ -24,6 +24,7 @@ contract Foo:
   }
 );
 window.onload = (event) => {
+  CodeMirror.fromTextArea(document.getElementById("code"));
   alert("The page has fully loaded");
 };
 /* var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
