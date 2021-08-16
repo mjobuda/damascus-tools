@@ -1,0 +1,5 @@
+{:tasks
+ {:requires ([babashka.fs :as fs])
+  clean (fs/delete-tree "target")
+  }
+ }
