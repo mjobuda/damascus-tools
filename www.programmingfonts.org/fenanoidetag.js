@@ -33,11 +33,7 @@ window.onload = (event) => {
     theme: "the-matrix",
     lineWrapping: true,
   });
-  WebAssembly.compileStreaming(fetch("fejs_bg.wasm")).then(function (mod) {
-    var imports = WebAssembly.Module.imports(mod);
-    console.log(imports[0]);
-  });
-  alert("The page has fully loaded");
+  console.log(compile);
 };
 /* var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   //var editor = CodeMirror(document.getElementById("code"), {
