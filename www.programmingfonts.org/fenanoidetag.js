@@ -24,7 +24,7 @@ contract Foo:
     }
   }
 );
-import init, { get_token, compile_to_ast, compile } from "fejs.js";
+import init, { get_token, compile_to_ast, compile } from "./fejs.js";
 window.onload = (event) => {
   CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
