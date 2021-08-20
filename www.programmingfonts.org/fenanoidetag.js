@@ -26,7 +26,7 @@ contract Foo:
 );
 import init, { get_token, compile_to_ast, compile } from "./fejs.js";
 window.onload = (event) => {
-  editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
     styleActiveLine: true,
     matchBrackets: true,
