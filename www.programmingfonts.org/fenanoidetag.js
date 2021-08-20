@@ -41,7 +41,7 @@ window.onload = (event) => {
   //editor.style.fontFamily = "victor-mono, monospace";
   async function run() {
     await init("./fejs_bg.wasm");
-    alert("gowno");
+    alert("gowno2");
   }
 
   function compileEditor() {
