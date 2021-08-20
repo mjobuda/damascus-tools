@@ -33,7 +33,7 @@ window.onload = (event) => {
     theme: "the-matrix",
     lineWrapping: true,
   });
-  console.log(compile);
+  console.log(compile(document.getElementById("code").value));
 };
 /* var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   //var editor = CodeMirror(document.getElementById("code"), {
