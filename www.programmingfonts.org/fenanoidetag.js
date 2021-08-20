@@ -34,7 +34,6 @@ window.onload = (event) => {
     lineWrapping: true,
   });
   window.compile = compile;
-  console.log(compile(document.getElementById("code").value));
 
   window.editor = editor;
   // editor.setSize(null, 550);
@@ -59,6 +58,7 @@ window.onload = (event) => {
   window.get_token = get_token;
   window.compile_to_ast = compile_to_ast;
   window.compile = compile;
+  console.log(compile(document.getElementById("code").value));
 };
 /* var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   //var editor = CodeMirror(document.getElementById("code"), {
