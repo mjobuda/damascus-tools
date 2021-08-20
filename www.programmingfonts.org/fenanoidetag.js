@@ -47,9 +47,9 @@ window.onload = (event) => {
   function compileEditor() {
     // editor = document.getElementById("new-editor");
     //const ast = compile_to_ast(editor.getValue());
-    console.log(editor.getValue());
-    console.log(get_token(editor.getValue()));
-    console.log(compile_to_ast(editor.getValue()));
+    console.log(window.editor.getValue());
+    console.log(get_token(window.editor.getValue()));
+    console.log(compile_to_ast(window.editor.getValue()));
   }
 
   var cButton = document.getElementById("COMPILEBUTTON");
