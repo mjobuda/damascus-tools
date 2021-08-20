@@ -24,6 +24,7 @@ contract Foo:
     }
   }
 );
+import init, { get_token, compile_to_ast, compile } from "fejs.js";
 window.onload = (event) => {
   CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
@@ -32,7 +33,6 @@ window.onload = (event) => {
     theme: "the-matrix",
     lineWrapping: true,
   });
-  import init, { get_token, compile_to_ast, compile } from "fejs.js";
   WebAssembly.compileStreaming(fetch("fejs_bg.wasm")).then(function (mod) {
     var imports = WebAssembly.Module.imports(mod);
     console.log(imports[0]);
