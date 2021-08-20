@@ -26,7 +26,7 @@ contract Foo:
 );
 import init, { get_token, compile_to_ast, compile } from "./fejs.js";
 window.onload = (event) => {
-  CodeMirror.fromTextArea(document.getElementById("code"), {
+  editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
     styleActiveLine: true,
     matchBrackets: true,
@@ -35,6 +35,30 @@ window.onload = (event) => {
   });
   window.compile = compile;
   console.log(compile(document.getElementById("code").value));
+
+  window.editor = editor;
+  // editor.setSize(null, 550);
+  // var code_mirror = document.querySelector('.CodeMirror');
+  //editor.style.fontFamily = "victor-mono, monospace";
+  async function run() {
+    await init("./fejs_bg.wasm");
+  }
+
+  function compileEditor() {
+    // editor = document.getElementById("new-editor");
+    //const ast = compile_to_ast(editor.getValue());
+    console.log(editor.getValue());
+    console.log(get_token(editor.getValue()));
+    console.log(compile_to_ast(editor.getValue()));
+  }
+
+  var cButton = document.getElementById("COMPILEBUTTON");
+  console.log(cButton);
+  cButton.onclick = compileEditor;
+  run();
+  window.get_token = get_token;
+  window.compile_to_ast = compile_to_ast;
+  window.compile = compile;
 };
 /* var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   //var editor = CodeMirror(document.getElementById("code"), {
