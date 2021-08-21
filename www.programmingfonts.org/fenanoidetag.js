@@ -50,5 +50,5 @@ window.onload = (event) => {
   window.get_token = get_token;
   window.compile_to_ast = compile_to_ast;
   window.compile = compile;
-  compileEditor();
+  window.compileEditor = compileEditor;
 };
