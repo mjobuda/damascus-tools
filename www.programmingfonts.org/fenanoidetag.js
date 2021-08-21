@@ -38,7 +38,6 @@ window.onload = (event) => {
   window.editor = editor;
   async function run() {
     await init("./fejs_bg.wasm");
-    alert("gowno");
   }
 
   function compileEditor() {
@@ -51,5 +50,5 @@ window.onload = (event) => {
   window.get_token = get_token;
   window.compile_to_ast = compile_to_ast;
   window.compile = compile;
-  console.log(compile(document.getElementById("code").value));
+  compileEditor();
 };
