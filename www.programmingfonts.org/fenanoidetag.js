@@ -51,6 +51,8 @@ window.onload = (event) => {
   window.compile = compile;
   window.compileEditor = compileEditor;
 
+  var numPanels = 0;
+
   function makePanel(where) {
     var node = document.createElement("div");
     var id = ++numPanels;
