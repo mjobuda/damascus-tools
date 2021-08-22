@@ -68,10 +68,10 @@ window.onload = (event) => {
     close.textContent = "compile";
     CodeMirror.on(close, "mousedown", function (e) {
       e.preventDefault();
-      panels[node.id].clear();
+      // panels[node.id].clear();
     });
     label = node.appendChild(document.createElement("span"));
-    label.textContent = "XYXXX";
+    // label.textContent = "XYXXX";
     return node;
   }
   function addPanel(where) {
