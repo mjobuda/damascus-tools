@@ -70,7 +70,7 @@ window.onload = (event) => {
       panels[node.id].clear();
     });
     label = node.appendChild(document.createElement("span"));
-    label.textContent = "I'm panel n°" + id;
+    label.textContent = "<button>compile</button>";
     return node;
   }
   function addPanel(where) {
