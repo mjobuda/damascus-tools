@@ -13,8 +13,7 @@ contract Foo:
             return 1
         else:
             return 0
-</textarea
-      >
+</textarea>
     </form>
     <div id="code-output"></div>
     <script>
@@ -51,4 +50,31 @@ window.onload = (event) => {
   window.compile_to_ast = compile_to_ast;
   window.compile = compile;
   window.compileEditor = compileEditor;
+
+  function makePanel(where) {
+    var node = document.createElement("div");
+    var id = ++numPanels;
+    var widget, close, label;
+
+    node.id = "panel-" + id;
+    node.className = "panel " + where;
+    close = node.appendChild(document.createElement("a"));
+    close.setAttribute("title", "Remove me!");
+    close.setAttribute("class", "remove-panel");
+    close.textContent = "✖";
+    CodeMirror.on(close, "mousedown", function (e) {
+      e.preventDefault();
+      panels[node.id].clear();
+    });
+    label = node.appendChild(document.createElement("span"));
+    label.textContent = "I'm panel n°" + id;
+    return node;
+  }
+  function addPanel(where) {
+    var node = makePanel(where);
+    panels[node.id] = editor.addPanel(node, { position: where, stable: true });
+  }
+
+  addPanel("top");
+  addPanel("bottom");
 };
