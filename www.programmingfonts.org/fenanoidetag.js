@@ -61,16 +61,17 @@ window.onload = (event) => {
 
     node.id = "panel-" + id;
     node.className = "panel " + where;
+    // close = node.appendChild(document.createElement("a"));
     close = node.appendChild(document.createElement("a"));
     close.setAttribute("title", "Remove me!");
     close.setAttribute("class", "remove-panel");
-    close.textContent = "✖";
+    close.textContent = "compile";
     CodeMirror.on(close, "mousedown", function (e) {
       e.preventDefault();
       panels[node.id].clear();
     });
     label = node.appendChild(document.createElement("span"));
-    label.textContent = "<button>compile</button>";
+    label.textContent = "XYXXX";
     return node;
   }
   function addPanel(where) {
@@ -78,6 +79,6 @@ window.onload = (event) => {
     panels[node.id] = editor.addPanel(node, { position: where, stable: true });
   }
 
-  addPanel("top");
+  // addPanel("top");
   addPanel("bottom");
 };
