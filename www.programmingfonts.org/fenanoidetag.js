@@ -63,11 +63,12 @@ window.onload = (event) => {
     node.className = "panel " + where;
     // close = node.appendChild(document.createElement("a"));
     close = node.appendChild(document.createElement("button"));
-    close.setAttribute("title", "Remove me!");
-    close.setAttribute("class", "remove-panel");
+    // close.setAttribute("title", "Remove me!");
+    // close.setAttribute("class", "remove-panel");
     close.textContent = "compile";
     CodeMirror.on(close, "mousedown", function (e) {
       e.preventDefault();
+      compileEditor();
       // panels[node.id].clear();
     });
     label = node.appendChild(document.createElement("span"));
