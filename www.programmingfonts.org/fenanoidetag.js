@@ -62,7 +62,7 @@ window.onload = (event) => {
     node.id = "panel-" + id;
     node.className = "panel " + where;
     // close = node.appendChild(document.createElement("a"));
-    close = node.appendChild(document.createElement("a"));
+    close = node.appendChild(document.createElement("button"));
     close.setAttribute("title", "Remove me!");
     close.setAttribute("class", "remove-panel");
     close.textContent = "compile";
