@@ -65,7 +65,7 @@ window.onload = (event) => {
     close = node.appendChild(document.createElement("div"));
     // close.setAttribute("title", "Remove me!");
     // close.setAttribute("class", "remove-panel");
-    close.textContent = "compile";
+    close.textContent = ">> compile <<";
     CodeMirror.on(close, "mousedown", function (e) {
       e.preventDefault();
       compileEditor();
