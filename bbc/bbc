@@ -25,8 +25,8 @@ system(f'bb nrepl-server {nreplPort} &')
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
 
-conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
 
 while True:
     userInput = myPromptSession.prompt('Enter command:\n')
+    conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
     send2REPL(conn, userInput)
