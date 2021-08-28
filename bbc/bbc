@@ -52,7 +52,7 @@ cprint('\n\n  Welcome to BBC! \n\n')
 while True:
     try:
         userInput = myPromptSession.prompt(
-            ANSI('\x1b[31mB\x1b[44mB\x1b[4m/C >>>:\n'), default='( )', lexer=PygmentsLexer(ClojureLexer))
+            ANSI('\x1b[31mB\x1b[44mB\x1b[4mC >>>:\n'), default='( )', lexer=PygmentsLexer(ClojureLexer))
     except KeyboardInterrupt:
         cprint('')
         cprint('\n\n  Papaaaa! \n\n')
