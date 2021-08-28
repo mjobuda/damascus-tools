@@ -55,8 +55,8 @@ myPromptSession = PromptSession(
 cprint('\n\n  Welcome to BBC! \n\n')
 
 # Tell Python to run the handler() function when SIGINT is recieved
-signal.signal(signal.SIGINT, self.ctrl_exit_handler)  # ctlr + c
-signal.signal(signal.SIGTSTP, self.ctrl_exit_handler)  # ctlr + z
+signal.signal(signal.SIGINT, handler)  # ctlr + c
+signal.signal(signal.SIGTSTP, handler)  # ctlr + z
 
 while True:
     userInput = myPromptSession.prompt(
