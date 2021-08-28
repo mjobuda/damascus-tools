@@ -36,11 +36,11 @@ def send2NREPL(nreplPort, clojureCode):
     conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
     conn.write({"op": "eval", "code": clojureCode})
     result = conn.read()
-    sys.stdout.flush()
     if 'err' in result:
         cprint(result['err'])
     if 'value' in result:
         cprint(result['value'])
+    sys.stdout.flush()
 
 
 # program execution starts here
