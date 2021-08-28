@@ -35,7 +35,8 @@ else:
 
 #  system(f'bb nrepl-server {nreplPort} &')
 nreplProcess = subprocess.Popen(
-    ['bb', 'nrepl-server', nreplPort], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    ['bb', 'nrepl-server', nreplPort], stdout=subprocess.PIPE,
+    stderr=subprocess.STDOUT)
 
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
