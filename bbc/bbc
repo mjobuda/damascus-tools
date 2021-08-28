@@ -52,12 +52,24 @@ else:
 nreplProcess = subprocess.Popen(
     ['bb', 'nrepl-server', nreplPort],
     stdout=subprocess.PIPE,
-    stderr=subprocess.STDOUT)
+    stderr=subprocess.PIPE)
 
 replProcess = subprocess.Popen(
     ['bb', 'repl'],
     stdout=subprocess.PIPE,
     stderr=subprocess.STDOUT)
+
+# normal REPL is REPL and NOT Nrepl
+# plain and simple stdout and stdin redirection
+# this will be colored and matched for autocompletion
+
+
+def send2REPL(clojureCode):
+    replProcess.stdin.write(clojureCode.encode('utf-8'))
+    replProcess.stdin.close()
+    result = replProcess.stdout.read()
+    cprint(result)
+
 
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
