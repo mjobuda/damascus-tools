@@ -70,10 +70,7 @@ def send2REPL(clojureCode):
     replProcess.stdin.write(clojureCode.encode('utf-8'))
     replProcess.stdin.flush()
     #  result = replProcess.stdout.read()
-    while True:
-        line = replProcess.stdout.readline()
-        if not line:
-            break
+    for line in replProcess.stdout:
         cprint(line)
 
 
