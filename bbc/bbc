@@ -10,6 +10,7 @@ import nrepl
 from pygments.formatters import TerminalFormatter
 from pygments.lexers.jvm import ClojureLexer
 from pygments import highlight
+import subprocess
 
 
 def cprint(code):
@@ -32,7 +33,8 @@ if len(sys.argv) == 1:
 else:
     nreplPort = sys.argv[1]
 
-system(f'bb nrepl-server {nreplPort} &')
+#  system(f'bb nrepl-server {nreplPort} &')
+nreplProcess = subprocess.Popen('bb', 'nrepl-server', f'{nreplPort}')
 
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
