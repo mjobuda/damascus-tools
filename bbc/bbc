@@ -9,7 +9,9 @@ import sys
 
 
 def send2REPL(conn, clojureCode):
-    system(f"rep -p {port} '{clojureCode}'|bat")
+    conn.write({"op": "eval", "code": clojureCode})
+    print(conn.read()['value'])
+    #system(f"rep -p {port} '{clojureCode}'|bat")
 
 
 # program execution starts here
@@ -23,6 +25,8 @@ system(f'bb nrepl-server {nreplPort} &')
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
 
+conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
+
 while True:
     userInput = myPromptSession.prompt('Enter command:\n')
-    send2REPL(nreplPort, userInput)
+    send2REPL(conn, userInput)
