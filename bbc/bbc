@@ -8,7 +8,7 @@ from os import system
 import sys
 
 
-CC = None
+CC = "fff"
 
 
 def send2REPL(port, clojureCode):
