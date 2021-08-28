@@ -50,5 +50,3 @@ while True:
     userInput = myPromptSession.prompt(
         'BBC >>>:\n', lexer=PygmentsLexer(ClojureLexer))
     send2NREPL(nreplPort, userInput)
-    #  output = nreplProcess.stdout.read()
-    cprint('')
