@@ -8,10 +8,16 @@ from os import system
 import sys
 import nrepl
 
+cprint = print
+
 
 def send2REPL(conn, clojureCode):
     conn.write({"op": "eval", "code": clojureCode})
-    print(conn.read()['value'])
+    result = conn.read()
+    if 'err' in result:
+        cprint(result['err'])
+    if 'value' in result:
+        cprint(result['value'])
 
 
 # program execution starts here
