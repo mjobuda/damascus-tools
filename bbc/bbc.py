@@ -6,7 +6,10 @@ from os.path import expanduser
 from os import system
 import sys
 
-nreplPort = sys.argv[1]
+if len(sys.argv) == 1:
+    nreplPort = 1667
+else:
+    nreplPort = sys.argv[1]
 system('bb nrepl-server '+nreplPort)
 
 myPromptSession = PromptSession(
