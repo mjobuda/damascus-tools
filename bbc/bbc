@@ -27,6 +27,11 @@ def cprint(code):
     print(highlight(code, ClojureLexer(), TerminalFormatter()))
 
 
+# the current implementation will use the normal REPL
+# I leave this here because maybe in the future it could
+# have some use....
+# you aint gonna need it?
+# who cares!!!
 def send2NREPL(nreplPort, clojureCode):
     conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
     conn.write({"op": "eval", "code": clojureCode})
@@ -49,6 +54,11 @@ nreplProcess = subprocess.Popen(
     stdout=subprocess.PIPE,
     stderr=subprocess.STDOUT)
 
+replProcess = subprocess.Popen(
+    ['bb', 'repl'],
+    stdout=subprocess.PIPE,
+    stderr=subprocess.STDOUT)
+
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
 
@@ -61,4 +71,5 @@ signal.signal(signal.SIGTSTP, handler)  # ctlr + z
 while True:
     userInput = myPromptSession.prompt(
         'BBC >>>:\n', lexer=PygmentsLexer(ClojureLexer))
-    send2NREPL(nreplPort, userInput)
+    #  send2NREPL(nreplPort, userInput)
+    send2REPL(userInput)
