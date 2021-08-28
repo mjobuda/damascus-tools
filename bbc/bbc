@@ -7,8 +7,13 @@ from os.path import expanduser
 from os import system
 import sys
 import nrepl
+from pygments.formatters import TerminalFormatter
+from pygments.lexers.jvm import ClojureLexer
+from pygments import highlight
 
-cprint = print
+
+def cprint(code):
+    print(highlight(code, PythonLexer(), TerminalFormatter()))
 
 
 def send2REPL(conn, clojureCode):
