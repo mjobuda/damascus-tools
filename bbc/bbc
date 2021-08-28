@@ -54,9 +54,11 @@ while True:
         userInput = myPromptSession.prompt(
             'BBC >>>:\n', default='()', lexer=PygmentsLexer(ClojureLexer))
     except KeyboardInterrupt:
+        cprint('')
         cprint('\n\n  Papaaaa! \n\n')
         break
     except EOFError:
+        cprint('')
         cprint('\n\n  Tchuessss! \n\n')
         break
     send2NREPL(nreplPort, userInput)
