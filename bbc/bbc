@@ -68,8 +68,8 @@ replProcess = subprocess.Popen(
 def send2REPL(clojureCode):
     replProcess.stdin.write(clojureCode.encode('utf-8'))
     replProcess.stdin.flush()
-    #  result = replProcess.stdout.read()
-    #  cprint(result)
+    result = replProcess.stdout.read()
+    cprint(result)
 
 
 myPromptSession = PromptSession(
