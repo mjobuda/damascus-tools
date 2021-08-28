@@ -13,7 +13,7 @@ CC = None
 
 def send2REPL(port, clojureCode):
     print(CC)
-    if !CC:
+    if not CC:
         CC = 'halo'
     system(f"rep -p {port} '{clojureCode}'|bat")
 
