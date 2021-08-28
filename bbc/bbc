@@ -36,6 +36,8 @@ system(f'bb nrepl-server {nreplPort} &')
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
 
+cprint('\n\n  Welcome to BBC! \n\n')
+
 
 while True:
     userInput = myPromptSession.prompt('Enter command:\n')
