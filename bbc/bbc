@@ -65,6 +65,10 @@ replProcess = subprocess.Popen(
 # plain and simple stdout and stdin redirection
 # this will be colored and matched for autocompletion
 
+# or not!!! this stdin-out with flushing and all sucks!!!!
+# maybe i should screw it and do pexpect?!?!
+# but there would also be probems...
+
 
 def send2REPL(clojureCode):
     replProcess.stdin.write(clojureCode.encode('utf-8'))
@@ -85,5 +89,5 @@ signal.signal(signal.SIGTSTP, handler)  # ctlr + z
 while True:
     userInput = myPromptSession.prompt(
         'BBC >>>:\n', lexer=PygmentsLexer(ClojureLexer))
-    #  send2NREPL(nreplPort, userInput)
-    send2REPL(userInput)
+    send2NREPL(nreplPort, userInput)
+    #  send2REPL(userInput)
