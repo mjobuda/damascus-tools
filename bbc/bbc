@@ -26,5 +26,4 @@ myPromptSession = PromptSession(
 
 while True:
     userInput = myPromptSession.prompt('Enter command:\n')
-    print("{}, interesting.\n".format(userInput))
     send2REPL(nreplPort, userInput)
