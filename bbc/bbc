@@ -4,7 +4,7 @@ from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
 from os.path import expanduser
 from prompt_toolkit.lexers import PygmentsLexer
-
+from prompt_toolkit.formatted_text import ANSI
 from os import system
 import sys
 import nrepl
@@ -52,7 +52,7 @@ cprint('\n\n  Welcome to BBC! \n\n')
 while True:
     try:
         userInput = myPromptSession.prompt(
-            'BBC >>>:\n', default='()', lexer=PygmentsLexer(ClojureLexer))
+            ANSI('BBC >>>:\n'), default='()', lexer=PygmentsLexer(ClojureLexer))
     except KeyboardInterrupt:
         cprint('')
         cprint('\n\n  Papaaaa! \n\n')
