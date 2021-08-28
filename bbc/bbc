@@ -48,4 +48,4 @@ while True:
     userInput = myPromptSession.prompt('BBC >>>:\n')
     send2NREPL(nreplPort, userInput)
     #  output = nreplProcess.stdout.read()
-    cprint()
+    cprint('')
