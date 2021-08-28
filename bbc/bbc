@@ -13,6 +13,15 @@ from pygments.lexers.jvm import ClojureLexer
 from pygments import highlight
 import subprocess
 
+import signal
+from sys import exit
+
+
+def handler(signal_received, frame):
+    # Handle any cleanup here
+    print('SIGINT or CTRL-C detected. Exiting gracefully')
+    exit(0)
+
 
 def cprint(code):
     print(highlight(code, ClojureLexer(), TerminalFormatter()))
@@ -22,6 +31,7 @@ def send2NREPL(nreplPort, clojureCode):
     conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
     conn.write({"op": "eval", "code": clojureCode})
     result = conn.read()
+    sys.stdout.flush()
     if 'err' in result:
         cprint(result['err'])
     if 'value' in result:
@@ -44,6 +54,9 @@ myPromptSession = PromptSession(
 
 cprint('\n\n  Welcome to BBC! \n\n')
 
+# Tell Python to run the handler() function when SIGINT is recieved
+signal.signal(signal.SIGINT, self.ctrl_exit_handler)  # ctlr + c
+signal.signal(signal.SIGTSTP, self.ctrl_exit_handler)  # ctlr + z
 
 while True:
     userInput = myPromptSession.prompt(
