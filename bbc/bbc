@@ -71,7 +71,7 @@ def send2REPL(clojureCode):
     replProcess.stdin.flush()
     #  result = replProcess.stdout.read()
     while True:
-        line = p.stdout.readline()
+        line = replProcess.stdout.readline()
         if not line:
             break
         cprint(line)
