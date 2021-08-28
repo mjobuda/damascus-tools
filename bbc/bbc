@@ -43,6 +43,17 @@ nreplProcess = subprocess.Popen(
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE)
 
+replProcess = subprocess.Popen(
+    ['bb', 'nrepl'],
+    stdin=subprocess.PIPE,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE)
+
+
+def send2REPL(clojureCode):
+    replProcess.communicate(input=clojureCode.encode())
+
+
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
 
@@ -61,4 +72,5 @@ while True:
         cprint('')
         cprint('\n\n  Tchuessss! \n\n')
         break
-    send2NREPL(nreplPort, userInput)
+    send2REPL(userInput)
+    #  send2NREPL(nreplPort, userInput)
