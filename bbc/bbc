@@ -6,6 +6,7 @@ from os.path import expanduser
 
 from os import system
 import sys
+import nrepl
 
 
 def send2REPL(conn, clojureCode):
