@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-#from prompt_toolkit import prompt
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
 from os.path import expanduser
@@ -9,7 +8,12 @@ from os import system
 import sys
 
 
+CC = None
+
+
 def send2REPL(port, clojureCode):
+    print(CC)
+    if !CC CC = 'halo'
     system(f"rep -p {port} '{clojureCode}'|bat")
 
 
