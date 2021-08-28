@@ -7,10 +7,10 @@ from os import system
 import sys
 
 if len(sys.argv) == 1:
-    nreplPort = 1667
+    nreplPort = '1667'
 else:
     nreplPort = sys.argv[1]
-system('bb nrepl-server '+nreplPort)
+system('bb nrepl-server '+nreplPort+' &')
 
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
