@@ -46,6 +46,7 @@ nreplProcess = subprocess.Popen(
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
 
+cprint('')
 cprint('\n\n  Welcome to BBC! \n\n')
 
 while True:
