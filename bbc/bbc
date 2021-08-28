@@ -47,4 +47,5 @@ cprint('\n\n  Welcome to BBC! \n\n')
 while True:
     userInput = myPromptSession.prompt('BBC >>>:\n')
     send2NREPL(nreplPort, userInput)
-    cprint(nreplProcess.stdout.read())
+    output = nreplProcess.stdout.read()
+    cprint()
