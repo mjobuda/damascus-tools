@@ -62,11 +62,15 @@ myPromptSession = PromptSession(
 cprint('\n\n  Welcome to BBC! \n\n')
 
 # Tell Python to run the handler() function when SIGINT is recieved
-signal.signal(signal.SIGINT, handler)  # ctlr + c
-signal.signal(signal.SIGTSTP, handler)  # ctlr + z
+#  signal.signal(signal.SIGINT, handler)  # ctlr + c
+#  signal.signal(signal.SIGTSTP, handler)  # ctlr + z
 
 while True:
-    userInput = myPromptSession.prompt(
-        'BBC >>>:\n', default='()', lexer=PygmentsLexer(ClojureLexer))
+    try:
+        userInput = myPromptSession.prompt(
+            'BBC >>>:\n', default='()', lexer=PygmentsLexer(ClojureLexer))
+    except KeyboardInterrupt:
+        break
+    except EOFError:
+        break
     send2NREPL(nreplPort, userInput)
-    #  send2REPL(userInput)
