@@ -8,11 +8,18 @@ from os.path import expanduser
 from os import system
 import sys
 
+
+def send2REPL(port, clojureCode):
+    system('rep -p 37129 '(+ 5 6)'|bat')
+
+
+# program execution starts here
 if len(sys.argv) == 1:
     nreplPort = '1667'
 else:
     nreplPort = sys.argv[1]
-system('bb nrepl-server '+nreplPort+' &')
+
+system(f'bb nrepl-server {nreplPort} &')
 
 myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
