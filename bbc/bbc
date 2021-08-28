@@ -47,7 +47,7 @@ myPromptSession = PromptSession(
     history=FileHistory(expanduser('~/.bbc_history')))
 
 cprint('')
-cprint('\n\n  Welcome to BBC! \n\n')
+cprint('\n\n \u001b[32m  Welcome to BBC! \n\n')
 
 while True:
     try:
