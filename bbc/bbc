@@ -67,6 +67,6 @@ signal.signal(signal.SIGTSTP, handler)  # ctlr + z
 
 while True:
     userInput = myPromptSession.prompt(
-        'BBC >>>:\n', default='()' lexer=PygmentsLexer(ClojureLexer))
+        'BBC >>>:\n', default='()', lexer=PygmentsLexer(ClojureLexer))
     send2NREPL(nreplPort, userInput)
     #  send2REPL(userInput)
