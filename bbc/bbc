@@ -41,6 +41,6 @@ cprint('\n\n  Welcome to BBC! \n\n')
 
 
 while True:
-    userInput = myPromptSession.prompt('Enter command:\n')
+    userInput = myPromptSession.prompt('BBC >>>:\n')
     #  conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
     send2NREPL(nreplPort, userInput)
