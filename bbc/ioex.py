@@ -7,5 +7,5 @@ proc = subprocess.Popen(
 proc.stdin.write(text)
 proc.stdin.close()
 result = proc.stdout.read()
-print result
+print(result)
 proc.wait()
