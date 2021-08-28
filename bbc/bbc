@@ -69,6 +69,7 @@ replProcess = subprocess.Popen(
 def send2REPL(clojureCode):
     replProcess.stdin.write(clojureCode.encode('utf-8'))
     replProcess.stdin.flush()
+    replProcess.stdout.flush()
     cprint(replProcess.stdout.readline())
 
 
