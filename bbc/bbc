@@ -17,21 +17,10 @@ import signal
 from sys import exit
 
 
-def handler(signal_received, frame):
-    # Handle any cleanup here
-    print('SIGINT or CTRL-C detected. Exiting gracefully')
-    exit(0)
-
-
 def cprint(code):
     print(highlight(code, ClojureLexer(), TerminalFormatter()))
 
 
-# the current implementation will use the normal REPL
-# I leave this here because maybe in the future it could
-# have some use....
-# you aint gonna need it?
-# who cares!!!
 def send2NREPL(nreplPort, clojureCode):
     conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
     conn.write({"op": "eval", "code": clojureCode})
@@ -51,8 +40,6 @@ else:
 
 nreplProcess = subprocess.Popen(
     ['bb', 'nrepl-server', nreplPort],
-    #  ["""bb socket-repl '{:address "0.0.0.0" :accept clojure.core.server/io-prepl :port 1667}'"""],
-    #  shell=True,
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE)
 
@@ -61,16 +48,14 @@ myPromptSession = PromptSession(
 
 cprint('\n\n  Welcome to BBC! \n\n')
 
-# Tell Python to run the handler() function when SIGINT is recieved
-#  signal.signal(signal.SIGINT, handler)  # ctlr + c
-#  signal.signal(signal.SIGTSTP, handler)  # ctlr + z
-
 while True:
     try:
         userInput = myPromptSession.prompt(
             'BBC >>>:\n', default='()', lexer=PygmentsLexer(ClojureLexer))
     except KeyboardInterrupt:
+        cprint('\n\n  Papaaaa! \n\n')
         break
     except EOFError:
+        cprint('\n\n  Tchuessss! \n\n')
         break
     send2NREPL(nreplPort, userInput)
