@@ -67,7 +67,7 @@ replProcess = subprocess.Popen(
 
 # or not!!! this stdin-out with flushing and all sucks!!!!
 # maybe i should screw it and do pexpect?!?!
-# but there would also be probems...
+# but there would also be problems...
 
 
 def send2REPL(clojureCode):
