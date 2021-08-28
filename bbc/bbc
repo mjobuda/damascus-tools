@@ -13,7 +13,7 @@ from pygments import highlight
 
 
 def cprint(code):
-    print(highlight(code, PythonLexer(), TerminalFormatter()))
+    print(highlight(code, ClojureLexer(), TerminalFormatter()))
 
 
 def send2REPL(conn, clojureCode):
