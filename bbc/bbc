@@ -16,7 +16,8 @@ def cprint(code):
     print(highlight(code, ClojureLexer(), TerminalFormatter()))
 
 
-def send2REPL(conn, clojureCode):
+def send2NREPL(nreplPort, clojureCode):
+    conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
     conn.write({"op": "eval", "code": clojureCode})
     result = conn.read()
     if 'err' in result:
@@ -41,5 +42,5 @@ cprint('\n\n  Welcome to BBC! \n\n')
 
 while True:
     userInput = myPromptSession.prompt('Enter command:\n')
-    conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
-    send2REPL(conn, userInput)
+    #  conn = nrepl.connect(f"nrepl://localhost:{nreplPort}")
+    send2NREPL(nreplPort, userInput)
