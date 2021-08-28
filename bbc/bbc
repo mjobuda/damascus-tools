@@ -3,6 +3,7 @@
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
 from os.path import expanduser
+from prompt_toolkit.lexers import PygmentsLexer
 
 from os import system
 import sys
