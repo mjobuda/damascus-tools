@@ -8,13 +8,7 @@ from os import system
 import sys
 
 
-CC = "fff"
-
-
-def send2REPL(port, clojureCode):
-    print(CC)
-    if not CC:
-        CC = 'halo'
+def send2REPL(conn, clojureCode):
     system(f"rep -p {port} '{clojureCode}'|bat")
 
 
