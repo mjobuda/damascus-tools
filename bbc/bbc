@@ -10,7 +10,7 @@ import sys
 
 
 def send2REPL(port, clojureCode):
-    system(f'rep -p {port} {clojureCode}|bat')
+    system(f"rep -p {port} '{clojureCode}'|bat")
 
 
 # program execution starts here
