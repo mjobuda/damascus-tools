@@ -10,7 +10,7 @@ import sys
 
 
 def send2REPL(port, clojureCode):
-    system('rep -p 37129 '(+ 5 6)'|bat')
+    system(f'rep -p {port} {clojureCode}|bat')
 
 
 # program execution starts here
@@ -26,4 +26,5 @@ myPromptSession = PromptSession(
 
 while True:
     userInput = myPromptSession.prompt('Enter command:\n')
-    print("{}, interesting.".format(userInput))
+    print("{}, interesting.\n".format(userInput))
+    send2REPL(nreplPort, userInput)
