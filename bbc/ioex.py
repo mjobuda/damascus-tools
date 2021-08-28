@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import subprocess
-text = 'hello'
+text = 'heXXXllo'
 proc = subprocess.Popen(
     'md5sum', stdout=subprocess.PIPE,
     stdin=subprocess.PIPE)
