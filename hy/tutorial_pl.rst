@@ -19,19 +19,19 @@ Ten program wywołuje funkcję :func:`print`, która podobnie jak wszystkie w Py
 
 Wszystkie :ref:`binarne i jednoargumentowe operatory <py:expressions>` są
 również dostępne, chociaż  ze względu na lispową
-tradycja``==`` jest pisane ``=``. A oto sposób używania operatora dodawania ``+``::
+tradycja ``==`` jest pisane ``=``. A oto sposób używania operatora dodawania ``+``::
 
     (+ 1 3)
 
 Ten kod zwraca ``4``. Jest to odpowiednik ``1 + 3`` w Pythonie i wielu innych
 językach. Języki z `rodziny lispów
 <https://pl.wikipedia.org/wiki/Lisp>`_ , w tym
-Hy, użyj składni prefiksu: ``+``, tak jak ``print`` lub ``sqrt`` pojawia się przed
-wszystkie jego argumenty. Wywołanie jest oddzielone nawiasami, ale otwarcie
-nawias pojawia się przed wywołaniem operatora zamiast po nim, więc
+Hy, używają tzw zapisu przedrostkowego(zwanego też notacją polską lub notacją Łukasiewicza): Zarówno ``+``, jak i ``print`` czy ``sqrt`` pojawiają się przed
+wszystkimy argumentami. Wywołanie jest oddzielone nawiasami, ale otwarcie
+nawiasu następuje przed wywołaniem operatora zamiast po nim, więc
 zamiast ``sqrt(2)`` piszemy ``(sqrt 2)``. Wiele argumentów, takich jak
-dwie liczby całkowite w ``(+ 1 3)`` są oddzielone białymi znakami. Wielu operatorów,
-w tym ``+``, zezwól na więcej niż dwa argumenty: ``(+ 1 2 3)`` jest równoważne
+dwie liczby całkowite w ``(+ 1 3)`` są oddzielone znakami niedrukowalnymi. Wiele operatorów,
+w tym ``+``, przyjmują na więcej niż dwa zmienne: ``(+ 1 2 3)`` jest równoważne
 ``1 + 2 + 3``.
 
 Oto bardziej złożony przykład::
