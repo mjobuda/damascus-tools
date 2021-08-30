@@ -14,18 +14,18 @@ Zacznijmy od klasyki::
 
     (print "Hy, world!")
 
-Ten program wywołuje funkcję :func:`print`, która, jak wszystkie w Pythonie
+Ten program wywołuje funkcję :func:`print`, która podobnie jak wszystkie w Pythonie
 :ref:`funkcje wbudowane <py:built-in-funcs>`, są dostępne w Hy.
 
 Wszystkie :ref:`binarne i jednoargumentowe operatory <py:expressions>` są
-dostępne również, chociaż ``==`` jest pisane ``=`` ze względu na Lisp
-tradycja. Oto jak użyjemy operatora dodawania ``+``::
+również dostępne, chociaż  ze względu na lispową
+tradycja``==`` jest pisane ``=``. A oto sposób używania operatora dodawania ``+``::
 
     (+ 1 3)
 
 Ten kod zwraca ``4``. Jest to odpowiednik ``1 + 3`` w Pythonie i wielu innych
-Języki. Języki w „Lispie”
-<https://en.wikipedia.org/wiki/Lisp_(język_programowania)>`_ rodzina, w tym
+językach. Języki z `rodziny lispów
+<https://pl.wikipedia.org/wiki/Lisp>`_ , w tym
 Hy, użyj składni prefiksu: ``+``, tak jak ``print`` lub ``sqrt`` pojawia się przed
 wszystkie jego argumenty. Wywołanie jest oddzielone nawiasami, ale otwarcie
 nawias pojawia się przed wywołaniem operatora zamiast po nim, więc
