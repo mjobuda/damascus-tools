@@ -76,7 +76,7 @@ zignoruje::
 Literały
 ========
 
-Hy ma :ref:`składnia literalna <składnia>` dla wszystkich typów co Python. Oto przykład kodu Hy dla każdego typu i jego odpowiednik w Pythonie.
+Hy ma :ref:`składnia literalna <syntax>` dla wszystkich typów co Python. Oto przykład kodu Hy dla każdego typu i jego odpowiednik w Pythonie.
 
 ==============  ================  ============================
 Hy              Python            Typ
@@ -325,6 +325,20 @@ który importuje moduł i udostępnia makra w czasie kompilacji.
    => (tutorial.macros.rev (1 2 3 +))
    6
 
+Hyrule
+======
+
+`Hyrule <https://github.com/hylang/hyrule>`_ to standardowa biblioteka narzędziowa Hy.
+Zapewnia wiele funkcji i makr, które są przydatne do pisania programów w Hy. ::
+
+    => (import hyrule [inc])
+    => (list (map inc [1 2 3]))
+    [2 3 4]
+    => (require hyrule [assoc])
+    => (setv d {})
+    => (assoc d  "a" 1  "b" 2)
+    => d
+    {"a" 1  "b" 2}
 
 Następne kroki
 ==============
