@@ -27,21 +27,20 @@ Ten kod zwraca ``4``. Jest to odpowiednik ``1 + 3`` w Pythonie i wielu innych
 językach. Języki z `rodziny lispów
 <https://pl.wikipedia.org/wiki/Lisp>`_ , w tym
 Hy, używają tzw zapisu przedrostkowego(zwanego też notacją polską lub notacją Łukasiewicza): Zarówno ``+``, jak i ``print`` czy ``sqrt`` pojawiają się przed
-wszystkimy argumentami. Wywołanie jest oddzielone nawiasami, ale otwarcie
+wszystkimy zmiennymi. Wywołanie jest oddzielone nawiasami, ale otwarcie
 nawiasu następuje przed wywołaniem operatora zamiast po nim, więc
-zamiast ``sqrt(2)`` piszemy ``(sqrt 2)``. Wiele argumentów, takich jak
-dwie liczby całkowite w ``(+ 1 3)`` są oddzielone znakami niedrukowalnymi. Wiele operatorów,
-w tym ``+``, przyjmują na więcej niż dwa zmienne: ``(+ 1 2 3)`` jest równoważne
+zamiast ``sqrt(2)`` piszemy ``(sqrt 2)``. W przypadku większej ilości zmiennych np
+dwie liczby całkowite w ``(+ 1 3)`` oddzielamy spacjami lubi innymi znakami niewidzialnymi. Wiele operatorów,
+w tym ``+``, przyjmują więcej niż dwa zmienne: ``(+ 1 2 3)`` jest równoważne
 ``1 + 2 + 3``.
 
 Oto bardziej złożony przykład::
 
     (- (* (+ 1 3 88) 2) 8)
 
-Ten kod zwraca ``176``. Czemu? Możemy zobaczyć odpowiednik wrostka z
-polecenie ``echo "(- (* (+ 1 3 88) 2) 8)" | hy2py``, który zwraca Python
-kod odpowiadający podanemu kodowi Hy lub przekazując opcję ``--spy`` do
-Hy podczas uruchamiania REPL, który pokazuje odpowiednik każdej linii wejściowej w Pythonie
+Ten kod zwraca ``176``. Czemu? Możemy sprawdzić jak to wygląda w tradycyjnym zapisie wrostkowym 
+poleceniem ``echo "(- (* (+ 1 3 88) 2) 8)" | hy2py``, który zwraca kod Pythona odpowiadający podanemu kodowi Hy lub przekazując opcję ``--spy`` do
+Hy podczas uruchamiania wiersza poleceń (po angielsku używa się skrót REPL, Read Eval Print Loop, czyli Czytaj Ewaluuj Wyświetl Pętla), który pokazuje odpowiednik każdej linii wejściowej w Pythonie
 przed wynikiem. Odpowiednikiem wrostka w tym przypadku jest::
 
 .. code-block:: python
