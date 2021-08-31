@@ -76,7 +76,7 @@ zignoruje::
    #!/usr/bin/env hy
    (print "Uczyń mnie wykonywalnym i uruchom mnie!")
 
-Literals
+Literały
 ========
 
 Hy ma :ref:`składnia literalna <składnia>` dla wszystkich typów co Python. Oto przykład kodu Hy dla każdego typu i jego odpowiednik w Pythonie.
