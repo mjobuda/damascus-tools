@@ -95,7 +95,7 @@ Hy              Python            Typ
 ``[1 2 3]``     ``[1, 2, 3]``     :class:`list` (lista)
 ``#{1 2 3}``    ``{1, 2, 3}``     :class:`set` (zbiór)
 ``{1 2  3 4}``  ``{1: 2, 3: 4}``  :class:`dict` (tablica asocjacyjna)
-==============  ================  ==========================
+==============  ================  ============================
 
 Ponadto Hy przwemuje skłądnie ułamków z Clojure dla
 :class:`fractions.Fraction`: ``1/3`` jest odpowiednikiem ``fractions.Fraction(1,3)``.
