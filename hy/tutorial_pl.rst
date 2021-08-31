@@ -183,7 +183,7 @@ Podstawowe pętle Hy to :ref:`while` i :ref:`for`::
 
 
 Bardziej funkcjonalny sposób iteracji zapewniają formy interpetowalne(po angielsku list comprehension, nie kojarzę ładnego polskiego odpowiednika), takie jak
-:hy:funkcja:`lfor`. Podczas gdy ``for`` zawsze zwraca ``Brak``, ``lfor`` zwraca listę
+:hy:func:`lfor`. Podczas gdy ``for`` zawsze zwraca ``Brak``, ``lfor`` zwraca listę
 z jednym elementem z każdej iteracji. ::
 
     (print (lfor  x [1 2 3]  (* x 2)))  ; => [2, 4, 6]
