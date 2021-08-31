@@ -38,17 +38,16 @@ Oto bardziej złożony przykład::
 
     (- (* (+ 1 3 88) 2) 8)
 
-Ten kod zwraca ``176``. Czemu? Możemy sprawdzić jak to wygląda w tradycyjnym zapisie wrostkowym 
+Ten kod zwraca ``176``. Czemu? Możemy sprawdzić jak to wygląda w tradycyjnym zapisie wrostkowym(infiksowym) 
 poleceniem ``echo "(- (* (+ 1 3 88) 2) 8)" | hy2py``, który zwraca kod Pythona odpowiadający podanemu kodowi Hy lub przekazując opcję ``--spy`` do
 Hy podczas uruchamiania wiersza poleceń (po angielsku używa się skrót REPL, Read Eval Print Loop, czyli Czytaj Ewaluuj Wyświetl Pętla), który pokazuje odpowiednik każdej linii wejściowej w Pythonie
-przed wynikiem. Odpowiednikiem wrostka w tym przypadku jest::
+przed wynikiem. Odpowiednikiem wrostkowym w tym przypadku jest::
 
 .. code-block:: python
 
     ((1 + 3 + 88) * 2) - 8
 
-Aby ocenić to wyrażenie wrostkowe, oczywiście obliczysz najgłębsze
-najpierw umieść wyrażenie w nawiasach i wyjdź na zewnątrz. To samo dotyczy
+Aby ewaluować to wyrażenie infiksowe trzeba zacząć od obliczania formuły leżącej najbardziej wewnątrz i kontynuować z doliczaniem kolejnych wyrażen na zewnątrz. To samo dotyczy
 Seplenienie. Oto, co otrzymamy, oceniając powyższy kod Hy krok po kroku::
 
     (- (* (+ 1 3 88) 2) 8)
