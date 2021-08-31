@@ -47,24 +47,23 @@ przed wynikiem. Odpowiednikiem wrostkowym w tym przypadku jest::
 
     ((1 + 3 + 88) * 2) - 8
 
-Aby ewaluować to wyrażenie infiksowe trzeba zacząć od obliczania formuły leżącej najbardziej wewnątrz i kontynuować z doliczaniem kolejnych wyrażen na zewnątrz. To samo dotyczy
-Seplenienie. Oto, co otrzymamy, oceniając powyższy kod Hy krok po kroku::
+Aby ewaluować to wyrażenie infiksowe trzeba zacząć od obliczania formuły leżącej najbardziej wewnątrz i kontynuować z doliczaniem kolejnych wyrażen na zewnątrz. Tak samo się to robi w 
+Lispie. Oto, co otrzymamy, ewaluując powyższy kod Hy krok po kroku::
 
     (- (* (+ 1 3 88) 2) 8)
     (- (* 92 2) 8)
     (- 184 8)
     176
 
-Podstawową jednostką składni Lisp, która jest podobna do wyrażenia C lub Pythona, jest
-**formularz**. ``92``, ``*`` i ``(* 92 2)`` to wszystkie formy. Program Lisp
-składa się z sekwencji formularzy zagnieżdżonych w formularzach. Formularze są zazwyczaj
-oddzielone od siebie białymi znakami, ale niektóre formy, takie jak string
-literały (``"Hej, świat!"``) mogą same zawierać białe znaki. jakiś
-**wyrażenie** to forma ujęta w nawiasy; jego pierwsza forma potomna, zwana
-**głowa** określa, co robi wyrażenie i ogólnie powinna być a
+Podstawową jednostką składni Lispa, która jest podobna do wyrażenia C lub Pythona, jest
+**forma**. ``92``, ``*`` i ``(* 92 2)`` to wszystko formy. Program Lisp
+składa się z sekwencji form zagnieżdżonych w formach. Formy są zazwyczaj
+oddzielone od siebie znakami niedrukowalnymi, ale niektóre formy, takie jak ciąg znaków (``"Hej, świat!"``) mogą same zawierać białe znaki. jakiś
+**wyrażenie** to forma ujęta w nawiasy; jego pierwsza forma potocznie, zwana
+**głowa** określa, co robi wyrażenie i ogólnie powinna być to
 funkcja lub makro. Funkcje to najzwyklejszy rodzaj głowy, podczas gdy makra
 (opisane bardziej szczegółowo poniżej) są funkcjami wykonywanymi w czasie kompilacji
-i powróć kod do wykonania w czasie wykonywania.
+i zwracają kod do wykonania w czasie wykonywania.
 
 Komentarze zaczynają się od znaku ``;`` i trwają do końca linii. A
 komentarz jest funkcjonalnie równoważny z białymi znakami. ::
