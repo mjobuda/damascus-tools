@@ -120,7 +120,7 @@ Nadaj wartość zmiennej za pomocą :hy:func:`setv`::
 
     (setv zone-plane 8)
 Uzyskaj dostęp do elementów listy, słownika lub innej struktury danych za pomocą
-:hy:func:`pobierz <hy.core.shadow.get>`::
+:hy:func:`get <hy.core.shadow.get>`::
 
     (setv owoc ["jabłko" "banan" "melon"])
     (print (get owoc 0))  ; => jabłko
@@ -141,8 +141,7 @@ wykonuje i zwraca formę ``THEN`` jeśli ``CONDITION`` jest prawdziwy (zgodnie z
 :class:`bool`) i ``ELSE`` w przeciwnym razie. Jeśli pominięto ``ELSE``, to ``None`` będzie w tym miejscu.
 
 Co jeśli chcesz użyć czegoś więcej niż formy na miejscu ``THEN`` lub klauzuli ``ELSE`` lub zamiast „CONDITION”? Użyj makra
-:hy:func:`do` (znany bardziej tradycyjnie w Lispie jako ``progn``), który łączy
-kilka form w jedną, zwracając ostatnią:
+:hy:func:`do` (znany bardziej tradycyjnie w Lispie jako ``progn``), który łączy kilka form w jedną, zwracając ostatnią::
 
    (if (do (print "Sprawdźmy.") (= 1 1))
      (do
