@@ -286,9 +286,8 @@ oraz makra, które ułatwiają programowe konstruowanie formularzy, takie jak
 używania ````` i ``~`` do zdefiniowania nowej konstrukcji kontrolnej ``do-while``.
 
 Czasami fajnie jest móc wywołać makro jednoparametrowe bez
-nawiasów. Pozwalają na to makra tagów. Nazwa makra tagu często jest tylko jedna
-długiego znaku, ale ponieważ Hy zezwala na większość znaków Unicode w nazwie a
-makro (lub zwykła zmienna), wkrótce nie zabraknie Ci znaków. ::
+nawiasów. Umożliwiają to makra tagów. Nazwa makra tagu często jest tylko jeden znak, ale ponieważ Hy zezwala na większość znaków Unicode w nazwie 
+makra (lub zwykłej zmiennej), to tak prędko ci się nie skończą znaki. ::
 
   => (defmacro "#↻" [code]
   ...  (setv op (get code -1) params (list (butlast code)))
@@ -296,7 +295,7 @@ makro (lub zwykła zmienna), wkrótce nie zabraknie Ci znaków. ::
   => #↻(1 2 3 +)
   6
 
-Co zrobić, jeśli chcesz użyć makra zdefiniowanego w innym module?
+A co, gdybyś chciał użyć makra zdefiniowanego w innym module?
 ``import`` nie pomoże, ponieważ tłumaczy się jedynie na ``import`` . w Pythonie
 instrukcja, która jest wykonywana w czasie wykonywania, a makra są rozwijane w czasie kompilacji,
 czyli podczas tłumaczenia z Hy na Pythona. Zamiast tego użyj :hy:func:`require <require>`,
@@ -311,8 +310,7 @@ Następne kroki
 ===========
 
 Wiesz już wystarczająco dużo, by być niebezpiecznym z Hy. Możesz teraz złośliwie się uśmiechać i
-wymknąć się do Hydeaway, aby robić rzeczy niewyobrażalne.
+wymknąć się do swojej kryjówki, aby robić rzeczy niewyobrażalne.
 
 Zapoznaj się z dokumentacją Pythona, aby uzyskać szczegółowe informacje na temat semantyki Pythona, a
-pozostałą część tej instrukcji dla funkcji specyficznych dla Hy. Podobnie jak sam Hy, instrukcja jest
-niekompletne, ale :ref:`wkłady <hakowanie>` są zawsze mile widziane.
+pozostałą część tej dokumentacji dla funkcji specyficznych dla Hy. Podobnie jak sam Hy, ta dokumentacja nie jest jeszcze gotowa(ani jej tłumaczenie!), ale :ref:`wkłady <hacking>` są zawsze mile widziane.
