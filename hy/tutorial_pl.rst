@@ -98,8 +98,7 @@ Hy              Python            Typ
 ==============  ================  =================
 
 Ponadto Hy przwemuje skłądnie ułamków z Clojure dla
-:class:`fractions.Fraction`: ``1/3`` jest odpowiednikiem ``fractions.Fraction(1,
-3)"".
+:class:`fractions.Fraction`: ``1/3`` jest odpowiednikiem ``fractions.Fraction(1,3)``.
 
 Hy REPL domyślnie wyświetla dane wyjściowe w składni Hy, za pmocą funkcji :hy:func:`hy.repr`::
 
