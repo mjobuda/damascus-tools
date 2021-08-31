@@ -79,9 +79,7 @@ zignoruje::
 Literals
 ========
 
-Hy ma :ref:`składnia literalna <składnia>` dla wszystkich tych samych typów danych, które
-Python tak. Oto przykład kodu Hy dla każdego typu i Pythona
-równowartość.
+Hy ma :ref:`składnia literalna <składnia>` dla wszystkich typów co Python. Oto przykład kodu Hy dla każdego typu i jego odpowiednik w Pythonie.
 
 ==============  ================  =================
 Hy              Python            Typ
@@ -89,25 +87,25 @@ Hy              Python            Typ
 ``1``           ``1``             :class:`int` (liczba całkowita)
 ``1.2``         ``1.2``           :class:`float` (liczba zmiennoprzecinkowa)
 ``4j``          ``4j``            :class:`complex` (liczba zespolona)
-``True``        ``True``          :class:`bool`
-``None``        ``None``          :class:`NoneType`
-``"hy"``        ``'hy'``          :class:`str`
-``b"hy"``       ``b'hy'``         :class:`bytes`
-``(, 1 2 3)``   ``(1, 2, 3)``     :class:`tuple`
-``[1 2 3]``     ``[1, 2, 3]``     :class:`list`
-``#{1 2 3}``    ``{1, 2, 3}``     :class:`set`
-``{1 2  3 4}``  ``{1: 2, 3: 4}``  :class:`dict`
+``True``        ``True``          :class:`bool` (typ logiczny)
+``None``        ``None``          :class:`NoneType` (typ pusty)
+``"hy"``        ``'hy'``          :class:`str` (tekstowy typ danych)
+``b"hy"``       ``b'hy'``         :class:`bytes` (bajt)
+``(, 1 2 3)``   ``(1, 2, 3)``     :class:`tuple` (krotka)
+``[1 2 3]``     ``[1, 2, 3]``     :class:`list` (lista)
+``#{1 2 3}``    ``{1, 2, 3}``     :class:`set` (zbiór)
+``{1 2  3 4}``  ``{1: 2, 3: 4}``  :class:`dict` (tablica asocjacyjna)
 ==============  ================  =================
 
-Ponadto Hy ma dosłowną składnię w stylu Clojure dla
+Ponadto Hy przwemuje skłądnie ułamków z Clojure dla
 :class:`fractions.Fraction`: ``1/3`` jest odpowiednikiem ``fractions.Fraction(1,
 3)"".
 
-Hy REPL domyślnie drukuje dane wyjściowe w składni Hy, z funkcją :hy:func:`hy.repr`::
+Hy REPL domyślnie wyświetla dane wyjściowe w składni Hy, za pmocą funkcji :hy:func:`hy.repr`::
 
   => [1 2 3]
   [1 2 3]
-Ale jeśli zaczniesz Hy w ten sposób::
+Ale jeśli wywołasz Hy w taki sposób::
 
   $ hy --repl-output-fn=repr
 
@@ -119,7 +117,7 @@ REPL użyje zamiast tego natywnej funkcji ``repr`` Pythona, więc zobaczysz wart
 
 Podstawowe operacje
 ================
-Ustaw zmienne za pomocą :hy:func:`setv`::
+Nadaj wartość zmiennej za pomocą :hy:func:`setv`::
 
     (setv zone-plane 8)
 Uzyskaj dostęp do elementów listy, słownika lub innej struktury danych za pomocą
@@ -136,37 +134,35 @@ Uzyskaj dostęp do szeregu elementów w uporządkowanej strukturze za pomocą :h
 Logika warunkowa może być zbudowana za pomocą :ref:`if`::
 
     (if (= 1 1)
-      (print "Math works. The universe is safe.")
-      (print "Math has failed. The universe is doomed."))
+      (print "Matamtyka działą. Wszechświat jest bezpieczny.")
+      (print "Matematyka zawiodła. Apokalipsa!!!"))
 
-Tak jak w tym przykładzie, ``if`` jest wywoływane tak jak ``(if CONDITION THEN ELSE)``. Ono
+Tak jak w tym przykładzie, ``if`` jest wywoływane tak jak ``(if CONDITION THEN ELSE)`` (jeśli WARUNEK WTEDY W-INNYM-PRZYPADKU). Ono
 wykonuje i zwraca formę ``THEN`` jeśli ``CONDITION`` jest prawdziwy (zgodnie z
-:class:`bool`) i ``ELSE`` w przeciwnym razie. Jeśli pominięto ``ELSE``, użyto ``Brak``
-Na swoim miejscu.
+:class:`bool`) i ``ELSE`` w przeciwnym razie. Jeśli pominięto ``ELSE``, to ``None`` będzie w tym miejscu.
 
-Co jeśli chcesz użyć czegoś więcej niż formy zamiast ``THEN`` lub ``ELSE``
-klauzul lub zamiast „WARUNKU”? Użyj makra
+Co jeśli chcesz użyć czegoś więcej niż formy na miejscu ``THEN`` lub klauzuli ``ELSE`` lub zamiast „CONDITION”? Użyj makra
 :hy:func:`do` (znany bardziej tradycyjnie w Lispie jako ``progn``), który łączy
-kilka formularzy w jeden, zwracając ostatnią:
+kilka form w jedną, zwracając ostatnią:
 
    (if (do (print "Let's check.") (= 1 1))
      (do
-       (print "Math works.")
-       (print "The universe is safe."))
+       (print "Math działa.")
+       (print "Wschechświat jest bezpieczny."))
      (do
-       (print "Math has failed.")
-       (print "The universe is doomed.")))
+       (print "Matematyka zawiodła.")
+       (print "Armageddon!!")))
 
-Aby rozgałęziać się na więcej niż jeden przypadek, spróbuj :hy:func:`cond <hy.core.macros.cond>`::
+Aby rozgałęziać na więcej niż jeden przypadek, spróbuj :hy:func:`cond <hy.core.macros.cond>`::
 
    (setv somevar 33)
    (cond
     [(> somevar 50)
-     (print "That variable is too big!")]
+     (print "Zmienna jest za duża!")]
     [(< somevar 10)
-     (print "That variable is too small!")]
+     (print "Zmienna jest za mała!")]
     [True
-     (print "That variable is jussssst right!")])
+     (print "W sssssam raz!!")])
 
 Makro ``(when CONDITION THEN-1 THEN-2 …)`` jest skrótem dla ``(if CONDITION
 (do THEN-1 THEN-2 …))``. ``unless`` działa tak samo jak ``when``, ale odwraca
@@ -182,9 +178,9 @@ Podstawowe pętle Hy to :ref:`while` i :ref:`for`::
     (for [x [1 2 3]]
       (print x))         ; => 1 2 3
 
-Bardziej funkcjonalny sposób iteracji zapewniają formy ze zrozumieniem, takie jak
+Bardziej funkcjonalny sposób iteracji zapewniają formy interpetowalne(po angielsku list comprehension, nie kojarzę ładnego polskiego odpowiednika), takie jak
 :hy:funkcja:`lfor`. Podczas gdy ``for`` zawsze zwraca ``Brak``, ``lfor`` zwraca listę
-z jednym elementem na iterację. ::
+z jednym elementem z każdej iteracji. ::
 
     (print (lfor  x [1 2 3]  (* x 2)))  ; => [2, 4, 6]
 
@@ -192,7 +188,7 @@ z jednym elementem na iterację. ::
 Funkcje, klasy i moduły
 ===============================
 
-Zdefiniuj nazwane funkcje za pomocą :hy:func:`defn <hy.core.bootstrap.defn>`::
+Definiowanie funkcji nazwanej za pomocą :hy:func:`defn <hy.core.bootstrap.defn>`::
 
     (defn fib [n]
       (if (< n 2)
@@ -200,25 +196,24 @@ Zdefiniuj nazwane funkcje za pomocą :hy:func:`defn <hy.core.bootstrap.defn>`::
         (+ (fib (- n 1)) (fib (- n 2)))))
     (print (fib 8))  ; => 21
 
-Zdefiniuj funkcje anonimowe za pomocą :hy:func:`fn <fn>`::
+Definiowanie funkcji anonimowej za pomocą :hy:func:`fn <fn>`::
 
     (print (list (filter (fn [x] (% x 2)) (range 10))))
       ; => [1, 3, 5, 7, 9]
 
-Specjalne symbole na liście parametrów ``defn`` lub ``fn`` pozwalają na
-wskaż opcjonalne argumenty, podaj wartości domyślne i zbierz niewymienione
-argumenty::
+Symbole specjalne w liście parametrów ``defn`` lub ``fn`` pozwalają na
+wskazanie opcjonalnych argumentów, podają wartości domyślne i zbierają niewymienione argumenty::
 
     (defn test [a b [c None] [d "x"] #* e]
       [a b c d e])
     (print (test 1 2))            ; => [1, 2, None, 'x', ()]
     (print (test 1 2 3 4 5 6 7))  ; => [1, 2, 3, 4, (5, 6, 7)]
 
-Ustaw parametr funkcji według nazwy z ``:keyword``::
+Ustawianie parametru funkcji według nazwy z ``:słowo-kluczowe``::
 
     (test 1 2 :d "y")             ; => [1, 2, None, 'y', ()]
 
-Zdefiniuj klasy za pomocą :hy:func:`defclass`::
+Definiowanie klasy za pomocą :hy:func:`defclass`::
 
     (defclass FooBar []
       (defn __init__ [self x]
@@ -226,8 +221,7 @@ Zdefiniuj klasy za pomocą :hy:func:`defclass`::
       (defn get-x [self]
         self.x))
 
-Tutaj tworzymy nową instancję ``fb`` ``FooBar`` i uzyskujemy dostęp do jej atrybutów przez
-różne środki::
+Tutaj tworzymy nową instancję ``fb`` z klasy ``FooBar`` i uzyskujemy dostęp do jej atrybutów poprzez różne środki::
 
     (setv fb (FooBar 15))
     (print fb.x)         ; => 15
@@ -236,19 +230,17 @@ różne środki::
     (print (fb.get-x))   ; => 15
 
 Zauważ, że składnia taka jak ``fb.x`` i ``fb.get-x`` działa tylko wtedy, gdy obiekt
-wywoływana (w tym przypadku ``fb``) jest prostą nazwą zmiennej. Aby uzyskać
-atrybut lub wywołaj metodę o dowolnej formie ``FORM``, musisz użyć
-składnia ``(. FORM x)`` lub ``(.get-x FORM)``.
+wywoływany (w tym przypadku ``fb``) jest prostą nazwą zmiennej. Aby uzyskać
+atrybut lub wywołać metodę o dowolnej formie ``FORM``, musisz użyć
+składnie ``(. FORM x)`` lub ``(.get-x FORM)``.
 
-Uzyskaj dostęp do zewnętrznego modułu, napisanego w Pythonie lub Hy, za pomocą
+Dostęp do zewnętrznego modułu, napisanego w Pythonie lub Hy, za pomocą
 :ref:`import`::
 
     (import math)
     (print (math.sqrt 2))  ; => 1.4142135623730951
 
-Python może zaimportować moduł Hy jak każdy inny moduł, o ile sam Hy to posiada
-został zaimportowany jako pierwszy, co oczywiście musiało już mieć miejsce, jeśli jesteś
-uruchamianie programu Hy.
+Python może zaimportować moduł Hy jak każdy inny moduł, o ile sam Hy został zaimportowany jako pierwszy, co oczywiście musiało już mieć miejsce, jeśli uruchomiłeś program Hy.
 
 Makra
 ======
@@ -258,26 +250,26 @@ jest wywoływana w czasie kompilacji (tj. gdy program Hy jest tłumaczony na
 Python :mod:`ast` obiektów) i zwraca kod, który staje się częścią finalnego
 program. Oto prosty przykład::
 
-    (print "Executing")
+    (print "Uruchamiam")
     (defmacro m []
-      (print "Now for a slow computation")
+      (print "A teraz parę powolnych obliczeń")
       (setv x (% (** 10 10 7) 3))
-      (print "Done computing")
+      (print "Skończyłem obliczanie")
       x)
-    (print "Value:" (m))
-    (print "Done executing")
+    (print "Wynik:" (m))
+    (print "Skończyłem wykonywanie")
 Jeśli uruchomisz ten program dwa razy z rzędu, zobaczysz to::
 
     $ hy example.hy
-    Now for a slow computation
-    Done computing
-    Executing
-    Value: 1
-    Done executing
+    A teraz parę powolnych obliczeń
+    Skończyłem obliczanie
+    Uruchamiam
+    Wynik: 1
+    Skończyłem wykonywanie
     $ hy example.hy
-    Executing
-    Value: 1
-    Done executing
+    Uruchamiam
+    Wynik: 1
+    Skończyłem wykonywanie
 
 Wolne obliczenia są wykonywane podczas pierwszej kompilacji programu
 wezwanie. Dopiero po skompilowaniu całego programu następuje normalne wykonanie
