@@ -9,7 +9,7 @@ Ten rozdział zawiera krótkie wprowadzenie do Hy. Zakłada podstawową wiedzę
 o programowaniu, ale bez konkretnej wcześniejszej znajomości Pythona lub Lispa.
 
 Lisp na pythonie
-======================
+================
 Zacznijmy od klasyki::
 
     (print "Hy, world!")
@@ -81,9 +81,9 @@ Literały
 
 Hy ma :ref:`składnia literalna <składnia>` dla wszystkich typów co Python. Oto przykład kodu Hy dla każdego typu i jego odpowiednik w Pythonie.
 
-==============  ================  =================
+==============  ================  ============================
 Hy              Python            Typ
-==============  ================  =================
+==============  ================  ============================
 ``1``           ``1``             :class:`int` (liczba całkowita)
 ``1.2``         ``1.2``           :class:`float` (liczba zmiennoprzecinkowa)
 ``4j``          ``4j``            :class:`complex` (liczba zespolona)
@@ -95,17 +95,18 @@ Hy              Python            Typ
 ``[1 2 3]``     ``[1, 2, 3]``     :class:`list` (lista)
 ``#{1 2 3}``    ``{1, 2, 3}``     :class:`set` (zbiór)
 ``{1 2  3 4}``  ``{1: 2, 3: 4}``  :class:`dict` (tablica asocjacyjna)
-==============  ================  =================
+==============  ================  ==========================
 
 Ponadto Hy przwemuje skłądnie ułamków z Clojure dla
 :class:`fractions.Fraction`: ``1/3`` jest odpowiednikiem ``fractions.Fraction(1,3)``.
 
-Hy REPL domyślnie wyświetla dane wyjściowe w składni Hy, za pmocą funkcji :hy:func:`hy.repr`::
+Hy REPL domyślnie wyświetla dane wyjściowe w składni Hy, za pomocą funkcji :hy:func:`hy.repr`::
 
   => [1 2 3]
   [1 2 3]
 
-Ale jeśli wywołasz Hy w taki sposób::
+
+Natomiast jeśli wywołasz Hy w taki sposób::
 
   $ hy --repl-output-fn=repr
 
@@ -117,7 +118,7 @@ REPL użyje zamiast tego natywnej funkcji ``repr`` Pythona, więc zobaczysz wart
 
 
 Podstawowe operacje
-================
+===================
 Nadaj wartość zmiennej za pomocą :hy:func:`setv`::
 
     (setv zone-plane 8)
@@ -153,6 +154,7 @@ Co jeśli chcesz użyć czegoś więcej niż formy na miejscu ``THEN`` lub klauz
        (print "Matematyka zawiodła.")
        (print "Armageddon!!")))
 
+
 Aby rozgałęziać na więcej niż jeden przypadek, spróbuj :hy:func:`cond <hy.core.macros.cond>`::
 
    (setv somevar 33)
@@ -163,6 +165,7 @@ Aby rozgałęziać na więcej niż jeden przypadek, spróbuj :hy:func:`cond <hy.
      (print "Zmienna jest za mała!")]
     [True
      (print "W sssssam raz!!")])
+
 
 Makro ``(when CONDITION THEN-1 THEN-2 …)`` jest skrótem dla ``(if CONDITION
 (do THEN-1 THEN-2 …))``. ``unless`` działa tak samo jak ``when``, ale odwraca
@@ -177,6 +180,7 @@ Podstawowe pętle Hy to :ref:`while` i :ref:`for`::
 
     (for [x [1 2 3]]
       (print x))         ; => 1 2 3
+
 
 Bardziej funkcjonalny sposób iteracji zapewniają formy interpetowalne(po angielsku list comprehension, nie kojarzę ładnego polskiego odpowiednika), takie jak
 :hy:funkcja:`lfor`. Podczas gdy ``for`` zawsze zwraca ``Brak``, ``lfor`` zwraca listę
@@ -196,10 +200,12 @@ Definiowanie funkcji nazwanej za pomocą :hy:func:`defn <hy.core.bootstrap.defn>
         (+ (fib (- n 1)) (fib (- n 2)))))
     (print (fib 8))  ; => 21
 
+
 Definiowanie funkcji anonimowej za pomocą :hy:func:`fn <fn>`::
 
     (print (list (filter (fn [x] (% x 2)) (range 10))))
       ; => [1, 3, 5, 7, 9]
+
 
 Symbole specjalne w liście parametrów ``defn`` lub ``fn`` pozwalają na
 wskazanie opcjonalnych argumentów, podają wartości domyślne i zbierają niewymienione argumenty::
@@ -209,9 +215,11 @@ wskazanie opcjonalnych argumentów, podają wartości domyślne i zbierają niew
     (print (test 1 2))            ; => [1, 2, None, 'x', ()]
     (print (test 1 2 3 4 5 6 7))  ; => [1, 2, 3, 4, (5, 6, 7)]
 
+
 Ustawianie parametru funkcji według nazwy z ``:słowo-kluczowe``::
 
     (test 1 2 :d "y")             ; => [1, 2, None, 'y', ()]
+
 
 Definiowanie klasy za pomocą :hy:func:`defclass`::
 
@@ -221,6 +229,7 @@ Definiowanie klasy za pomocą :hy:func:`defclass`::
       (defn get-x [self]
         self.x))
 
+
 Tutaj tworzymy nową instancję ``fb`` z klasy ``FooBar`` i uzyskujemy dostęp do jej atrybutów poprzez różne środki::
 
     (setv fb (FooBar 15))
@@ -228,6 +237,7 @@ Tutaj tworzymy nową instancję ``fb`` z klasy ``FooBar`` i uzyskujemy dostęp d
     (print (. fb x))     ; => 15
     (print (.get-x fb))  ; => 15
     (print (fb.get-x))   ; => 15
+
 
 Zauważ, że składnia taka jak ``fb.x`` i ``fb.get-x`` działa tylko wtedy, gdy obiekt
 wywoływany (w tym przypadku ``fb``) jest prostą nazwą zmiennej. Aby uzyskać
@@ -239,6 +249,7 @@ Dostęp do zewnętrznego modułu, napisanego w Pythonie lub Hy, za pomocą
 
     (import math)
     (print (math.sqrt 2))  ; => 1.4142135623730951
+
 
 Python może zaimportować moduł Hy jak każdy inny moduł, o ile sam Hy został zaimportowany jako pierwszy, co oczywiście musiało już mieć miejsce, jeśli uruchomiłeś program Hy.
 
@@ -258,6 +269,8 @@ program. Oto prosty przykład::
       x)
     (print "Wynik:" (m))
     (print "Skończyłem wykonywanie")
+
+
 Jeśli uruchomisz ten program dwa razy z rzędu, zobaczysz to::
 
     $ hy przyklad.hy
@@ -271,11 +284,13 @@ Jeśli uruchomisz ten program dwa razy z rzędu, zobaczysz to::
     Wynik: 1
     Skończyłem wykonywanie
 
+
 Powolne obliczenia są wykonywane podczas kompilacji programu przy pierwszym wywołaniu. Dopiero po skompilowaniu całego programu następuje normalne wykonanie zaczynając od góry, wyświetla "Uruchamiam". Kiedy program uruchamia się drugi raz, jest uruchamiany z wcześniej skompilowanego kodu bajtowego, co jest równoważne do::
 
     (print "Uruchamiam")
     (print "Wynik:" 1)
     (print "Skończyłem wykonywanie")
+
 
 Nasze makro ``m`` ma szczególnie prostą wartość zwracaną, liczbę całkowitą, która w
 czas kompilacji jest konwertowany na literał całkowity. Ogólnie makra mogą zwracać
@@ -295,6 +310,7 @@ makra (lub zwykłej zmiennej), to tak prędko ci się nie skończą znaki. ::
   => #↻(1 2 3 +)
   6
 
+
 A co, gdybyś chciał użyć makra zdefiniowanego w innym module?
 ``import`` nie pomoże, ponieważ tłumaczy się jedynie na ``import`` . w Pythonie
 instrukcja, która jest wykonywana w czasie wykonywania, a makra są rozwijane w czasie kompilacji,
@@ -306,8 +322,9 @@ który importuje moduł i udostępnia makra w czasie kompilacji.
    => (tutorial.macros.rev (1 2 3 +))
    6
 
+
 Następne kroki
-===========
+==============
 
 Wiesz już wystarczająco dużo, by być niebezpiecznym z Hy. Możesz teraz złośliwie się uśmiechać i
 wymknąć się do swojej kryjówki, aby robić rzeczy niewyobrażalne.
