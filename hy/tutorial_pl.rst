@@ -39,9 +39,8 @@ Oto bardziej złożony przykład::
     (- (* (+ 1 3 88) 2) 8)
 
 Ten kod zwraca ``176``. Czemu? Możemy sprawdzić jak to wygląda w tradycyjnym zapisie wrostkowym(infiksowym) 
-poleceniem ``echo "(- (* (+ 1 3 88) 2) 8)" | hy2py``, który zwraca kod Pythona odpowiadający podanemu kodowi Hy lub przekazując opcję ``--spy`` do
-Hy podczas uruchamiania wiersza poleceń (po angielsku używa się skrót REPL, Read Eval Print Loop, czyli Czytaj Ewaluuj Wyświetl Pętla), który pokazuje odpowiednik każdej linii wejściowej w Pythonie
-przed wynikiem. Odpowiednikiem wrostkowym w tym przypadku jest:
+poleceniem ``echo "(- (* (+ 1 3 88) 2) 8)" | hy2py``, który zwraca kod Pythona odpowiadający podanemu kodowi Hy, albo przekazując opcję ``--spy`` do
+Hy podczas uruchamiania REPL (Read Eval Print Loop, czyli Czytaj Ewaluuj Wyświetl Pętla), wówczas odpowiednik każdej linii wejściowej w Pythonie wyświetli się przed wynikiem. Odpowiednikiem wrostkowym w tym przypadku jest:
 
 .. code-block:: python
 
@@ -58,10 +57,8 @@ Lispie. Oto, co otrzymamy, ewaluując powyższy kod Hy krok po kroku::
 Podstawową jednostką składni Lispa, która jest podobna do wyrażenia C lub Pythona, jest
 **forma**. ``92``, ``*`` i ``(* 92 2)`` to wszystko formy. Program Lisp
 składa się z sekwencji form zagnieżdżonych w formach. Formy są zazwyczaj
-oddzielone od siebie znakami niedrukowalnymi, ale niektóre formy, takie jak ciąg znaków (``"Hej, świat!"``) mogą same zawierać białe znaki. jakiś
-**wyrażenie** to forma ujęta w nawiasy; jego pierwsza forma potocznie, zwana
-**głowa** określa, co robi wyrażenie i ogólnie powinna być to
-funkcja lub makro. Funkcje to najzwyklejszy rodzaj głowy, podczas gdy makra
+oddzielone od siebie znakami niedrukowalnymi, ale niektóre formy, takie jak ciąg znaków (``"Hej, świat!"``) mogą same zawierać znaki niedrukowalne. 
+Natomiast **wyrażenie** to forma ujęta w nawiasy; jego pierwsza forma, potocznie zwana **głowa**, określa co robi wyrażenie i ogólnie powinna być to funkcja lub makro. Funkcje to najzwyklejszy rodzaj głowy, podczas gdy makra
 (opisane bardziej szczegółowo poniżej) są funkcjami wykonywanymi w czasie kompilacji
 i zwracają kod do wykonania w czasie wykonywania.
 
@@ -97,7 +94,7 @@ Hy              Python            Typ
 ``{1 2  3 4}``  ``{1: 2, 3: 4}``  :class:`dict` (tablica asocjacyjna)
 ==============  ================  ============================
 
-Ponadto Hy przwemuje skłądnie ułamków z Clojure dla
+Ponadto Hy przejmuje skłądnie ułamków z Clojure dla
 :class:`fractions.Fraction`: ``1/3`` jest odpowiednikiem ``fractions.Fraction(1,3)``.
 
 Hy REPL domyślnie wyświetla dane wyjściowe w składni Hy, za pomocą funkcji :hy:func:`hy.repr`::
@@ -122,6 +119,8 @@ Podstawowe operacje
 Nadaj wartość zmiennej za pomocą :hy:func:`setv`::
 
     (setv zone-plane 8)
+
+
 Uzyskaj dostęp do elementów listy, słownika lub innej struktury danych za pomocą
 :hy:func:`get <hy.core.shadow.get>`::
 
@@ -129,15 +128,19 @@ Uzyskaj dostęp do elementów listy, słownika lub innej struktury danych za pom
     (print (get owoc 0))  ; => jabłko
     (setv (get owoc 1) "durian")
     (print (get owoc 1))  ; => durian
+
+
 Uzyskaj dostęp do szeregu elementów w uporządkowanej strukturze za pomocą :hy:func:`cut`::
 
     (print (cut "abcdef" 1 4))  ; => bcd
+
 
 Logika warunkowa może być zbudowana za pomocą :ref:`if`::
 
     (if (= 1 1)
       (print "Matamtyka działą. Wszechświat jest bezpieczny.")
       (print "Matematyka zawiodła. Apokalipsa!!!"))
+
 
 Tak jak w tym przykładzie, ``if`` jest wywoływane tak jak ``(if CONDITION THEN ELSE)`` (jeśli WARUNEK WTEDY W-INNYM-PRZYPADKU). Ono
 wykonuje i zwraca formę ``THEN`` jeśli ``CONDITION`` jest prawdziwy (zgodnie z
@@ -183,7 +186,7 @@ Podstawowe pętle Hy to :ref:`while` i :ref:`for`::
 
 
 Bardziej funkcjonalny sposób iteracji zapewniają formy interpetowalne(po angielsku list comprehension, nie kojarzę ładnego polskiego odpowiednika), takie jak
-:hy:func:`lfor`. Podczas gdy ``for`` zawsze zwraca ``Brak``, ``lfor`` zwraca listę
+:hy:func:`lfor`. Podczas gdy ``for`` zawsze zwraca ``None``, ``lfor`` zwraca listę
 z jednym elementem z każdej iteracji. ::
 
     (print (lfor  x [1 2 3]  (* x 2)))  ; => [2, 4, 6]
