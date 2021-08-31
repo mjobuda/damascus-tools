@@ -65,13 +65,12 @@ funkcja lub makro. Funkcje to najzwyklejszy rodzaj głowy, podczas gdy makra
 (opisane bardziej szczegółowo poniżej) są funkcjami wykonywanymi w czasie kompilacji
 i zwracają kod do wykonania w czasie wykonywania.
 
-Komentarze zaczynają się od znaku ``;`` i trwają do końca linii. A
-komentarz jest funkcjonalnie równoważny z białymi znakami. ::
+Komentarze zaczynają się od znaku ``;`` i trwają do końca linii.Komentarz jest funkcjonalnie równoważny z znakami niedrukowalnymi. ::
 
-    (print (** 2 64))   ; Max 64-bit unsigned integer value
+    (print (** 2 64))   ; Największa całkowita liczba 64 bitowa
 
 Chociaż ``#`` nie jest znakiem komentarza w Hy, program Hy może zaczynać się od
-`linia shebang <https://en.wikipedia.org/wiki/Shebang_(Unix)>`_, która sama Hy
+`linii shebang <https://pl.wikipedia.org/wiki/Shebang>`_, którą Hy
 zignoruje::
 
    #!/usr/bin/env hy
