@@ -8,7 +8,7 @@ Tutorial
 Ten rozdział zawiera krótkie wprowadzenie do Hy. Zakłada podstawową wiedzę
 o programowaniu, ale bez konkretnej wcześniejszej znajomości Pythona lub Lispa.
 
-Lisp-stick on a Python
+Lisp na pythonie
 ======================
 Zacznijmy od klasyki::
 
@@ -41,7 +41,7 @@ Oto bardziej złożony przykład::
 Ten kod zwraca ``176``. Czemu? Możemy sprawdzić jak to wygląda w tradycyjnym zapisie wrostkowym(infiksowym) 
 poleceniem ``echo "(- (* (+ 1 3 88) 2) 8)" | hy2py``, który zwraca kod Pythona odpowiadający podanemu kodowi Hy lub przekazując opcję ``--spy`` do
 Hy podczas uruchamiania wiersza poleceń (po angielsku używa się skrót REPL, Read Eval Print Loop, czyli Czytaj Ewaluuj Wyświetl Pętla), który pokazuje odpowiednik każdej linii wejściowej w Pythonie
-przed wynikiem. Odpowiednikiem wrostkowym w tym przypadku jest::
+przed wynikiem. Odpowiednikiem wrostkowym w tym przypadku jest:
 
 .. code-block:: python
 
