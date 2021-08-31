@@ -1,4 +1,4 @@
-#! usr/bin/env hy
+#!/usr/bin/env hy
 ;; * Hy REPL Init Script
 ;; ** Set up sys.path
 (eval-and-compile
