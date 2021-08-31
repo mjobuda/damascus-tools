@@ -123,10 +123,10 @@ Nadaj wartość zmiennej za pomocą :hy:func:`setv`::
 Uzyskaj dostęp do elementów listy, słownika lub innej struktury danych za pomocą
 :hy:func:`pobierz <hy.core.shadow.get>`::
 
-    (setv fruit ["apple" "banana" "cantaloupe"])
-    (print (get fruit 0))  ; => apple
-    (setv (get fruit 1) "durian")
-    (print (get fruit 1))  ; => durian
+    (setv owoc ["jabłko" "banan" "melon"])
+    (print (get owoc 0))  ; => jabłko
+    (setv (get owoc 1) "durian")
+    (print (get owoc 1))  ; => durian
 Uzyskaj dostęp do szeregu elementów w uporządkowanej strukturze za pomocą :hy:func:`cut`::
 
     (print (cut "abcdef" 1 4))  ; => bcd
@@ -145,9 +145,9 @@ Co jeśli chcesz użyć czegoś więcej niż formy na miejscu ``THEN`` lub klauz
 :hy:func:`do` (znany bardziej tradycyjnie w Lispie jako ``progn``), który łączy
 kilka form w jedną, zwracając ostatnią:
 
-   (if (do (print "Let's check.") (= 1 1))
+   (if (do (print "Sprawdźmy.") (= 1 1))
      (do
-       (print "Math działa.")
+       (print "Matematyka działa.")
        (print "Wschechświat jest bezpieczny."))
      (do
        (print "Matematyka zawiodła.")
@@ -260,37 +260,33 @@ program. Oto prosty przykład::
     (print "Skończyłem wykonywanie")
 Jeśli uruchomisz ten program dwa razy z rzędu, zobaczysz to::
 
-    $ hy example.hy
+    $ hy przyklad.hy
     A teraz parę powolnych obliczeń
     Skończyłem obliczanie
     Uruchamiam
     Wynik: 1
     Skończyłem wykonywanie
-    $ hy example.hy
+    $ hy przyklad.hy
     Uruchamiam
     Wynik: 1
     Skończyłem wykonywanie
 
-Wolne obliczenia są wykonywane podczas pierwszej kompilacji programu
-wezwanie. Dopiero po skompilowaniu całego programu następuje normalne wykonanie
-zacznij od góry, drukując "Wykonywanie". Kiedy program nazywa się sekundą
-czas, jest uruchamiany z wcześniej skompilowanego kodu bajtowego, co jest równoważne
-po prostu::
+Powolne obliczenia są wykonywane podczas kompilacji programu przy pierwszym wywołaniu. Dopiero po skompilowaniu całego programu następuje normalne wykonanie zaczynając od góry, wyświetla "Uruchamiam". Kiedy program uruchamia się drugi raz, jest uruchamiany z wcześniej skompilowanego kodu bajtowego, co jest równoważne do::
 
-    (print "Executing")
-    (print "Value:" 1)
-    (print "Done executing")
+    (print "Uruchamiam")
+    (print "Wynik:" 1)
+    (print "Skończyłem wykonywanie")
 
 Nasze makro ``m`` ma szczególnie prostą wartość zwracaną, liczbę całkowitą, która w
 czas kompilacji jest konwertowany na literał całkowity. Ogólnie makra mogą zwracać
-dowolne formularze Hy do wykonania jako kod. Jest kilku operatorów specjalnych
+dowolne formy Hy do wykonania jako kod. Jest kilku operatorów specjalnych
 oraz makra, które ułatwiają programowe konstruowanie formularzy, takie jak
 :hy:func:`quote` (``'``), :hy:func:`quasiquote` (`````), :hy:func:`unquote` (``~``), i
 :hy:func:`defmacro! <hy.core.bootstrap.defmacro!>`. Poprzedni rozdział zawiera :hy:func:`prosty przykład <while>`
 używania ````` i ``~`` do zdefiniowania nowej konstrukcji kontrolnej ``do-while``.
 
 Czasami fajnie jest móc wywołać makro jednoparametrowe bez
-zdanie wtrącone. Pozwalają na to makra tagów. Nazwa makra tagu często jest tylko jedna
+nawiasów. Pozwalają na to makra tagów. Nazwa makra tagu często jest tylko jedna
 długiego znaku, ale ponieważ Hy zezwala na większość znaków Unicode w nazwie a
 makro (lub zwykła zmienna), wkrótce nie zabraknie Ci znaków. ::
 
