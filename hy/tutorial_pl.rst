@@ -104,9 +104,11 @@ Hy REPL domyślnie wyświetla dane wyjściowe w składni Hy, za pmocą funkcji :
 
   => [1 2 3]
   [1 2 3]
+
 Ale jeśli wywołasz Hy w taki sposób::
 
   $ hy --repl-output-fn=repr
+
 
 REPL użyje zamiast tego natywnej funkcji ``repr`` Pythona, więc zobaczysz wartości w składni Pythona::
 
