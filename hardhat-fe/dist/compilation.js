@@ -26,7 +26,7 @@ exports.compile = void 0;
 const plugins_1 = require("hardhat/plugins");
 const source_names_1 = require("hardhat/utils/source-names");
 const path_1 = __importDefault(require("path"));
-var fejs = require("@berlinvege/fedockerjs");
+var fejs = require("@berlinvege/fejs");
 const fs = __importStar(require("fs"));
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
 async function compile(feConfig, paths, artifacts) {
@@ -43,7 +43,7 @@ async function compile(feConfig, paths, artifacts) {
         const sourceName = await source_names_1.localPathToSourceName(paths.root, file);
         const feSourceCode = fs.readFileSync(file, "utf8");
         console.log(feSourceCode);
-        const compilerResult = fejs.compile(feSourceCode);
+        const compilerResult = fejs(feSourceCode);
         console.log("Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode);
         for (const key of Object.keys(compilerResult.contracts)) {
             const artifact = getArtifactFromFeOutput(sourceName, key, compilerResult.contracts[key]);
