@@ -19,4 +19,5 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.4",
+  fe_binary_path: "bbb!",
 };
