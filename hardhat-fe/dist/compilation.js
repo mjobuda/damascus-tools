@@ -29,6 +29,7 @@ const path_1 = __importDefault(require("path"));
 var fejs = require("@berlinvege/fejs");
 const fs = __importStar(require("fs"));
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
+function compileFileWithFeBinary(feBinaryPath, source) { }
 async function compile(feConfig, paths, artifacts) {
     const feVersion = feConfig.version;
     const files = await getFeSources(paths);
@@ -38,8 +39,7 @@ async function compile(feConfig, paths, artifacts) {
     for (const file of files) {
         const pathFromCWD = path_1.default.relative(process.cwd(), file);
         const pathFromSources = path_1.default.relative(paths.sources, file);
-        //console.log("Compiling with Fe...");
-        //console.log("Fe moduler object... "+fejs.compile_to_ast);
+        console.log("Compiling with Fe...");
         const sourceName = await source_names_1.localPathToSourceName(paths.root, file);
         const feSourceCode = fs.readFileSync(file, "utf8");
         console.log(feSourceCode);
