@@ -33,7 +33,7 @@ export async function compile(
     const sourceName = await localPathToSourceName(paths.root, file);
     const feSourceCode = fs.readFileSync(file, "utf8");
     console.log(feSourceCode);
-    const compilerResult = fejs.compile(feSourceCode);
+    const compilerResult = fejs(feSourceCode);
     console.log(
       "Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode
     );
