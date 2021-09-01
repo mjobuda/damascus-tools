@@ -9,6 +9,12 @@ import { FeConfig } from "./types";
 
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
 
+function compileWithFeBinary(
+  binaryPath: string,
+  sourcePath: string
+)
+
+
 export async function compile(
   feConfig: FeConfig,
   paths: ProjectPathsConfig,
@@ -17,16 +23,12 @@ export async function compile(
   const feVersion = feConfig.version;
 
   const files = await getFeSources(paths);
-  //console.log(paths);
-  //console.log(files);
 
   let someContractFailed = false;
 
   for (const file of files) {
     const pathFromCWD = path.relative(process.cwd(), file);
     const pathFromSources = path.relative(paths.sources, file);
-    //console.log("Compiling with Fe...");
-    //console.log("Fe moduler object... "+fejs.compile_to_ast);
 
     const sourceName = await localPathToSourceName(paths.root, file);
     const feSourceCode = fs.readFileSync(file, "utf8");
@@ -72,8 +74,6 @@ function getArtifactFromFeOutput(
   contractName: string,
   output: any
 ): Artifact {
-  //const contractName = pathToContractName(sourceName);
-
   return {
     _format: ARTIFACT_FORMAT_VERSION,
     contractName,
