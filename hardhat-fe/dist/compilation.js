@@ -43,7 +43,7 @@ async function compile(feConfig, paths, artifacts) {
         const sourceName = await source_names_1.localPathToSourceName(paths.root, file);
         const feSourceCode = fs.readFileSync(file, "utf8");
         console.log(feSourceCode);
-        const compilerResult = fejs(feSourceCode);
+        const compilerResult = fejs.compile(feSourceCode);
         console.log("Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode);
         for (const key of Object.keys(compilerResult.contracts)) {
             const artifact = getArtifactFromFeOutput(sourceName, key, compilerResult.contracts[key]);
