@@ -72,30 +72,8 @@ function compileFileWithFeBinary(fileName) {
 }
 function getCompileResultFromBinaryBuild() {
     //sorry. I'm done. I'm not playing the TypeScript game anymore
-    //The only reason I do this in TS is because I love Fe
-    //Fe has the potential to become an awesome tech and I want to bring
-    // it to the people
-    // TypeScript is not a good language. It's not possible
-    // to make good software with it. Period.
-    //if you want types you can use Rust. Or something else.
-    //but don't fall into the M$ trap. They don't design SW to be useful,
-    // but to make money. That's not the same thing.
-    // producing unmaintainable software can be good buisness.
-    //
-    //From now on I will use every workaround possible to get the job
-    //done as fast as possible.
-    // By definition this results in crappy code.
-    // But as I finally understood it's not possible to produce good code with TS.
-    // It's designed that way. That's it's purpose. To force the developer
-    // to produce boilerplate. There is no other reason to use it.
-    // If you think that the following is bad and it should be done by XYZ
-    //then you felt into the M$ trap. 10 engineers after you will have to understand
-    // XYZ and add their ABC to it. And the next 10 engineers will have to understand
-    // XYZABC. And to fix bugs in it. And then to redesign it.
-    // Besides: TS takes away the repl and the possibility to debug in your browser
-    // If you want a language that is superior to JS but takes away some conveniences
-    // you can use clojurescript. Oh yes, CJ has a repl. Even a few.
-    // There are so many choices. Don't use TypeScript.
+    //this technology is @@@. It's not possible to do good software with it
+    //any attempt to do so is a waste of time.
     var compilerResult = {};
     compilerResult.contracts = {};
     const FE_OUTPUT = fs.readdirSync("fe_output");
@@ -103,6 +81,7 @@ function getCompileResultFromBinaryBuild() {
         compilerResult.contracts[fileName] = {};
         compilerResult.contracts[fileName].bytecode = fs.readFileSync("fe_output/" + fileName + "/" + fileName + ".bin", "utf8");
         compilerResult.contracts[fileName].abi = fs.readFileSync("fe_output/" + fileName + "/" + fileName + "_abi.json", "utf8");
+        compilerResult.contracts[fileName].abi = JSON.parse(compilerResult.contracts[fileName].abi);
     }
     return compilerResult;
 }
