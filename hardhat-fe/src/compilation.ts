@@ -12,7 +12,10 @@ const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
 
 
 function getFeCommand() {
-    return "fe";
+const fePath = fs.readFileSync(process.cwd()+'/fe_path_name',{encoding:'utf8', flag:'r'}).trim();
+  console.log(fePath);
+  console.log(process.cwd());
+    return fePath;
 }
 // function compileFileWithFeBinary(fileName) {
     // const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
@@ -41,10 +44,8 @@ export async function compile(
 ) {
   const feVersion = feConfig.version;
   console.log(feVersion);
-
-const fePath = fs.readFileSync(process.cwd()+'/fe_path_name',{encoding:'utf8', flag:'r'}).trim();
-  console.log(fePath);
-  console.log(process.cwd());
+const useFeBinary = fs.exists('fe_path_name');
+  console.log(useFeBinary);
 
   const files = await getFeSources(paths);
   console.log(files);
