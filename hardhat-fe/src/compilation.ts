@@ -44,7 +44,7 @@ export async function compile(
 ) {
   const feVersion = feConfig.version;
   console.log(feVersion);
-const useFeBinary = fs.exists('fe_path_name');
+const useFeBinary = fs.existsSync('fe_path_name');
   console.log(useFeBinary);
 
   const files = await getFeSources(paths);
