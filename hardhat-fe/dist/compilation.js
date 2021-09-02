@@ -30,37 +30,62 @@ var fejs = require("@berlinvege/fejs");
 const fs = __importStar(require("fs"));
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
 function getFeCommand() {
-    const fePath = fs.readFileSync(process.cwd() + '/fe_path_name', { encoding: 'utf8', flag: 'r' }).trim();
+    const fePath = fs
+        .readFileSync(process.cwd() + "/fe_path_name", {
+        encoding: "utf8",
+        flag: "r",
+    })
+        .trim();
     console.log(fePath);
     console.log(process.cwd());
     return fePath;
 }
 function getFeTempOutputFolder() {
-    return process.cwd() + '/fe_output';
+    return process.cwd() + "/fe_output";
 }
-// function compileFileWithFeBinary(fileName) {
-// const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
-// const outputFolder = getFeTempOutputFolder();
-// const rmCommand = "rm -rf " + outputFolder;
-// if (fileName.endsWith('.git'))
-// fileName = fileName.slice(0, -4);
-// if (!fileName.endsWith('.fe')) return;
-// const feCommand = getFeCommand()
-// + " "
-// + fileName + " " + fe_options + " "
-// + "--output-dir " + outputFolder;
-// const rmOutput = execSync(rmCommand).toString();
-// try {
-// execSync(feCommand);
-// }
-// catch (e) {
-// console.log('[Compiler Exception] ' + e);
-// }
-// }
+function compileFileWithFeBinary(fileName) {
+    const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
+    const outputFolder = getFeTempOutputFolder();
+    const rmCommand = "rm -rf " + outputFolder;
+    if (fileName.endsWith(".git"))
+        fileName = fileName.slice(0, -4);
+    if (!fileName.endsWith(".fe"))
+        return;
+    const feCommand = getFeCommand() +
+        " " +
+        fileName +
+        " " +
+        fe_options +
+        " " +
+        "--output-dir " +
+        outputFolder;
+    const rmOutput = require('child_process').execSync(rmCommand).toString();
+    try {
+        require('child_process').execSync(feCommand);
+    }
+    catch (e) {
+        console.log("[Compiler Exception] " + e);
+    }
+}
+function getCompileResultFromBinaryBuild() {
+    //sorry. I'm done. I'm not playing the TypeScript game anymore
+    //The only reason I do this in TS is because I love Fe
+    //Fe has the potential to become an awesome tech and I want to bring 
+    // it to the people
+    // TypeScript is not a good language. It's not possible 
+    // to make good software with it. Period.
+    //if you want types you can use Rust. Or something else.
+    //but don't fall into the M$ trap. They don't design SW to be useful,
+    // but to make money. That's not the same thing.
+    // producing unmaintainable software can be good buisness.
+    var compilerResult = {};
+    compilerResult.contracts["Fooooooo"] = "kwakwa";
+    return compilerResult;
+}
 async function compile(feConfig, paths, artifacts) {
     const feVersion = feConfig.version;
     console.log(feVersion);
-    const useFeBinary = fs.existsSync('fe_path_name');
+    const useFeBinary = fs.existsSync("fe_path_name");
     console.log(useFeBinary);
     const files = await getFeSources(paths);
     console.log(files);
@@ -72,14 +97,14 @@ async function compile(feConfig, paths, artifacts) {
         const sourceName = await source_names_1.localPathToSourceName(paths.root, file);
         const feSourceCode = fs.readFileSync(file, "utf8");
         console.log(feSourceCode);
-        // if (useFeBinary)
-        // {
-        // compileFileWithFeBinary(feSourceCode);
-        // }
-        // else
-        // {
-        const compilerResult = fejs.compile(feSourceCode);
-        // }
+        var compilerResult;
+        if (useFeBinary) {
+            compileFileWithFeBinary(feSourceCode);
+            compilerResult = getCompileResultFromBinaryBuild();
+        }
+        else {
+            compilerResult = fejs.compile(feSourceCode);
+        }
         console.log("Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode);
         for (const key of Object.keys(compilerResult.contracts)) {
             const artifact = getArtifactFromFeOutput(sourceName, key, compilerResult.contracts[key]);
