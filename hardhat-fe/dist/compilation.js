@@ -29,12 +29,34 @@ const path_1 = __importDefault(require("path"));
 var fejs = require("@berlinvege/fejs");
 const fs = __importStar(require("fs"));
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
-function compileFileWithFeBinary(feBinaryPath, source) { }
+function getFeCommand() {
+    return "fe";
+}
+// function compileFileWithFeBinary(fileName) {
+// const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
+// const outputFolder = getFeTempOutputFolder();
+// const rmCommand = "rm -rf " + outputFolder;
+// if (fileName.endsWith('.git'))
+// fileName = fileName.slice(0, -4);
+// if (!fileName.endsWith('.fe')) return;
+// const feCommand = getFeCommand()
+// + " "
+// + fileName + " " + fe_options + " "
+// + "--output-dir " + outputFolder;
+// const rmOutput = execSync(rmCommand).toString();
+// try {
+// execSync(feCommand);
+// }
+// catch (e) {
+// console.log('[Compiler Exception] ' + e);
+// }
+// }
 async function compile(feConfig, paths, artifacts) {
     const feVersion = feConfig.version;
+    const fePath = feConfig.fe_binary_path;
+    console.log(fePath);
     const files = await getFeSources(paths);
-    //console.log(paths);
-    //console.log(files);
+    console.log(files);
     let someContractFailed = false;
     for (const file of files) {
         const pathFromCWD = path_1.default.relative(process.cwd(), file);
