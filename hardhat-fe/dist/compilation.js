@@ -122,7 +122,7 @@ async function compile(feConfig, paths, artifacts) {
         else {
             compilerResult = fejs.compile(feSourceCode);
         }
-        console.log("Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode);
+        console.log("Fe compilerResult object... " + compilerResult.contracts["Fooooooo"].bytecode);
         for (const key of Object.keys(compilerResult.contracts)) {
             const artifact = getArtifactFromFeOutput(sourceName, key, compilerResult.contracts[key]);
             await artifacts.saveArtifactAndDebugFile(artifact);
