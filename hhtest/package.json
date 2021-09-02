@@ -9,6 +9,5 @@
     "hardhat": "^2.6.1"
   },
   "dependencies": {
-    "@berlinvege/hardhat-fe": "0.0.10"
   }
 }
