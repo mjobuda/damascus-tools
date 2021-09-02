@@ -50,7 +50,7 @@ function compileFileWithFeBinary(fileName: string) {
 }
 
 function getCompileResultFromBinaryBuild() {
-  var compilerResult;
+  let compilerResult = {contracts={}};
   compilerResult.contracts["Fooooooo"] = "kwakwa";
   return compilerResult;
 }
