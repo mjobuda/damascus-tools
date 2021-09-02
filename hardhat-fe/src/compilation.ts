@@ -70,7 +70,7 @@ function getCompileResultFromBinaryBuild() {
   // XYZ and add their ABC to it. And the next 10 engineers will have to understand
   // XYZABC. And to fix bugs in it. And then to redesign it.
   var compilerResult: {[k: string]: any} = {};
-  var compilerResult.contracts = {};
+  compilerResult.contracts = {};
   compilerResult.contracts["Fooooooo"] = "kwakwa";
   return compilerResult;
 }
