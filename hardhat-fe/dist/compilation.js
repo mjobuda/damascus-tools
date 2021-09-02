@@ -46,7 +46,7 @@ function getFeTempOutputFolder() {
 function compileFileWithFeBinary(fileName) {
     console.log('XXXXXX');
     console.log(fileName);
-    const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
+    const fe_options = "--overwrite --emit=abi,bytecode";
     const outputFolder = getFeTempOutputFolder();
     const rmCommand = "rm -rf " + outputFolder;
     if (fileName.endsWith(".git"))
