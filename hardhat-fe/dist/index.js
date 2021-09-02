@@ -24,7 +24,7 @@ const config_env_1 = require("hardhat/internal/core/config/config-env");
 const task_names_2 = require("./task-names");
 require("./type-extensions");
 config_env_1.extendConfig((config) => {
-    const defaultConfig = { version: "latest", fe_binary_path: "bum!" };
+    const defaultConfig = { version: "latest" }; //, fe_binary_path: "bum!" };
     config.fe = Object.assign(Object.assign({}, defaultConfig), config.fe);
 });
 config_env_1.subtask(task_names_1.TASK_COMPILE_GET_COMPILATION_TASKS, async (_, __, runSuper) => {
