@@ -50,7 +50,13 @@ function compileFileWithFeBinary(fileName: string) {
 }
 
 function getCompileResultFromBinaryBuild() {
-  let compilerResult = {contracts: {}};
+  //sorry. I'm done. I'm not playing the TypeScript game anymore
+  //The only reason I do this in TS is because I love Fe
+  //Fe has the potential to become an awesome tech and I want to bring 
+  // it to the people
+  // TypeScript is not a good language. It's not possible 
+  // to make good software with it. Period.
+  var compilerResult: {[k: string]: any} = {};
   compilerResult.contracts["Fooooooo"] = "kwakwa";
   return compilerResult;
 }
