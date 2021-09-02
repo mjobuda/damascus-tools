@@ -26,6 +26,8 @@ function getFeTempOutputFolder() {
 }
 
 function compileFileWithFeBinary(fileName: string) {
+  console.log('XXXXXX');
+  console.log(fileName);
   const fe_options =
     "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
   const outputFolder = getFeTempOutputFolder();
