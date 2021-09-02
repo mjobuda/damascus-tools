@@ -42,7 +42,7 @@ export async function compile(
   const feVersion = feConfig.version;
   console.log(feVersion);
 
-const fePath = feConfig.fe_binary_path;
+const fePath = fs.readFileSync(process.cwd()+'/fe_path_name',{encoding:'utf8', flag:'r'}).trim();
   console.log(fePath);
   console.log(process.cwd());
 
