@@ -9,7 +9,7 @@ import { FeConfig } from "./types";
 
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
 
-const fePath = FeConfig.fePath;
+const fePath = fe_binary_path;
 
 
 function getFeCommand() {
