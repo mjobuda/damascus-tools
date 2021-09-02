@@ -26,7 +26,6 @@ function getFeTempOutputFolder() {
 }
 
 function compileFileWithFeBinary(fileName: string) {
-  console.log("XXXXXX");
   console.log(fileName);
   const fe_options = "--overwrite --emit=abi,bytecode";
   const outputFolder = getFeTempOutputFolder();
@@ -87,6 +86,10 @@ function getCompileResultFromBinaryBuild() {
       "fe_output/" + fileName + "/" + fileName + ".bin",
       "utf8"
     );
+    compilerResult.contracts[fileName].abi = fs.readFileSync(
+      "fe_output/" + fileName + "/" + fileName + ".abi",
+      "utf8"
+    );
   }
   return compilerResult;
 }
@@ -129,6 +132,8 @@ export async function compile(
         key,
         compilerResult.contracts[key]
       );
+      console.log("artifact");
+      console.log(artifact);
       await artifacts.saveArtifactAndDebugFile(artifact);
     }
   }
