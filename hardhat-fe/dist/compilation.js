@@ -99,6 +99,11 @@ function getCompileResultFromBinaryBuild() {
     // There are so many choices. Don't use TypeScript.
     var compilerResult = {};
     compilerResult.contracts = {};
+    const FE_OUTPUT = fs.readdirSync('fe_output');
+    for (const fileName of FE_OUTPUT) {
+        compilerResult.contracts[fileName] = {};
+        compilerResult.contracts[fileName].bytecode = fs.readFileSync('fe_output/' + fileName + '/' + fileName + '.bin');
+    }
     compilerResult.contracts["Fooooooo"] = {};
     compilerResult.contracts["Fooooooo"].bytecode = "uttututu";
     return compilerResult;
