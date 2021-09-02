@@ -181,6 +181,8 @@ function getArtifactFromFeOutput(
 }
 
 function add0xPrefixIfNecessary(hex: string): string {
+    console.log("...hex...");
+    console.log(hex);
   hex = hex.toLowerCase();
 
   if (hex.slice(0, 2) === "0x") {
