@@ -44,7 +44,6 @@ function getFeTempOutputFolder() {
     return process.cwd() + "/fe_output";
 }
 function compileFileWithFeBinary(fileName) {
-    console.log("XXXXXX");
     console.log(fileName);
     const fe_options = "--overwrite --emit=abi,bytecode";
     const outputFolder = getFeTempOutputFolder();
@@ -103,6 +102,7 @@ function getCompileResultFromBinaryBuild() {
     for (const fileName of FE_OUTPUT) {
         compilerResult.contracts[fileName] = {};
         compilerResult.contracts[fileName].bytecode = fs.readFileSync("fe_output/" + fileName + "/" + fileName + ".bin", "utf8");
+        compilerResult.contracts[fileName].abi = fs.readFileSync("fe_output/" + fileName + "/" + fileName + ".abi", "utf8");
     }
     return compilerResult;
 }
@@ -133,6 +133,8 @@ async function compile(feConfig, paths, artifacts) {
         }
         for (const key of Object.keys(compilerResult.contracts)) {
             const artifact = getArtifactFromFeOutput(sourceName, key, compilerResult.contracts[key]);
+            console.log("artifact");
+            console.log(artifact);
             await artifacts.saveArtifactAndDebugFile(artifact);
         }
     }
