@@ -102,10 +102,7 @@ function getCompileResultFromBinaryBuild() {
     for (const fileName of FE_OUTPUT) {
         compilerResult.contracts[fileName] = {};
         compilerResult.contracts[fileName].bytecode = fs.readFileSync("fe_output/" + fileName + "/" + fileName + ".bin", "utf8");
-        // compilerResult.contracts[fileName].abi = fs.readFileSync(
-        // "fe_output/" + fileName + "/" + fileName + ".bin",
-        // "utf8"
-        // );
+        compilerResult.contracts[fileName].abi = fs.readFileSync("fe_output/" + fileName + "/" + fileName + "_abi.json", "utf8");
     }
     return compilerResult;
 }
