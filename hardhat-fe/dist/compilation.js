@@ -78,7 +78,17 @@ function getCompileResultFromBinaryBuild() {
     //but don't fall into the M$ trap. They don't design SW to be useful,
     // but to make money. That's not the same thing.
     // producing unmaintainable software can be good buisness.
+    //
+    //From now on I will use every workaround possible to get the job 
+    //done as fast as possible.
+    // By definitionthis results in crappy code.
+    // But as I finally understood it's not possible to produce good code with TS
+    // If you think that the following is bad and it should be done by XYZ
+    //then you felt into the M$ trap. 10 engineers after you will have to understand
+    // XYZ and add their ABC to it. And the next 10 engineers will have to understand
+    // XYZABC. And to fix bugs in it. And then to redesign it.
     var compilerResult = {};
+    compilerResult.contracts = {};
     compilerResult.contracts["Fooooooo"] = "kwakwa";
     return compilerResult;
 }
