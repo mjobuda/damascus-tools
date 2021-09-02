@@ -44,7 +44,7 @@ function getFeTempOutputFolder() {
     return process.cwd() + "/fe_output";
 }
 function compileFileWithFeBinary(fileName) {
-    console.log('XXXXXX');
+    console.log("XXXXXX");
     console.log(fileName);
     const fe_options = "--overwrite --emit=abi,bytecode";
     const outputFolder = getFeTempOutputFolder();
@@ -99,13 +99,11 @@ function getCompileResultFromBinaryBuild() {
     // There are so many choices. Don't use TypeScript.
     var compilerResult = {};
     compilerResult.contracts = {};
-    const FE_OUTPUT = fs.readdirSync('fe_output');
+    const FE_OUTPUT = fs.readdirSync("fe_output");
     for (const fileName of FE_OUTPUT) {
         compilerResult.contracts[fileName] = {};
-        compilerResult.contracts[fileName].bytecode = fs.readFileSync('fe_output/' + fileName + '/' + fileName + '.bin', "utf8");
+        compilerResult.contracts[fileName].bytecode = fs.readFileSync("fe_output/" + fileName + "/" + fileName + ".bin", "utf8");
     }
-    compilerResult.contracts["Fooooooo"] = {};
-    compilerResult.contracts["Fooooooo"].bytecode = "uttututu";
     return compilerResult;
 }
 async function compile(feConfig, paths, artifacts) {
@@ -133,8 +131,6 @@ async function compile(feConfig, paths, artifacts) {
             console.log("Compiling with Fejs...");
             compilerResult = fejs.compile(feSourceCode);
         }
-        console.log("Fe compilerResult object... " +
-            compilerResult.contracts["Fooooooo"].bytecode);
         for (const key of Object.keys(compilerResult.contracts)) {
             const artifact = getArtifactFromFeOutput(sourceName, key, compilerResult.contracts[key]);
             await artifacts.saveArtifactAndDebugFile(artifact);
