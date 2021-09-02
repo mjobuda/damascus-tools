@@ -69,9 +69,8 @@ function getCompileResultFromBinaryBuild() {
   //then you felt into the M$ trap. 10 engineers after you will have to understand
   // XYZ and add their ABC to it. And the next 10 engineers will have to understand
   // XYZABC. And to fix bugs in it. And then to redesign it.
-  // It's garbage. And nonsense.
   var compilerResult: {[k: string]: any} = {};
-  var compilerResult['contracts']: any;
+  var compilerResult.contracts = {};
   compilerResult.contracts["Fooooooo"] = "kwakwa";
   return compilerResult;
 }
