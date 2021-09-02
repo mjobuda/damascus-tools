@@ -6,7 +6,6 @@ import path from "path";
 var fejs = require("@berlinvege/fejs");
 import * as fs from "fs";
 import { FeConfig } from "./types";
-import execSync from 'child_process';
 
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
 
