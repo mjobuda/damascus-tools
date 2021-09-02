@@ -169,6 +169,8 @@ function getArtifactFromFeOutput(sourceName, contractName, output) {
     };
 }
 function add0xPrefixIfNecessary(hex) {
+    console.log("...hex...");
+    console.log(hex);
     hex = hex.toLowerCase();
     if (hex.slice(0, 2) === "0x") {
         return hex;
