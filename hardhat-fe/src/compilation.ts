@@ -56,7 +56,7 @@ function getCompileResultFromBinaryBuild() {
   // it to the people
   // TypeScript is not a good language. It's not possible 
   // to make good software with it. Period.
-  //if you want types you can use Rust.
+  //if you want types you can use Rust. Or something else.
   //but don't fall into the M$ trap. They don't design SW to be useful,
   // but to make money. That's not the same thing.
   // producing unmaintainable software can be good buisness.
@@ -88,11 +88,12 @@ export async function compile(
     const sourceName = await localPathToSourceName(paths.root, file);
     const feSourceCode = fs.readFileSync(file, "utf8");
     console.log(feSourceCode);
+    var compilerResult;
     if (useFeBinary) {
       compileFileWithFeBinary(feSourceCode);
-      const compilerResult = getCompileResultFromBinaryBuild();
+      compilerResult = getCompileResultFromBinaryBuild();
     } else {
-      const compilerResult = fejs.compile(feSourceCode);
+      compilerResult = fejs.compile(feSourceCode);
     }
     console.log(
       "Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode
