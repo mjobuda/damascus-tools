@@ -53,6 +53,7 @@ function getFeCommand() {
 // }
 async function compile(feConfig, paths, artifacts) {
     const feVersion = feConfig.version;
+    console.log(feVersion);
     const fePath = feConfig.fe_binary_path;
     console.log(fePath);
     const files = await getFeSources(paths);
