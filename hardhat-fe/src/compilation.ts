@@ -88,8 +88,6 @@ function getCompileResultFromBinaryBuild() {
   compilerResult.contracts[fileName] = {};
   compilerResult.contracts[fileName].bytecode = fs.readFileSync('fe_output/'+fileName+'/'+fileName+'.bin', "utf8");
     }
-  compilerResult.contracts["Fooooooo"] = {};
-  compilerResult.contracts["Fooooooo"].bytecode = "uttututu";
   return compilerResult;
 }
 
@@ -125,10 +123,6 @@ export async function compile(
     console.log("Compiling with Fejs...");
       compilerResult = fejs.compile(feSourceCode);
     }
-    console.log(
-      "Fe compilerResult object... " +
-        compilerResult.contracts["Fooooooo"].bytecode
-    );
     for (const key of Object.keys(compilerResult.contracts)) {
       const artifact = getArtifactFromFeOutput(
         sourceName,
