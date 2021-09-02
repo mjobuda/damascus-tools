@@ -121,7 +121,7 @@ async function compile(feConfig, paths, artifacts) {
         var compilerResult;
         if (useFeBinary) {
             console.log("Compiling with FeBinary...");
-            compileFileWithFeBinary(feSourceCode);
+            compileFileWithFeBinary(file);
             compilerResult = getCompileResultFromBinaryBuild();
         }
         else {
