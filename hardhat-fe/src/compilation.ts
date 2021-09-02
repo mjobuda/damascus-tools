@@ -17,25 +17,29 @@ const fePath = fs.readFileSync(process.cwd()+'/fe_path_name',{encoding:'utf8', f
   console.log(process.cwd());
     return fePath;
 }
-// function compileFileWithFeBinary(fileName) {
-    // const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
-    // const outputFolder = getFeTempOutputFolder();
-    // const rmCommand = "rm -rf " + outputFolder;
-    // if (fileName.endsWith('.git'))
-        // fileName = fileName.slice(0, -4);
-        // if (!fileName.endsWith('.fe')) return;
-    // const feCommand = getFeCommand()
-        // + " "
-        // + fileName + " " + fe_options + " "
-        // + "--output-dir " + outputFolder;
-    // const rmOutput = execSync(rmCommand).toString();
-    // try {
-        // execSync(feCommand);
-    // }
-    // catch (e) {
-        // console.log('[Compiler Exception] ' + e);
-    // }
-// }
+
+function getFeTempOutputFolder() {
+return process.cwd()+'/fe_output'
+}
+function compileFileWithFeBinary(fileName) {
+    const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
+    const outputFolder = getFeTempOutputFolder();
+    const rmCommand = "rm -rf " + outputFolder;
+    if (fileName.endsWith('.git'))
+        fileName = fileName.slice(0, -4);
+        if (!fileName.endsWith('.fe')) return;
+    const feCommand = getFeCommand()
+        + " "
+        + fileName + " " + fe_options + " "
+        + "--output-dir " + outputFolder;
+    const rmOutput = execSync(rmCommand).toString();
+    try {
+        execSync(feCommand);
+    }
+    catch (e) {
+        console.log('[Compiler Exception] ' + e);
+    }
+}
 
 export async function compile(
   feConfig: FeConfig,
@@ -60,14 +64,14 @@ const useFeBinary = fs.existsSync('fe_path_name');
     const sourceName = await localPathToSourceName(paths.root, file);
     const feSourceCode = fs.readFileSync(file, "utf8");
     console.log(feSourceCode);
-    if (useFeBinary)
-      {
-compileFileWithFeBinary(feSourceCode);
-      }
-    else
-      {
+    // if (useFeBinary)
+      // {
+// compileFileWithFeBinary(feSourceCode);
+      // }
+    // else
+      // {
     const compilerResult = fejs.compile(feSourceCode);
-      }
+      // }
     console.log(
       "Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode
     );
