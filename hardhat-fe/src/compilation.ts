@@ -86,7 +86,7 @@ function getCompileResultFromBinaryBuild() {
     {
 
   compilerResult.contracts[fileName] = {};
-  compilerResult.contracts[fileName].bytecode = fs.readFileSync('fe_output/'+fileName+'/'+fileName+'.bin');
+  compilerResult.contracts[fileName].bytecode = fs.readFileSync('fe_output/'+fileName+'/'+fileName+'.bin', "utf8");
     }
   compilerResult.contracts["Fooooooo"] = {};
   compilerResult.contracts["Fooooooo"].bytecode = "uttututu";
