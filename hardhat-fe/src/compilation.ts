@@ -60,7 +60,14 @@ const useFeBinary = fs.existsSync('fe_path_name');
     const sourceName = await localPathToSourceName(paths.root, file);
     const feSourceCode = fs.readFileSync(file, "utf8");
     console.log(feSourceCode);
+    if (useFeBinary)
+      {
+compileFileWithFeBinary(feSourceCode);
+      }
+    else
+      {
     const compilerResult = fejs.compile(feSourceCode);
+      }
     console.log(
       "Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode
     );
