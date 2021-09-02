@@ -112,7 +112,7 @@ export async function compile(
     var compilerResult;
     if (useFeBinary) {
     console.log("Compiling with FeBinary...");
-      compileFileWithFeBinary(feSourceCode);
+      compileFileWithFeBinary(file);
       compilerResult = getCompileResultFromBinaryBuild();
     } else {
     console.log("Compiling with Fejs...");
