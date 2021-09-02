@@ -45,7 +45,7 @@ const fePath = feConfig.fe_binary_path;
   console.log(fePath);
 
   const files = await getFeSources(paths);
-  //console.log(files);
+  console.log(files);
 
   let someContractFailed = false;
 
