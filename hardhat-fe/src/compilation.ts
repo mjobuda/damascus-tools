@@ -9,7 +9,6 @@ import { FeConfig } from "./types";
 
 const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
 
-const fePath = fe_binary_path;
 
 
 function getFeCommand() {
@@ -41,6 +40,8 @@ export async function compile(
   artifacts: Artifacts
 ) {
   const feVersion = feConfig.version;
+
+const fePath = feConfig.fe_binary_path;
 
   const files = await getFeSources(paths);
   //console.log(paths);
