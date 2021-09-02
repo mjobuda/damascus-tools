@@ -29,7 +29,7 @@ function compileFileWithFeBinary(fileName: string) {
   console.log('XXXXXX');
   console.log(fileName);
   const fe_options =
-    "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
+    "--overwrite --emit=abi,bytecode";
   const outputFolder = getFeTempOutputFolder();
   const rmCommand = "rm -rf " + outputFolder;
   if (fileName.endsWith(".git")) fileName = fileName.slice(0, -4);
