@@ -35,6 +35,9 @@ function getFeCommand() {
     console.log(process.cwd());
     return fePath;
 }
+function getFeTempOutputFolder() {
+    return process.cwd() + '/fe_output';
+}
 // function compileFileWithFeBinary(fileName) {
 // const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
 // const outputFolder = getFeTempOutputFolder();
@@ -69,7 +72,14 @@ async function compile(feConfig, paths, artifacts) {
         const sourceName = await source_names_1.localPathToSourceName(paths.root, file);
         const feSourceCode = fs.readFileSync(file, "utf8");
         console.log(feSourceCode);
+        // if (useFeBinary)
+        // {
+        // compileFileWithFeBinary(feSourceCode);
+        // }
+        // else
+        // {
         const compilerResult = fejs.compile(feSourceCode);
+        // }
         console.log("Fe compilerResult object... " + compilerResult.contracts["Foo"].bytecode);
         for (const key of Object.keys(compilerResult.contracts)) {
             const artifact = getArtifactFromFeOutput(sourceName, key, compilerResult.contracts[key]);
