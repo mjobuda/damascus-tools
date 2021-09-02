@@ -40,6 +40,7 @@ export async function compile(
   artifacts: Artifacts
 ) {
   const feVersion = feConfig.version;
+  console.log(feVersion);
 
 const fePath = feConfig.fe_binary_path;
   console.log(fePath);
