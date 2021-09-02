@@ -5,7 +5,7 @@ import { TASK_COMPILE_FE } from "./task-names";
 import "./type-extensions";
 
 extendConfig((config) => {
-  const defaultConfig = { version: "latest", fe_binary_path: "bum!" };
+  const defaultConfig = { version: "latest"};//, fe_binary_path: "bum!" };
   config.fe = { ...defaultConfig, ...config.fe };
 });
 
