@@ -14,25 +14,25 @@ const ARTIFACT_FORMAT_VERSION = "hh-fe-artifact-1";
 function getFeCommand() {
     return "fe";
 }
-function compileFileWithFeBinary(fileName) {
-    const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
-    const outputFolder = getFeTempOutputFolder();
-    const rmCommand = "rm -rf " + outputFolder;
-    if (fileName.endsWith('.git'))
-        fileName = fileName.slice(0, -4);
-        if (!fileName.endsWith('.fe')) return;
-    const feCommand = getFeCommand()
-        + " "
-        + fileName + " " + fe_options + " "
-        + "--output-dir " + outputFolder;
-    const rmOutput = execSync(rmCommand).toString();
-    try {
-        execSync(feCommand);
-    }
-    catch (e) {
-        console.log('[Compiler Exception] ' + e);
-    }
-}
+// function compileFileWithFeBinary(fileName) {
+    // const fe_options = "--overwrite --emit=abi,bytecode,ast,tokens,yul,loweredAst";
+    // const outputFolder = getFeTempOutputFolder();
+    // const rmCommand = "rm -rf " + outputFolder;
+    // if (fileName.endsWith('.git'))
+        // fileName = fileName.slice(0, -4);
+        // if (!fileName.endsWith('.fe')) return;
+    // const feCommand = getFeCommand()
+        // + " "
+        // + fileName + " " + fe_options + " "
+        // + "--output-dir " + outputFolder;
+    // const rmOutput = execSync(rmCommand).toString();
+    // try {
+        // execSync(feCommand);
+    // }
+    // catch (e) {
+        // console.log('[Compiler Exception] ' + e);
+    // }
+// }
 
 export async function compile(
   feConfig: FeConfig,
