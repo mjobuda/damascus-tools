@@ -71,7 +71,7 @@ function getCompileResultFromBinaryBuild() {
   // XYZABC. And to fix bugs in it. And then to redesign it.
   // It's garbage. And nonsense.
   var compilerResult: {[k: string]: any} = {};
-  var compilerResult.contracts: any;
+  var compilerResult['contracts']: any;
   compilerResult.contracts["Fooooooo"] = "kwakwa";
   return compilerResult;
 }
