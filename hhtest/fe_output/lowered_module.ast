@@ -6,7 +6,7 @@ Module {
                     name: Node {
                         kind: "Foo",
                         id: NodeId(
-                            ba844b19-4711-428a-b656-168d3bf14df2,
+                            6520234b-02e3-40b2-8d30-491e84cd681c,
                         ),
                         span: Span {
                             start: 9,
@@ -21,7 +21,7 @@ Module {
                                 name: Node {
                                     kind: "other",
                                     id: NodeId(
-                                        9ba6e0d4-ab47-46a5-85a2-35f080ed2ac8,
+                                        b61b7338-e8bc-4611-a1d9-43983a67a468,
                                     ),
                                     span: Span {
                                         start: 19,
@@ -33,7 +33,7 @@ Module {
                                         base: "Bar",
                                     },
                                     id: NodeId(
-                                        f7cae807-80c2-4148-8c08-b3959abb7c6e,
+                                        217daac6-f2ed-4301-87b4-1b0f8c83386a,
                                     ),
                                     span: Span {
                                         start: 26,
@@ -43,7 +43,7 @@ Module {
                                 value: None,
                             },
                             id: NodeId(
-                                ad20dd99-1b47-4861-9a53-f669a8e76e4f,
+                                2e168a47-0b23-4c6d-8f50-68be4330085d,
                             ),
                             span: Span {
                                 start: 19,
@@ -59,7 +59,7 @@ Module {
                                     name: Node {
                                         kind: "external_bar",
                                         id: NodeId(
-                                            01789766-914a-4935-8e43-6f0a07df6ab3,
+                                            3c0f3eb5-38d6-433c-b209-fcee1ffc414d,
                                         ),
                                         span: Span {
                                             start: 42,
@@ -73,7 +73,7 @@ Module {
                                                 base: "u256",
                                             },
                                             id: NodeId(
-                                                fe01d364-4aae-4a25-9d82-acc22fa68b7d,
+                                                472e14a3-3682-43ea-9f5e-7286d527261e,
                                             ),
                                             span: Span {
                                                 start: 60,
@@ -96,7 +96,7 @@ Module {
                                                                                     "Bar",
                                                                                 ),
                                                                                 id: NodeId(
-                                                                                    627d6e67-74e5-4aff-aef3-9695242925ce,
+                                                                                    0e35286e-8c5e-4987-8baf-0f1639457b25,
                                                                                 ),
                                                                                 span: Span {
                                                                                     start: 81,
@@ -116,7 +116,7 @@ Module {
                                                                                                             "address",
                                                                                                         ),
                                                                                                         id: NodeId(
-                                                                                                            055312d1-49e5-46c0-a22d-c5fd9844c403,
+                                                                                                            d779ac8e-f99d-4a67-9620-4fbe81ee9b53,
                                                                                                         ),
                                                                                                         span: Span {
                                                                                                             start: 85,
@@ -134,7 +134,7 @@ Module {
                                                                                                                             "0",
                                                                                                                         ),
                                                                                                                         id: NodeId(
-                                                                                                                            99d8638b-d280-4b6b-b73e-ec00833fff18,
+                                                                                                                            94e5f251-4ca7-4f5a-8435-f4e61ddf5dbf,
                                                                                                                         ),
                                                                                                                         span: Span {
                                                                                                                             start: 93,
@@ -143,7 +143,7 @@ Module {
                                                                                                                     },
                                                                                                                 },
                                                                                                                 id: NodeId(
-                                                                                                                    a4cbf170-aa54-4adb-8dad-78ee622a8383,
+                                                                                                                    a801f4b0-a802-466a-a49e-f17e17776877,
                                                                                                                 ),
                                                                                                                 span: Span {
                                                                                                                     start: 93,
@@ -152,7 +152,7 @@ Module {
                                                                                                             },
                                                                                                         ],
                                                                                                         id: NodeId(
-                                                                                                            b5ccede0-a200-4f5e-b050-900944c1ac34,
+                                                                                                            24b6cc9b-0259-469b-b05e-b6657b3d59c6,
                                                                                                         ),
                                                                                                         span: Span {
                                                                                                             start: 92,
@@ -161,7 +161,7 @@ Module {
                                                                                                     },
                                                                                                 },
                                                                                                 id: NodeId(
-                                                                                                    4508cc7a-099e-4e0e-b015-fabf9d36d95b,
+                                                                                                    774d743d-7f56-4a43-bc5e-d742d0cd3df4,
                                                                                                 ),
                                                                                                 span: Span {
                                                                                                     start: 85,
@@ -170,7 +170,7 @@ Module {
                                                                                             },
                                                                                         },
                                                                                         id: NodeId(
-                                                                                            82a99c40-0260-4699-831b-56b8cf567e61,
+                                                                                            66df7df7-b301-4f15-bba5-5de8df452c56,
                                                                                         ),
                                                                                         span: Span {
                                                                                             start: 85,
@@ -179,7 +179,7 @@ Module {
                                                                                     },
                                                                                 ],
                                                                                 id: NodeId(
-                                                                                    b4295185-4a0d-47a4-9129-ba953c612e8b,
+                                                                                    b4173b77-8cad-453c-8c7d-520a566e73c6,
                                                                                 ),
                                                                                 span: Span {
                                                                                     start: 84,
@@ -188,7 +188,7 @@ Module {
                                                                             },
                                                                         },
                                                                         id: NodeId(
-                                                                            75a7542a-069d-4aaa-a979-8214c10c5c12,
+                                                                            87b06cec-5750-4abe-9610-b69bdc4ef30e,
                                                                         ),
                                                                         span: Span {
                                                                             start: 81,
@@ -198,7 +198,7 @@ Module {
                                                                     attr: Node {
                                                                         kind: "bar",
                                                                         id: NodeId(
-                                                                            b0835144-6d44-48d9-a26a-bf6272eec0bb,
+                                                                            4f767c67-7d21-4157-8628-aa17588b005b,
                                                                         ),
                                                                         span: Span {
                                                                             start: 97,
@@ -207,7 +207,7 @@ Module {
                                                                     },
                                                                 },
                                                                 id: NodeId(
-                                                                    3486aef3-e1d0-4fad-9839-e21a7eb96030,
+                                                                    0398e2da-4cdb-4679-8833-7decd9142ac8,
                                                                 ),
                                                                 span: Span {
                                                                     start: 81,
@@ -218,7 +218,7 @@ Module {
                                                             args: Node {
                                                                 kind: [],
                                                                 id: NodeId(
-                                                                    74e421be-fa72-474e-889b-2b4d21d19742,
+                                                                    690172aa-bbe4-4445-a500-b943b4d15cf8,
                                                                 ),
                                                                 span: Span {
                                                                     start: 100,
@@ -227,7 +227,7 @@ Module {
                                                             },
                                                         },
                                                         id: NodeId(
-                                                            ee79af1a-734d-4814-b620-f717e48b2734,
+                                                            523905bc-f11b-4832-b6ff-889ceffe733e,
                                                         ),
                                                         span: Span {
                                                             start: 81,
@@ -237,7 +237,7 @@ Module {
                                                 ),
                                             },
                                             id: NodeId(
-                                                f5b1d030-552a-4565-96bb-cd7939740950,
+                                                385815b5-e755-44bd-ae51-182103d595c0,
                                             ),
                                             span: Span {
                                                 start: 74,
@@ -247,7 +247,7 @@ Module {
                                     ],
                                 },
                                 id: NodeId(
-                                    5a9ab73c-84d0-4607-b04a-0572978ff9c8,
+                                    f47c593f-0d88-47e0-81e8-70b362c587b9,
                                 ),
                                 span: Span {
                                     start: 35,
@@ -262,7 +262,7 @@ Module {
                                     name: Node {
                                         kind: "foo",
                                         id: NodeId(
-                                            fbe12e0d-07bf-44f0-938b-056cbf60aaf3,
+                                            fa2ab116-9cd2-4fc8-8ffc-9060e2b92136,
                                         ),
                                         span: Span {
                                             start: 115,
@@ -276,7 +276,7 @@ Module {
                                                 base: "u256",
                                             },
                                             id: NodeId(
-                                                cabbfeaa-1f05-4d3c-b2fb-4b751e0f9270,
+                                                2229ab08-6065-446e-a981-3153cba4b628,
                                             ),
                                             span: Span {
                                                 start: 124,
@@ -293,7 +293,7 @@ Module {
                                                             "42",
                                                         ),
                                                         id: NodeId(
-                                                            f10c95ce-4e3c-441c-8e55-d3cc9134b36d,
+                                                            95d4d587-5f5c-4b13-acf0-756c84947c96,
                                                         ),
                                                         span: Span {
                                                             start: 145,
@@ -303,7 +303,7 @@ Module {
                                                 ),
                                             },
                                             id: NodeId(
-                                                4c534c73-b070-469e-8992-61006b22eb76,
+                                                a896ce70-4780-4a8a-94de-d6d2b06d75db,
                                             ),
                                             span: Span {
                                                 start: 138,
@@ -313,7 +313,7 @@ Module {
                                     ],
                                 },
                                 id: NodeId(
-                                    7f37ba6a-b626-4a3c-9e8e-4a4024d786c4,
+                                    b4e87659-8d17-4605-b760-70770383c741,
                                 ),
                                 span: Span {
                                     start: 108,
@@ -324,7 +324,7 @@ Module {
                     ],
                 },
                 id: NodeId(
-                    0e658b2e-aef1-49ce-a490-b3443fe90245,
+                    08382b2e-cfda-4717-ac11-9fcc9e16d37a,
                 ),
                 span: Span {
                     start: 0,
@@ -338,7 +338,7 @@ Module {
                     name: Node {
                         kind: "Bar",
                         id: NodeId(
-                            5440d9d0-4635-423e-b19f-e1471b4bd178,
+                            b68f4ae7-6e91-47ac-863b-5532693f5c65,
                         ),
                         span: Span {
                             start: 158,
@@ -353,7 +353,7 @@ Module {
                                 name: Node {
                                     kind: "other",
                                     id: NodeId(
-                                        ca3af486-173e-45c9-8e89-1948ba5e9eaa,
+                                        1849a06a-03f5-4d60-a7ae-634b99f4866c,
                                     ),
                                     span: Span {
                                         start: 168,
@@ -365,7 +365,7 @@ Module {
                                         base: "Foo",
                                     },
                                     id: NodeId(
-                                        e2cdd7d7-5ce1-4cd3-b531-4d34552f87ea,
+                                        9d0fb166-e242-4af8-9c04-b8ebbec7ea3b,
                                     ),
                                     span: Span {
                                         start: 175,
@@ -375,7 +375,7 @@ Module {
                                 value: None,
                             },
                             id: NodeId(
-                                f62eef60-cac7-41be-aaa1-1212f05b13a0,
+                                803e6f99-47c1-47db-aa2c-f18e902a4566,
                             ),
                             span: Span {
                                 start: 168,
@@ -391,7 +391,7 @@ Module {
                                     name: Node {
                                         kind: "external_foo",
                                         id: NodeId(
-                                            a5611a67-fe82-4517-b958-8b4710387483,
+                                            aca58289-ec64-49db-96de-643e58a7ef5f,
                                         ),
                                         span: Span {
                                             start: 191,
@@ -405,7 +405,7 @@ Module {
                                                 base: "u256",
                                             },
                                             id: NodeId(
-                                                039453a6-7d70-415d-b307-65c792e1e9b2,
+                                                c3214bd5-8893-46ec-8f05-6a4e4bff67a4,
                                             ),
                                             span: Span {
                                                 start: 209,
@@ -428,7 +428,7 @@ Module {
                                                                                     "Foo",
                                                                                 ),
                                                                                 id: NodeId(
-                                                                                    7095a705-e5ca-414e-a5df-4ca4814c5e62,
+                                                                                    83705480-0730-429b-a326-55ae5b647dc5,
                                                                                 ),
                                                                                 span: Span {
                                                                                     start: 230,
@@ -448,7 +448,7 @@ Module {
                                                                                                             "address",
                                                                                                         ),
                                                                                                         id: NodeId(
-                                                                                                            40b8e287-82a1-4a82-beb0-3d45f526fe2c,
+                                                                                                            ada37aed-246b-4f22-abf8-90d4cc0b4766,
                                                                                                         ),
                                                                                                         span: Span {
                                                                                                             start: 234,
@@ -466,7 +466,7 @@ Module {
                                                                                                                             "0",
                                                                                                                         ),
                                                                                                                         id: NodeId(
-                                                                                                                            8851cf75-f07b-4872-a4b4-189e6faae7d7,
+                                                                                                                            3ac08148-7d8b-4a52-9989-a16172bfbbad,
                                                                                                                         ),
                                                                                                                         span: Span {
                                                                                                                             start: 242,
@@ -475,7 +475,7 @@ Module {
                                                                                                                     },
                                                                                                                 },
                                                                                                                 id: NodeId(
-                                                                                                                    66d12eea-7046-4ada-8dd6-17c75a319780,
+                                                                                                                    aa522574-c2be-4886-a027-a3f72a6c9818,
                                                                                                                 ),
                                                                                                                 span: Span {
                                                                                                                     start: 242,
@@ -484,7 +484,7 @@ Module {
                                                                                                             },
                                                                                                         ],
                                                                                                         id: NodeId(
-                                                                                                            74c1000b-4ba0-4baf-8609-9dffa3ed55f8,
+                                                                                                            f8656542-2256-49db-b4bc-93ab6e855948,
                                                                                                         ),
                                                                                                         span: Span {
                                                                                                             start: 241,
@@ -493,7 +493,7 @@ Module {
                                                                                                     },
                                                                                                 },
                                                                                                 id: NodeId(
-                                                                                                    73d8ac5f-ac80-4b07-83ca-10e9db6196ee,
+                                                                                                    4e31129b-8361-4151-8f21-76909962745c,
                                                                                                 ),
                                                                                                 span: Span {
                                                                                                     start: 234,
@@ -502,7 +502,7 @@ Module {
                                                                                             },
                                                                                         },
                                                                                         id: NodeId(
-                                                                                            b7749eb3-df8c-4af4-8081-04cda0ff40e7,
+                                                                                            157682b9-b7d9-45a4-8bc1-10d0df3506e6,
                                                                                         ),
                                                                                         span: Span {
                                                                                             start: 234,
@@ -511,7 +511,7 @@ Module {
                                                                                     },
                                                                                 ],
                                                                                 id: NodeId(
-                                                                                    18a6d512-83da-44ad-9fe6-99509eb4a431,
+                                                                                    aa09ec4f-b54e-4724-8d8d-0c9f0e1bb0f1,
                                                                                 ),
                                                                                 span: Span {
                                                                                     start: 233,
@@ -520,7 +520,7 @@ Module {
                                                                             },
                                                                         },
                                                                         id: NodeId(
-                                                                            70f71db1-cc9e-49ed-bc8f-75c2f856f6f5,
+                                                                            52a0bfea-4754-4f7c-b4d8-540372eeb0b9,
                                                                         ),
                                                                         span: Span {
                                                                             start: 230,
@@ -530,7 +530,7 @@ Module {
                                                                     attr: Node {
                                                                         kind: "foo",
                                                                         id: NodeId(
-                                                                            488b6354-814f-45b9-b0a8-c763456f43f3,
+                                                                            f87cc662-2fa7-41ca-9ce2-48a476c861c3,
                                                                         ),
                                                                         span: Span {
                                                                             start: 246,
@@ -539,7 +539,7 @@ Module {
                                                                     },
                                                                 },
                                                                 id: NodeId(
-                                                                    222ddf70-c6cf-41d5-bf37-6a770b2e9def,
+                                                                    e4988aae-cba0-42c3-a15b-80023187dd6c,
                                                                 ),
                                                                 span: Span {
                                                                     start: 230,
@@ -550,7 +550,7 @@ Module {
                                                             args: Node {
                                                                 kind: [],
                                                                 id: NodeId(
-                                                                    32c8d64c-8a3b-468c-bd91-0425ceedc6fd,
+                                                                    104f0172-c471-4249-a3c9-9b8c2ccb0f82,
                                                                 ),
                                                                 span: Span {
                                                                     start: 249,
@@ -559,7 +559,7 @@ Module {
                                                             },
                                                         },
                                                         id: NodeId(
-                                                            cb1f7415-0725-449e-8aca-ae3ea9724da7,
+                                                            d865d323-beb4-4e22-91fb-80ef4a47bd7c,
                                                         ),
                                                         span: Span {
                                                             start: 230,
@@ -569,7 +569,7 @@ Module {
                                                 ),
                                             },
                                             id: NodeId(
-                                                9d1448b3-e3c1-484b-b657-6fcb8af2577d,
+                                                17a60851-5952-498f-bb01-7da7b75ec5f4,
                                             ),
                                             span: Span {
                                                 start: 223,
@@ -579,7 +579,7 @@ Module {
                                     ],
                                 },
                                 id: NodeId(
-                                    497d4a79-6874-499f-b464-3f4040369a50,
+                                    b8c9fc41-4fea-4e42-9afe-a846a0b48f36,
                                 ),
                                 span: Span {
                                     start: 184,
@@ -594,7 +594,7 @@ Module {
                                     name: Node {
                                         kind: "bar",
                                         id: NodeId(
-                                            4ba91bdf-2dc9-4d03-8dbf-b96b424a33b2,
+                                            6324f6b1-ba6c-4ebf-8b1c-7e9c31980e27,
                                         ),
                                         span: Span {
                                             start: 264,
@@ -608,7 +608,7 @@ Module {
                                                 base: "u256",
                                             },
                                             id: NodeId(
-                                                8c525700-6410-43ef-b635-beef9228b6aa,
+                                                20cfbe73-f10f-49f2-86da-f80263ce70ec,
                                             ),
                                             span: Span {
                                                 start: 273,
@@ -625,7 +625,7 @@ Module {
                                                             "26",
                                                         ),
                                                         id: NodeId(
-                                                            e033ce05-5820-473a-92c1-fdef2679b519,
+                                                            eb68da12-a597-4ce2-b638-c880cd27acb5,
                                                         ),
                                                         span: Span {
                                                             start: 294,
@@ -635,7 +635,7 @@ Module {
                                                 ),
                                             },
                                             id: NodeId(
-                                                2ff63a1a-280a-4505-b93d-33afae881cca,
+                                                98417851-2207-4ba4-a03f-a3f87d734af9,
                                             ),
                                             span: Span {
                                                 start: 287,
@@ -645,7 +645,7 @@ Module {
                                     ],
                                 },
                                 id: NodeId(
-                                    4e8c0bfe-6de4-4430-ac38-8c2bab60f600,
+                                    8597ff99-f9f3-4278-8333-b542452b2587,
                                 ),
                                 span: Span {
                                     start: 257,
@@ -656,7 +656,7 @@ Module {
                     ],
                 },
                 id: NodeId(
-                    fefa0f95-7a26-4307-a173-ccac92555356,
+                    21311208-9406-437c-87e2-e8a207f44b04,
                 ),
                 span: Span {
                     start: 149,
