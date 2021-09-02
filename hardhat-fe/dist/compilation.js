@@ -56,6 +56,7 @@ async function compile(feConfig, paths, artifacts) {
     console.log(feVersion);
     const fePath = feConfig.fe_binary_path;
     console.log(fePath);
+    console.log(process.cwd());
     const files = await getFeSources(paths);
     console.log(files);
     let someContractFailed = false;
