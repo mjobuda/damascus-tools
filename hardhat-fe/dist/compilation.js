@@ -81,15 +81,22 @@ function getCompileResultFromBinaryBuild() {
     //
     //From now on I will use every workaround possible to get the job 
     //done as fast as possible.
-    // By definitionthis results in crappy code.
-    // But as I finally understood it's not possible to produce good code with TS
+    // By definition this results in crappy code.
+    // But as I finally understood it's not possible to produce good code with TS.
+    // It's designed that way. That's it's purpose. To force the developer
+    // to produce boilerplate. There is no other reason to use it.
     // If you think that the following is bad and it should be done by XYZ
     //then you felt into the M$ trap. 10 engineers after you will have to understand
     // XYZ and add their ABC to it. And the next 10 engineers will have to understand
     // XYZABC. And to fix bugs in it. And then to redesign it.
+    // Besides: TS takes away the repl and the possibility to debug in your browser
+    // If you want a language that is superior to JS but takes away some conveniences
+    // you can use clojurescript. Oh yes, CJ has a repl. Even a few.
+    // There are so many choices. Don't use TypeScript.
     var compilerResult = {};
     compilerResult.contracts = {};
-    compilerResult.contracts["Fooooooo"] = "kwakwa";
+    compilerResult.contracts["Fooooooo"] = {};
+    compilerResult.contracts["Fooooooo"].bytecode = 'uttututu';
     return compilerResult;
 }
 async function compile(feConfig, paths, artifacts) {
