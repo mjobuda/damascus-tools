@@ -26,10 +26,9 @@ function getFeTempOutputFolder() {
 }
 
 function compileFileWithFeBinary(fileName: string) {
-  console.log('XXXXXX');
+  console.log("XXXXXX");
   console.log(fileName);
-  const fe_options =
-    "--overwrite --emit=abi,bytecode";
+  const fe_options = "--overwrite --emit=abi,bytecode";
   const outputFolder = getFeTempOutputFolder();
   const rmCommand = "rm -rf " + outputFolder;
   if (fileName.endsWith(".git")) fileName = fileName.slice(0, -4);
@@ -81,13 +80,14 @@ function getCompileResultFromBinaryBuild() {
   // There are so many choices. Don't use TypeScript.
   var compilerResult: { [k: string]: any } = {};
   compilerResult.contracts = {};
-  const FE_OUTPUT=fs.readdirSync('fe_output');
-  for (const fileName of FE_OUTPUT)
-    {
-
-  compilerResult.contracts[fileName] = {};
-  compilerResult.contracts[fileName].bytecode = fs.readFileSync('fe_output/'+fileName+'/'+fileName+'.bin', "utf8");
-    }
+  const FE_OUTPUT = fs.readdirSync("fe_output");
+  for (const fileName of FE_OUTPUT) {
+    compilerResult.contracts[fileName] = {};
+    compilerResult.contracts[fileName].bytecode = fs.readFileSync(
+      "fe_output/" + fileName + "/" + fileName + ".bin",
+      "utf8"
+    );
+  }
   return compilerResult;
 }
 
@@ -116,11 +116,11 @@ export async function compile(
     console.log(feSourceCode);
     var compilerResult;
     if (useFeBinary) {
-    console.log("Compiling with FeBinary...");
+      console.log("Compiling with FeBinary...");
       compileFileWithFeBinary(file);
       compilerResult = getCompileResultFromBinaryBuild();
     } else {
-    console.log("Compiling with Fejs...");
+      console.log("Compiling with Fejs...");
       compilerResult = fejs.compile(feSourceCode);
     }
     for (const key of Object.keys(compilerResult.contracts)) {
@@ -175,8 +175,8 @@ function getArtifactFromFeOutput(
 }
 
 function add0xPrefixIfNecessary(hex: string): string {
-    console.log("...hex...");
-    console.log(hex);
+  console.log("...hex...");
+  console.log(hex);
   hex = hex.toLowerCase();
 
   if (hex.slice(0, 2) === "0x") {
