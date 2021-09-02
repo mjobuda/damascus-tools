@@ -64,6 +64,7 @@ function getCompileResultFromBinaryBuild() {
       "fe_output/" + fileName + "/" + fileName + ".bin",
       "utf8"
     );
+
     compilerResult.contracts[fileName].abi = fs.readFileSync(
       "fe_output/" + fileName + "/" + fileName + "_abi.json",
       "utf8"
