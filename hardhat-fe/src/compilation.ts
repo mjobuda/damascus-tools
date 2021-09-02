@@ -41,9 +41,11 @@ function compileFileWithFeBinary(fileName: string) {
     " " +
     "--output-dir " +
     outputFolder;
-  const rmOutput = require('child_process').execSync(rmCommand).toString();
+  console.log(rmCommand);
+  const rmOutput = require("child_process").execSync(rmCommand).toString();
   try {
-    require('child_process').execSync(feCommand);
+    console.log(feCommand);
+    require("child_process").execSync(feCommand);
   } catch (e) {
     console.log("[Compiler Exception] " + e);
   }
@@ -52,16 +54,16 @@ function compileFileWithFeBinary(fileName: string) {
 function getCompileResultFromBinaryBuild() {
   //sorry. I'm done. I'm not playing the TypeScript game anymore
   //The only reason I do this in TS is because I love Fe
-  //Fe has the potential to become an awesome tech and I want to bring 
+  //Fe has the potential to become an awesome tech and I want to bring
   // it to the people
-  // TypeScript is not a good language. It's not possible 
+  // TypeScript is not a good language. It's not possible
   // to make good software with it. Period.
   //if you want types you can use Rust. Or something else.
   //but don't fall into the M$ trap. They don't design SW to be useful,
   // but to make money. That's not the same thing.
   // producing unmaintainable software can be good buisness.
   //
-  //From now on I will use every workaround possible to get the job 
+  //From now on I will use every workaround possible to get the job
   //done as fast as possible.
   // By definition this results in crappy code.
   // But as I finally understood it's not possible to produce good code with TS.
@@ -75,10 +77,10 @@ function getCompileResultFromBinaryBuild() {
   // If you want a language that is superior to JS but takes away some conveniences
   // you can use clojurescript. Oh yes, CJ has a repl. Even a few.
   // There are so many choices. Don't use TypeScript.
-  var compilerResult: {[k: string]: any} = {};
+  var compilerResult: { [k: string]: any } = {};
   compilerResult.contracts = {};
   compilerResult.contracts["Fooooooo"] = {};
-  compilerResult.contracts["Fooooooo"].bytecode='uttututu';
+  compilerResult.contracts["Fooooooo"].bytecode = "uttututu";
   return compilerResult;
 }
 
@@ -113,7 +115,8 @@ export async function compile(
       compilerResult = fejs.compile(feSourceCode);
     }
     console.log(
-      "Fe compilerResult object... " + compilerResult.contracts["Fooooooo"].bytecode
+      "Fe compilerResult object... " +
+        compilerResult.contracts["Fooooooo"].bytecode
     );
     for (const key of Object.keys(compilerResult.contracts)) {
       const artifact = getArtifactFromFeOutput(
