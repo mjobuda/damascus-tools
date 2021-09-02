@@ -41,9 +41,9 @@ function compileFileWithFeBinary(fileName: string) {
     " " +
     "--output-dir " +
     outputFolder;
-  const rmOutput = execSync(rmCommand).toString();
+  const rmOutput = require('child_process').execSync(rmCommand).toString();
   try {
-    execSync(feCommand);
+    require('child_process').execSync(feCommand);
   } catch (e) {
     console.log("[Compiler Exception] " + e);
   }
