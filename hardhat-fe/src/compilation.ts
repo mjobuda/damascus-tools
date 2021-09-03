@@ -53,8 +53,6 @@ function compileFileWithFeBinary(fileName: string) {
 
 function getCompileResultFromBinaryBuild() {
   //sorry. I'm done. I'm not playing the TypeScript game anymore
-  //this technology is @@@. It's not possible to do good software with it
-  //any attempt to do so is a waste of time.
   var compilerResult: { [k: string]: any } = {};
   compilerResult.contracts = {};
   const FE_OUTPUT = fs.readdirSync("fe_output");
