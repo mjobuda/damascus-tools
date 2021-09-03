@@ -3,7 +3,6 @@ import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import { Artifact, Artifacts, ProjectPathsConfig } from "hardhat/types";
 import { localPathToSourceName } from "hardhat/utils/source-names";
 import path from "path";
-var fejs = require("@berlinvege/fejs");
 import * as fs from "fs";
 import { FeConfig } from "./types";
 
@@ -100,6 +99,7 @@ export async function compile(
       compileFileWithFeBinary(file);
       compilerResult = getCompileResultFromBinaryBuild();
     } else {
+      var fejs = require("@berlinvege/fejs");
       console.log("Compiling with Fejs...");
       compilerResult = fejs.compile(feSourceCode);
     }
