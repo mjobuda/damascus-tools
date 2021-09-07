@@ -7,8 +7,8 @@ import sys
 
 from setuptools import find_packages, setup
 
-with open(os.path.join(os.path.dirname(__file__), "README.rst")) as f:
-    long_description = f.read()
+#  with open(os.path.join(os.path.dirname(__file__), "README.rst")) as f:
+    #  long_description = f.read()
 
 
 setup(
