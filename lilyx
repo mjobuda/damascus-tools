@@ -1,3 +1,4 @@
+/usr/bin/python
 import re
 import sys
 from ptpython.entry_points.run_ptpython import run
