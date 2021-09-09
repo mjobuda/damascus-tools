@@ -13,5 +13,7 @@ setup(
     description='lil repl for a lissp',
     packages=find_packages(),    
     install_requires=['ptpython >= 3.0.0', 'hissp'],
-    scripts=['scripts/lily.py']
+    entry_points={
+        'console_scripts': ['lily=lily:main']
+    }
 )
