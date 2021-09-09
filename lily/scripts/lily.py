@@ -64,5 +64,6 @@ def newEval(self,expression):
     self.current_statement_index += 1
     self.signatures = []
 
-ptpython.repl.PythonRepl.run_and_show_expression = newEval
-ptpython.repl.embed(globals(), locals(),configure=configure,history_filename='.lily_history')
+def run():
+    ptpython.repl.PythonRepl.run_and_show_expression = newEval
+    ptpython.repl.embed(globals(), locals(),configure=configure,history_filename='.lily_history')
