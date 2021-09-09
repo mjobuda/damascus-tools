@@ -10,7 +10,7 @@ setup(
     url='',
     author='Marek Owsikowski',
     author_email='owsikowski@gmail.com',
-    description='lil repl for lissp',
+    description='lil repl for a lissp',
     packages=find_packages(),    
-    install_requires=['ptpython >= 3.0.0', 'matplotlib >= 1.5.1'],
+    install_requires=['ptpython >= 3.0.0', 'hissp >= 0.3.0'],
 )
