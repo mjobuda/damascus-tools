@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 setup(
     name='lily',
     version='0.8.0',
-    url='',
+    url='https://github.com/mjobuda/damascus-tools',
     author='Marek Owsikowski',
     author_email='owsikowski@gmail.com',
     description='lil repl for a lissp',
