@@ -23,11 +23,11 @@ setup(
         hissp
     ],
     python_requires=">=3.6",
-    packages=find_packages(where="src"),
+    packages=find_packages(),
     package_dir={"": "src"},
     entry_points={
         "console_scripts": [
-            "lily = src.lily.run"
+            "lily = src.lily:run"
         ]
     })
 
