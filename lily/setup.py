@@ -18,8 +18,8 @@ setup(
     url="https://github.com/mjobuda/damascus-tools/tree/main/lily",
     description="Lissp REPL. Based on ptpython",
     install_requires=[
-        ptpython,
-        hissp
+        "ptpython",
+        "hissp"
     ],
     python_requires=">=3.6",
     packages=find_packages(),
