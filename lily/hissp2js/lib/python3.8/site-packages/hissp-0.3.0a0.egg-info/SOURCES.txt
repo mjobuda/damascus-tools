@@ -1,0 +1,16 @@
+README.md
+setup.py
+src/hissp/LICENSE.txt
+src/hissp/__init__.py
+src/hissp/__main__.py
+src/hissp/basic.lissp
+src/hissp/basic.py
+src/hissp/compiler.py
+src/hissp/munger.py
+src/hissp/reader.py
+src/hissp/repl.py
+src/hissp.egg-info/PKG-INFO
+src/hissp.egg-info/SOURCES.txt
+src/hissp.egg-info/dependency_links.txt
+src/hissp.egg-info/entry_points.txt
+src/hissp.egg-info/top_level.txt

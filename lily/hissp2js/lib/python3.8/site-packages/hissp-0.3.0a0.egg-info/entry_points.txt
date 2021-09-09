@@ -1,0 +1,3 @@
+[console_scripts]
+lissp = hissp.__main__:main
+

@@ -1,0 +1,66 @@
+
+Transcrypt (TM) Python to JavaScript Small Sane Subset Transpiler Version 3.9.0
+Copyright (C) Geatec Engineering. License: Apache 2.0
+
+
+Performing static type validation on application: //home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/modules/org/transcrypt/__runtime__.py
+The following inconsistencies were found:
+	Success: no issues found in 1 source file
+	
+
+Performing lightweight consistency check on module: //home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/modules/org/transcrypt/__runtime__.py
+	Line 24: undefined name 'Error'
+	Line 25: undefined name 'Error'
+	Line 169: use ==/!= to compare constant literals (str, bytes, int, float, tuple)
+	Line 178: use ==/!= to compare constant literals (str, bytes, int, float, tuple)
+	Line 195: use ==/!= to compare constant literals (str, bytes, int, float, tuple)
+	Line 204: use ==/!= to compare constant literals (str, bytes, int, float, tuple)
+	Line 219: use ==/!= to compare constant literals (str, bytes, int, float, tuple)
+	Line 225: use ==/!= to compare constant literals (str, bytes, int, float, tuple)
+
+Saving target code in: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/__target__/org.transcrypt.__runtime__.js
+Performing static type validation on application: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/static_types.py
+The following inconsistencies were found:
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/mod2/__init__.py:2: error: Incompatible return value type (got "int", expected "str")
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/mod1.py:3: error: Incompatible types in assignment (expression has type "float", variable has type "int")
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/mod1.py:4: error: Incompatible return value type (got "str", expected "int")
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/static_types.py:8: error: Incompatible types in assignment (expression has type "float", variable has type "int")
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/static_types.py:16: error: Incompatible return value type (got "int", expected "Iterator[int]")
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/static_types.py:19: error: No return value expected
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/static_types.py:26: error: No return value expected
+	Found 7 errors in 3 files (checked 1 source file)
+	
+
+Performing lightweight consistency check on module: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/static_types.py
+	Line 5: 'mod1' imported but unused
+	Line 6: 'mod2' imported but unused
+
+Performing static type validation on application: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/mod2/__init__.py
+The following inconsistencies were found:
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/mod2/__init__.py:2: error: Incompatible return value type (got "int", expected "str")
+	Found 1 error in 1 file (checked 1 source file)
+	
+
+Saving target code in: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/__target__/mod2.js
+Performing static type validation on application: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/mod1.py
+The following inconsistencies were found:
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/mod1.py:3: error: Incompatible types in assignment (expression has type "float", variable has type "int")
+	/home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/mod1.py:4: error: Incompatible return value type (got "str", expected "int")
+	Found 2 errors in 1 file (checked 1 source file)
+	
+
+Performing lightweight consistency check on module: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/mod1.py
+	Line 3: local variable 'a' is assigned to but never used
+
+Saving target code in: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/__target__/mod1.js
+Performing static type validation on application: //home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/modules/typing/__init__.py
+The following inconsistencies were found:
+	Success: no issues found in 1 source file
+	
+
+Saving target code in: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/__target__/typing.js
+Saving target code in: /home/jac/active/geatec/transcrypt/qquick/Transcrypt/transcrypt/development/manual_tests/static_types/__target__/static_types.js
+
+Ready
+
+
