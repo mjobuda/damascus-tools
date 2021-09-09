@@ -14,6 +14,6 @@ setup(
     packages=find_packages(),    
     install_requires=['ptpython >= 3.0.0', 'hissp'],
     entry_points={
-        'console_scripts': ['lily=lily:main']
+        'console_scripts': ['lily=lily:run']
     }
 )
