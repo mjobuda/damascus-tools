@@ -1,0 +1,18 @@
+function! Bumm()
+py3 << EOF
+
+import vim
+import os
+
+# Open file
+fd = os.open("command",os.O_RDWR|os.CREAT)
+
+# Writing text
+ret = os.write(fd,"BUMM")
+
+EOF
+
+endfunction
+
+com! bumm call Bumm()
+nnoremap Q :Conv<CR>
