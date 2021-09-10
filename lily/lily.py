@@ -37,8 +37,8 @@ sys.modules["__main__"] = __main__
 #  lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
 oldRepl = hissp.repl.LisspREPL()
 #  oldRepl.lissp.filename="<input>"
+oldRepl.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
 lissp = oldRepl.lissp
-lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
 def newEval(self,expression):
     try:
         expression = lissp.compile(expression)
