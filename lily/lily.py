@@ -63,7 +63,7 @@ def newEval(self,expression):
     except Exception as EEE:
         print('no! no,no\n')
         import traceback
-        xprint("lil' traceback:\n"+'\n'.join( traceback.format_exc().split('\n')[5:]))
+        xprint("lil' traceback:\n"+'\n'.join( traceback.format_exc().split('\n')[:]))
     if result is not None:
         # Print.
         self.show_result(result)
