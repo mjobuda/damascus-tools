@@ -33,12 +33,12 @@ def xprint(expression,prompt=">>> ", newline="... ",lexer=LisspReplLexer,formatt
 #  locals()["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
 __main__ = ModuleType("__main__")
 sys.modules["__main__"] = __main__
-lissp = Lissp(ns=__main__.__dict__)
+#  lissp = Lissp(ns=__main__.__dict__)
 #  lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
-#  oldRepl = hissp.repl.LisspREPL()
+oldRepl = hissp.repl.LisspREPL()
 #  oldRepl.lissp.filename="<input>"
-#  oldRepl.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
-#  lissp = oldRepl.lissp
+oldRepl.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
+lissp = oldRepl.lissp
 def newEval(self,expression):
     try:
         expression = lissp.compile(expression)
@@ -72,10 +72,10 @@ def newEval(self,expression):
     self.signatures = []
 
 def run():
-    from hissp.basic import _macro_
+    #  from hissp.basic import _macro_
     #  locals()["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
     ptpython.repl.PythonRepl.run_and_show_expression = newEval
-    ptpython.repl.embed(globals(), locals(),configure=configure,history_filename='.lily_history')
+    ptpython.repl.embed(globals(), locals()+oldRepl.locals["_macro_"],configure=configure,history_filename='.lily_history')
 
 if __name__ == "__main__":
     run()
