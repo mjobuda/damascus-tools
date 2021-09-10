@@ -16,7 +16,7 @@ import ptpython.repl
 
 from hissp.reader import Lissp, SoftSyntaxError
 import hissp.basic
-from hissp.repl import LisspRepl
+import hissp.repl 
 from types import ModuleType, SimpleNamespace
         
 from pygments.lexers import PythonLexer, PythonTracebackLexer
@@ -35,7 +35,7 @@ __main__ = ModuleType("__main__")
 sys.modules["__main__"] = __main__
 lissp = Lissp(ns=__main__.__dict__)
 lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
-oldRepl = LisspREPL(locals=__main__.__dict__)
+oldRepl = hissp.repl.LisspREPL(locals=__main__.__dict__)
 oldRepl.lissp.filename="<input>"
 def newEval(self,expression):
     oldRepl.runsource(expression)
