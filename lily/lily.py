@@ -34,7 +34,7 @@ def xprint(expression,prompt=">>> ", newline="... ",lexer=LisspReplLexer,formatt
 __main__ = ModuleType("__main__")
 sys.modules["__main__"] = __main__
 lissp = Lissp(ns=__main__.__dict__)
-lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
+#  lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
 oldRepl = hissp.repl.LisspREPL(locals=__main__.__dict__)
 oldRepl.lissp.filename="<input>"
 def newEval(self,expression):
