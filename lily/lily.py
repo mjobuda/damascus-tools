@@ -72,7 +72,8 @@ def newEval(self,expression):
     self.signatures = []
 
 def run():
-    locals()["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
+    from hissp.basic import _macro_
+    #  locals()["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
     ptpython.repl.PythonRepl.run_and_show_expression = newEval
     ptpython.repl.embed(globals(), locals(),configure=configure,history_filename='.lily_history')
 
