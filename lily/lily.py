@@ -67,3 +67,6 @@ def newEval(self,expression):
 def run():
     ptpython.repl.PythonRepl.run_and_show_expression = newEval
     ptpython.repl.embed(globals(), locals(),configure=configure,history_filename='.lily_history')
+
+if __name__ == "__main__":
+    run()
