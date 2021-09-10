@@ -5,10 +5,9 @@ import vim
 import os
 
 # Open file
-fd = os.open("command",'rw')
-
+fd = open("command",'w') 
 # Writing text
-ret = os.write(fd,"BUMM")
+os.write(fd,"BUMM")
 
 EOF
 
