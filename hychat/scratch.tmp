@@ -14,5 +14,5 @@ EOF
 
 endfunction
 
-com! bumm call Bumm()
-nnoremap Q :Conv<CR>
+com! Buu call Bumm()
+nnoremap Q :Buu<CR>
