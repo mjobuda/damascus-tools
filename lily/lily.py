@@ -58,7 +58,8 @@ def newEval(self,expression):
     xprint(expression)
     result = None
     try:
-        result = self.eval(expression)
+        #  result = self.eval(expression)
+        result = eval(expression)
     except Exception as EEE:
         print('no! no,no\n')
         import traceback
