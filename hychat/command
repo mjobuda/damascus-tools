@@ -1,1 +1,1 @@
-(import starlette.applications :as SA)
+(defn/a homepage[req] (RES.JSONResponse
