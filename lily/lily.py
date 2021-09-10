@@ -39,7 +39,6 @@ oldRepl = hissp.repl.LisspREPL(locals=__main__.__dict__)
 oldRepl.lissp.filename="<input>"
 def newEval(self,expression):
     oldRepl.runsource(expression)
-    pass
     try:
         expression = lissp.compile(expression)
     except SoftSyntaxError:
