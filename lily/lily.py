@@ -34,7 +34,7 @@ def xprint(expression,prompt=">>> ", newline="... ",lexer=LisspReplLexer,formatt
 __main__ = ModuleType("__main__")
 sys.modules["__main__"] = __main__
 lissp = Lissp(ns=__main__.__dict__)
-lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
+#  lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
 #  oldRepl = hissp.repl.LisspREPL()
 #  oldRepl.lissp.filename="<input>"
 #  oldRepl.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
