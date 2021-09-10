@@ -33,12 +33,12 @@ def xprint(expression,prompt=">>> ", newline="... ",lexer=LisspReplLexer,formatt
 #  locals()["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
 __main__ = ModuleType("__main__")
 sys.modules["__main__"] = __main__
-#  lissp = Lissp(ns=__main__.__dict__)
-#  lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
-oldRepl = hissp.repl.LisspREPL()
+lissp = Lissp(ns=__main__.__dict__)
+lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
+#  oldRepl = hissp.repl.LisspREPL()
 #  oldRepl.lissp.filename="<input>"
-oldRepl.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
-lissp = oldRepl.lissp
+#  oldRepl.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
+#  lissp = oldRepl.lissp
 def newEval(self,expression):
     try:
         expression = lissp.compile(expression)
