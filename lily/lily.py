@@ -36,10 +36,10 @@ sys.modules["__main__"] = __main__
 #  lissp = Lissp(ns=__main__.__dict__)
 #  lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
 oldRepl = hissp.repl.LisspREPL()
-oldRepl.lissp.filename="<input>"
+#  oldRepl.lissp.filename="<input>"
 lissp = oldRepl.lissp
+lissp.locals["_macro_"] = SimpleNamespace(**vars(hissp.basic._macro_))
 def newEval(self,expression):
-    oldRepl.runsource(expression)
     try:
         expression = lissp.compile(expression)
     except SoftSyntaxError:
