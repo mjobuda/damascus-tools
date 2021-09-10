@@ -4,9 +4,9 @@
 from hissp.reader import Lissp
 from hissp.compiler import readerless
 
-def xx(ss):
+def xx(ss,ns):
     print(ss)
-    ss=Lissp().reads(ss)
+    ss=Lissp(ns=ns).reads(ss)
     print(ss)
     ss=next(ss)
     print(ss)
