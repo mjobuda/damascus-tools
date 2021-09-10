@@ -1,1 +1,1 @@
-(defn/a homepage[req] (RES.JSONResponse
+                      {"hello" "world"}))
