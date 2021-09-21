@@ -1,0 +1,11 @@
+neon@neon:~/vim$ history 
+    1  sudo apt install make clang libtool-bin
+    2  python3
+    3  apt install pip3
+    4  sudo apt install pip3
+    5  sudo apt install pip
+    6  git
+    7  sudo apt install git
+    8  git clone https://github.com/vim/vim
+    9  history 
+neon@neon:~/vim$ 
