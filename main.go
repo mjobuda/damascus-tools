@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/kbinani/screenshot"
-	"github.com/kolesa-team/go-webp/encoder"
-	"github.com/kolesa-team/go-webp/webp"
+	// "github.com/kolesa-team/go-webp/encoder"
+	// "github.com/kolesa-team/go-webp/webp"
 	"image"
 	"image/png"
 	"os"
@@ -23,22 +23,22 @@ func save(img *image.RGBA, filePath string) {
 }
 
 // save *image.RGBA to filePath with webP format.
-func saveWP(img *image.RGBA, filePath string) {
-  output, err :=
-  os.Create(filePath)
-  if err != nil {
-    print(err)
-  }
-  defer output.Close()
-	options, err := encoder.NewLosslessEncoderOptions(encoder.PresetDefault, 6)
-  if err != nil {
-    print(err)
-  }
-	err = webp.Encode(output, img, options) 
-  if err != nil {
-    print(err)
-  }
-}
+// func saveWP(img *image.RGBA, filePath string) {
+  // output, err :=
+  // os.Create(filePath)
+  // if err != nil {
+    // print(err)
+  // }
+  // defer output.Close()
+	// options, err := encoder.NewLosslessEncoderOptions(encoder.PresetDefault, 6)
+  // if err != nil {
+    // print(err)
+  // }
+	// err = webp.Encode(output, img, options)
+  // if err != nil {
+    // print(err)
+  // }
+// }
 func main() {
 	// Capture each displays.
   os.Mkdir("zrzuty", os.ModePerm);
@@ -54,14 +54,16 @@ func main() {
 		all = bounds.Union(all)
 	}
 	for true {
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 		// Capture all desktop region into an image.
 		fmt.Printf("%v\n", all)
 		img, err := screenshot.Capture(all.Min.X, all.Min.Y, all.Dx(), all.Dy())
 		if err != nil {
 			print(err)
 		}
-		saveWP(img, "zrzuty/"+ strconv.FormatInt(time.Now().UnixNano(),10) +".webp")
+		// saveWP(img, "zrzuty/"+ strconv.FormatInt(time.Now().UnixNano(),10) +".webp")
+		save(img, "zrzuty/"+ strconv.FormatInt(time.Now().UnixNano(),10) +".png")
+		save(img, "zrzuty/ostatnie.png")
 	}
 
 }
